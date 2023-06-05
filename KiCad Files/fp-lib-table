@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "LTP-305G")(type "KiCad")(uri "${KIPRJMOD}/Resources/LTP-305G.pretty")(options "")(descr ""))
+  (lib (name "MCU_RaspberryPi_and_Boards")(type "KiCad")(uri "${KIPRJMOD}/Resources/MCU_RaspberryPi_and_Boards.pretty")(options "")(descr ""))
+)

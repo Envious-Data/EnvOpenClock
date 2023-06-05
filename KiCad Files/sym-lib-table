@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "ltp-305g")(type "KiCad")(uri "${KIPRJMOD}/Resources/ltp-305g.kicad_sym")(options "")(descr ""))
+  (lib (name "IS31FL3730-QFLS2-TR")(type "KiCad")(uri "${KIPRJMOD}/Resources/IS31FL3730.pretty/IS31FL3730-QFLS2-TR.kicad_sym")(options "")(descr ""))
+  (lib (name "MCU_RaspberryPi_and_Boards")(type "Legacy")(uri "${KIPRJMOD}/Resources/MCU_RaspberryPi_and_Boards.pretty/MCU_RaspberryPi_and_Boards.lib")(options "")(descr ""))
+)
