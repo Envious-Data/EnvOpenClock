@@ -25,5 +25,4 @@ fp-info-cache
 *.ses
 
 # Exported BOM files
-*.xml
-*.csv
+!KiCad Files/production/

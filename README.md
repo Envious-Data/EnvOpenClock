@@ -1,2 +1,2 @@
 # Env-OpenClock
- A fancy lil clock using LTP-305
+ A fancy lil clock using LTP-305s
