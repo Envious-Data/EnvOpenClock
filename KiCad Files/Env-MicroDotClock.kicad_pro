@@ -34,9 +34,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 0.8,
+          "height": 1.6,
+          "width": 1.6
         },
         "silk_line_width": 0.09999999999999999,
         "silk_text_italic": false,
@@ -60,16 +60,23 @@
           "width": 0.15
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "silk_edge_clearance|85012400|112014000|f78911f7-8a61-4439-9da1-5c6ac84a0f5d|53051249-0554-4022-945f-5b1d7b16dc23",
+        "silk_edge_clearance|85012400|115021000|f78911f7-8a61-4439-9da1-5c6ac84a0f5d|78305cc5-8572-45b3-b865-d2fe4ead9325",
+        "silk_edge_clearance|85012400|115021000|f78911f7-8a61-4439-9da1-5c6ac84a0f5d|a36ff0a9-d52d-4094-8cb3-522bce8588be",
+        "silk_edge_clearance|85012400|94021000|f78911f7-8a61-4439-9da1-5c6ac84a0f5d|7dbd51f8-fe37-4617-a620-ba7a060f6aaa",
+        "starved_thermal|104162400|95631000|7f007093-7c2e-4263-ba92-6f67d9f5475f|477f078c-0b22-4fc1-a9ee-6a9a88546629|F.Cu",
+        "starved_thermal|91462400|95631000|7f007093-7c2e-4263-ba92-6f67d9f5475f|05291b4b-c5ed-4dca-99a7-a3ab6951a1ec|F.Cu"
+      ],
       "meta": {
         "version": 2
       },
       "rule_severities": {
         "annular_width": "error",
         "clearance": "error",
-        "connection_width": "warning",
-        "copper_edge_clearance": "ignore",
-        "copper_sliver": "warning",
+        "connection_width": "error",
+        "copper_edge_clearance": "error",
+        "copper_sliver": "error",
         "courtyards_overlap": "error",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
@@ -89,7 +96,7 @@
         "lib_footprint_mismatch": "ignore",
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
-        "missing_courtyard": "ignore",
+        "missing_courtyard": "error",
         "missing_footprint": "warning",
         "net_conflict": "warning",
         "npth_inside_courtyard": "ignore",
@@ -106,12 +113,12 @@
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
-        "track_dangling": "warning",
+        "track_dangling": "error",
         "track_width": "error",
         "tracks_crossing": "error",
         "unconnected_items": "error",
         "unresolved_variable": "error",
-        "via_dangling": "warning",
+        "via_dangling": "error",
         "zones_intersect": "error"
       },
       "rules": {
