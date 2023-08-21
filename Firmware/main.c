@@ -26,6 +26,9 @@ int main() {
     pre_generate_alternate_characters();
     char *clock_string_buffer = malloc(9);
 
+    gpio_init(25);
+    gpio_set_dir(25, GPIO_OUT);
+
     while(true)  
     {
         clock_read_time();
@@ -48,14 +51,11 @@ int main() {
 		//hour:minute/second
         // set_char(0, 'E', true);
 		sprintf(clock_string_buffer, "%02x:%02x:%02x",clock_buffer[2],clock_buffer[1],clock_buffer[0]);
-        // set_char(0, 'F', true);
-
-        // sprintf(clock_string_buffer, "%08x", i);
 		//weekday
 		// sprintf(clock_string_buffer, "%s\n",week[(unsigned char)clock_buffer[3]-1]);
 
+		// sprintf(clock_string_buffer, "%02x:%02x:%02x",clock_buffer[0],clock_buffer[0],clock_buffer[0]);
         display_string(clock_string_buffer);
-        sleep_ms(10);
 	}  
 
     // set_char(0, 'Z', true);
