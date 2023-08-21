@@ -5127,8 +5127,8 @@
     (property "Datasheet" "~" (at 126.746 153.67 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 212f9ae7-37c7-4914-a564-81778f67f614))
-    (pin "2" (uuid 77f595a1-13d5-447e-99f9-a3a41b0fb7de))
+    (pin "1" (uuid 176ccf01-d7be-45f2-873e-85beeace035b))
+    (pin "2" (uuid 36a40200-ff81-4efe-83ea-08f97ae82f9f))
     (instances
       (project "Env-MicroDotClock"
         (path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f"
