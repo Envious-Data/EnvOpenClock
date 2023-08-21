@@ -140,7 +140,7 @@ char *append_chars(const char *original, char character_to_append, size_t num_ch
 
     strcpy(new_string, original);
     
-    for (size_t i = 0; i < num_chars; ++i) {
+    for (size_t i = 0; i < num_chars; i++) {
         new_string[original_length + i] = character_to_append;
     }
     
@@ -151,8 +151,8 @@ char *append_chars(const char *original, char character_to_append, size_t num_ch
 
 
 void convertLeftToRight(const uint8_t *left_matrix, uint8_t *right_matrix) {
-    for (int row = 0; row < 8; ++row) {
-        for (int col = 0; col < 8; ++col) {
+    for (int row = 0; row < 8; row++) {
+        for (int col = 0; col < 8; col++) {
             uint8_t bit_value = (left_matrix[row] >> (col)) & 1;
             right_matrix[col] |= (bit_value << row);
         }
@@ -202,10 +202,13 @@ void update_display() {
             uint8_t* pre_mat_a_buf = prepend_address(MATRIX_A_ADDR, displays[i], count_of(displays[i]));
             i2c_write_blocking(I2C_DISPLAY_LINE, addresses[i], pre_mat_a_buf, count_of(displays[i]) + 1, false);
             free(pre_mat_a_buf);
+
         } else {
             uint8_t* pre_mat_b_buf = prepend_address(MATRIX_B_ADDR, displays[i], count_of(displays[i]));
             i2c_write_blocking(I2C_DISPLAY_LINE, addresses[i], pre_mat_b_buf, count_of(displays[i]) + 1, false);
             free(pre_mat_b_buf);
+
+
             set_option(i, MODE_ADDR, DEFAULT_MODE);
             set_option(i, OPTION_ADDR, DEFAULT_OPTIONS);
             set_option(i, BRIGHTNESS_ADDR, 0b00011111);

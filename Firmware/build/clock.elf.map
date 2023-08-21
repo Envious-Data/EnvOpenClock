@@ -85,6 +85,8 @@ Discarded input sections
  .text.clear_all
                 0x00000000       0x38 CMakeFiles/clock.dir/display.c.obj
  .text.clear    0x00000000       0x28 CMakeFiles/clock.dir/display.c.obj
+ .text.set_char
+                0x00000000       0x48 CMakeFiles/clock.dir/display.c.obj
  .text.scroll_display_string
                 0x00000000      0x224 CMakeFiles/clock.dir/display.c.obj
  .text          0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
@@ -359,8 +361,6 @@ Discarded input sections
                 0x00000000       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.busy_wait_us_32
                 0x00000000       0x7c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .text.busy_wait_us
-                0x00000000       0x68 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.busy_wait_ms
                 0x00000000       0x98 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_force_irq
@@ -422,8 +422,6 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .data          0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .bss           0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .text.uart_init
-                0x00000000      0x188 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .text.uart_deinit
                 0x00000000       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .text.uart_set_baudrate
@@ -438,11 +436,6 @@ Discarded input sections
                 0x00000000       0x28 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .text.uart_is_readable_within_us
                 0x00000000       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .bss.uart_char_to_line_feed
-                0x00000000        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .comment       0x00000000       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
- .ARM.attributes
-                0x00000000       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .text          0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .data          0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .bss           0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
@@ -962,16 +955,12 @@ Discarded input sections
  .text._lseek   0x00000000        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text._fstat   0x00000000        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text._isatty  0x00000000        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .text.stdio_set_driver_enabled
-                0x00000000       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_flush
                 0x00000000       0x28 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_vprintf
                 0x00000000       0xd4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_printf
                 0x00000000       0x18 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .text.stdio_init_all
-                0x00000000        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_getchar
                 0x00000000       0x7c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.getchar_timeout_us
@@ -985,16 +974,6 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .data          0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss           0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .text.stdio_uart_out_chars
-                0x00000000       0x4c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .text.stdio_uart_in_chars
-                0x00000000       0x98 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .text.on_uart_rx
-                0x00000000       0x28 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .text.stdio_uart_set_chars_available_callback
-                0x00000000       0x8c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .text.stdio_uart_init
-                0x00000000       0x48 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdout_uart_init
                 0x00000000       0x40 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text.stdin_uart_init
@@ -1003,20 +982,12 @@ Discarded input sections
                 0x00000000       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata.__bi_66.0
                 0x00000000        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .rodata.str1.4
-                0x00000000       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata.__bi_70.1
                 0x00000000        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata.__bi_54.2
                 0x00000000        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .rodata.__bi_58.3
                 0x00000000        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .rodata.__bi_33.4
-                0x00000000        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .rodata.__bi_34.5
-                0x00000000        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .data.stdio_uart
-                0x00000000       0x18 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .binary_info.__bi_ptr70
                 0x00000000        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .binary_info.__bi_ptr66
@@ -1025,19 +996,6 @@ Discarded input sections
                 0x00000000        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .binary_info.__bi_ptr54
                 0x00000000        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .binary_info.__bi_ptr34
-                0x00000000        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .binary_info.__bi_ptr33
-                0x00000000        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .bss.chars_available_param
-                0x00000000        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .bss.chars_available_callback
-                0x00000000        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .bss.uart_instance
-                0x00000000        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .comment       0x00000000       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
- .ARM.attributes
-                0x00000000       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .text          0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .data          0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .bss           0x00000000        0x0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
@@ -1057,9 +1015,9 @@ Discarded input sections
                 0x00000000       0x48 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_read_timeout_per_char_us
                 0x00000000       0x48 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .text          0x00000000        0x0 /tmp/ccBjhYbB.o
- .data          0x00000000        0x0 /tmp/ccBjhYbB.o
- .bss           0x00000000        0x0 /tmp/ccBjhYbB.o
+ .text          0x00000000        0x0 /tmp/ccFNuzde.o
+ .data          0x00000000        0x0 /tmp/ccFNuzde.o
+ .bss           0x00000000        0x0 /tmp/ccFNuzde.o
  .data          0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x00000000       0x10 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
@@ -1239,11 +1197,11 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 .boot2          0x10000000      0x100
                 0x10000000                        __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 /tmp/ccBjhYbB.o
+ .boot2         0x10000000      0x100 /tmp/ccFNuzde.o
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x51e0
+.text           0x10000100     0x5568
                 0x10000100                        __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1305,349 +1263,370 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .text*)
  .text          0x100002bc       0x98 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
  .text.startup.main
-                0x10000354      0x128 CMakeFiles/clock.dir/main.c.obj
+                0x10000354       0xec CMakeFiles/clock.dir/main.c.obj
                 0x10000354                main
  .text.clock_set_time
-                0x1000047c       0xac CMakeFiles/clock.dir/rtc.c.obj
-                0x1000047c                clock_set_time
+                0x10000440       0xac CMakeFiles/clock.dir/rtc.c.obj
+                0x10000440                clock_set_time
  .text.clock_read_time
-                0x10000528       0x34 CMakeFiles/clock.dir/rtc.c.obj
-                0x10000528                clock_read_time
+                0x100004ec       0x34 CMakeFiles/clock.dir/rtc.c.obj
+                0x100004ec                clock_read_time
  .text.pre_generate_alternate_characters
-                0x1000055c      0x2d0 CMakeFiles/clock.dir/display.c.obj
-                0x1000055c                pre_generate_alternate_characters
+                0x10000520      0x2d0 CMakeFiles/clock.dir/display.c.obj
+                0x10000520                pre_generate_alternate_characters
  .text.update_display
-                0x1000082c      0x14c CMakeFiles/clock.dir/display.c.obj
-                0x1000082c                update_display
- .text.set_char
-                0x10000978       0x48 CMakeFiles/clock.dir/display.c.obj
-                0x10000978                set_char
+                0x100007f0      0x14c CMakeFiles/clock.dir/display.c.obj
+                0x100007f0                update_display
  .text.display_string
-                0x100009c0       0x84 CMakeFiles/clock.dir/display.c.obj
-                0x100009c0                display_string
+                0x1000093c       0x84 CMakeFiles/clock.dir/display.c.obj
+                0x1000093c                display_string
  .text.gpio_set_function
-                0x10000a44       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000a44                gpio_set_function
+                0x100009c0       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x100009c0                gpio_set_function
  .text.gpio_set_pulls
-                0x10000a74       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000a74                gpio_set_pulls
+                0x100009f0       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x100009f0                gpio_set_pulls
  .text.gpio_init
-                0x10000a98       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x10000a98                gpio_init
+                0x10000a14       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x10000a14                gpio_init
  .text.running_on_fpga
-                0x10000ad4       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
-                0x10000ad4                running_on_fpga
+                0x10000a50       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
+                0x10000a50                running_on_fpga
  .text.hw_claim_or_assert
-                0x10000ae4       0x44 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
-                0x10000ae4                hw_claim_or_assert
+                0x10000a60       0x44 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
+                0x10000a60                hw_claim_or_assert
  .text.spin_locks_reset
-                0x10000b28       0x1c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000b28                spin_locks_reset
+                0x10000aa4       0x1c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000aa4                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x10000b44       0x18 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
-                0x10000b44                next_striped_spin_lock_num
+                0x10000ac0       0x18 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
+                0x10000ac0                next_striped_spin_lock_num
  .text.irq_set_enabled
-                0x10000b5c       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000b5c                irq_set_enabled
+                0x10000ad8       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000ad8                irq_set_enabled
  .text.irq_get_vtable_handler
-                0x10000b80       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000b80                irq_get_vtable_handler
+                0x10000afc       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000afc                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x10000b90       0x54 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000b90                irq_set_exclusive_handler
+                0x10000b0c       0x54 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000b0c                irq_set_exclusive_handler
  .text.irq_remove_handler
-                0x10000be4      0x1c4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000be4                irq_remove_handler
+                0x10000b60      0x1c4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000b60                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x10000da8       0xb4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000da8                irq_add_tail_to_free_list
+                0x10000d24       0xb4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000d24                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x10000e5c       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
-                0x10000e5c                irq_init_priorities
+                0x10000dd8       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x10000dd8                irq_init_priorities
  .text.lock_init
-                0x10000e80       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_sync/lock_core.c.obj
-                0x10000e80                lock_init
+                0x10000dfc       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_sync/lock_core.c.obj
+                0x10000dfc                lock_init
  .text.mutex_init
-                0x10000e90       0x1c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x10000e90                mutex_init
+                0x10000e0c       0x1c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10000e0c                mutex_init
  .text.recursive_mutex_init
-                0x10000eac       0x1c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_sync/mutex.c.obj
-                0x10000eac                recursive_mutex_init
+                0x10000e28       0x1c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_sync/mutex.c.obj
+                0x10000e28                recursive_mutex_init
  .text.timer_pool_entry_comparator
-                0x10000ec8       0x34 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
-                0x10000ec8                timer_pool_entry_comparator
+                0x10000e44       0x34 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000e44                timer_pool_entry_comparator
  .text.sleep_until_callback
-                0x10000efc       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000e78       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
  .text.add_alarm_under_lock.isra.0
-                0x10000f2c      0x100 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000ea8      0x100 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x1000102c      0x1c0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x10000fa8      0x1c0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x100011ec       0x6c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
-                0x100011ec                alarm_pool_init_default
+                0x10001168       0x6c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001168                alarm_pool_init_default
  .text.alarm_pool_add_alarm_at
-                0x10001258      0x188 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
-                0x10001258                alarm_pool_add_alarm_at
+                0x100011d4      0x188 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x100011d4                alarm_pool_add_alarm_at
  .text.sleep_until
-                0x100013e0       0xc4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
-                0x100013e0                sleep_until
+                0x1000135c       0xc4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x1000135c                sleep_until
  .text.sleep_ms
-                0x100014a4       0x38 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
-                0x100014a4                sleep_ms
+                0x10001420       0x38 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001420                sleep_ms
  .text.best_effort_wfe_or_timeout
-                0x100014dc       0xec CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
-                0x100014dc                best_effort_wfe_or_timeout
+                0x10001458       0xec CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x10001458                best_effort_wfe_or_timeout
  .text.hardware_alarm_irq_handler
-                0x100015c8       0xbc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001544       0xbc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x10001684       0x18 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x10001684                hardware_alarm_claim
+                0x10001600       0x18 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001600                hardware_alarm_claim
  .text.time_us_64
-                0x1000169c       0x14 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x1000169c                time_us_64
+                0x10001618       0x14 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001618                time_us_64
+ .text.busy_wait_us
+                0x1000162c       0x68 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x1000162c                busy_wait_us
  .text.busy_wait_until
-                0x100016b0       0x20 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x100016b0                busy_wait_until
+                0x10001694       0x20 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001694                busy_wait_until
  .text.hardware_alarm_set_callback
-                0x100016d0       0x8c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x100016d0                hardware_alarm_set_callback
+                0x100016b4       0x8c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x100016b4                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x1000175c       0xd0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x1000175c                hardware_alarm_set_target
+                0x10001740       0xd0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001740                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x1000182c       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
-                0x1000182c                hardware_alarm_cancel
+                0x10001810       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x10001810                hardware_alarm_cancel
  .text.ph_merge_nodes
-                0x10001868       0x64 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x1000184c       0x64 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_post_alloc_init
-                0x100018cc       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x100018cc                ph_post_alloc_init
+                0x100018b0       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x100018b0                ph_post_alloc_init
  .text.ph_merge_two_pass
-                0x10001908       0x98 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001908                ph_merge_two_pass
+                0x100018ec       0x98 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x100018ec                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x100019a0      0x100 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001984      0x100 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x10001aa0      0x104 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001aa0                ph_remove_head
+                0x10001a84      0x104 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001a84                ph_remove_head
  .text.ph_remove_and_free_node
-                0x10001ba4       0x78 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
-                0x10001ba4                ph_remove_and_free_node
+                0x10001b88       0x78 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
+                0x10001b88                ph_remove_and_free_node
+ .text.uart_init
+                0x10001c00      0x188 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x10001c00                uart_init
  .text.clocks_init
-                0x10001c1c      0x2c8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10001c1c                clocks_init
+                0x10001d88      0x2c8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10001d88                clocks_init
  .text.clock_get_hz
-                0x10001ee4        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x10001ee4                clock_get_hz
+                0x10002050        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x10002050                clock_get_hz
  .text.pll_init
-                0x10001ef0       0xa0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
-                0x10001ef0                pll_init
+                0x1000205c       0xa0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x1000205c                pll_init
  .text.watchdog_start_tick
-                0x10001f90       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x10001f90                watchdog_start_tick
+                0x100020fc       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x100020fc                watchdog_start_tick
  .text.xosc_init
-                0x10001fa0       0x28 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x10001fa0                xosc_init
+                0x1000210c       0x28 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x1000210c                xosc_init
  .text.runtime_init
-                0x10001fc8       0xf0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10001fc8                runtime_init
- .text._exit    0x100020b8        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100020b8                _exit
- .text._sbrk    0x100020bc       0x34 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100020bc                _sbrk
- .text.exit     0x100020f0        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100020f0                exit
- .text.panic    0x100020f8       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x100020f8                panic
+                0x10002134       0xf0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002134                runtime_init
+ .text._exit    0x10002224        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002224                _exit
+ .text._sbrk    0x10002228       0x34 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002228                _sbrk
+ .text.exit     0x1000225c        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x1000225c                exit
+ .text.panic    0x10002264       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002264                panic
  .text.hard_assertion_failure
-                0x10002128        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
-                0x10002128                hard_assertion_failure
+                0x10002294        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x10002294                hard_assertion_failure
  .text._out_buffer
-                0x10002134        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100022a0        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_null
-                0x1000213c        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100022a8        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_rev
-                0x10002140       0x90 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100022ac       0x90 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._ntoa_format
-                0x100021d0      0x1f4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x1000233c      0x1f4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._out_char
-                0x100023c4       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._etoa    0x100023d4      0x454 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .text._ftoa    0x10002828      0x3c4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002530       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._etoa    0x10002540      0x454 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .text._ftoa    0x10002994      0x3c4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text._vsnprintf
-                0x10002bec      0xb24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10002d58      0xb24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .text.__wrap_sprintf
-                0x10003710       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x10003710                __wrap_sprintf
+                0x1000387c       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x1000387c                __wrap_sprintf
  .text.weak_raw_vprintf
-                0x1000373c       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
-                0x1000373c                weak_raw_vprintf
- .text          0x1000376c       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x100038a8       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x100038a8                weak_raw_vprintf
+ .text          0x100038d8       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x1000377c       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x1000377c                rom_func_lookup
+                0x100038e8       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x100038e8                rom_func_lookup
  .text.rom_data_lookup
-                0x1000378c       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x1000378c                rom_data_lookup
+                0x100038f8       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x100038f8                rom_data_lookup
  .text.rom_funcs_lookup
-                0x1000379c       0x44 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x1000379c                rom_funcs_lookup
+                0x10003908       0x44 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x10003908                rom_funcs_lookup
  .text.__wrap___aeabi_idiv
-                0x100037e0       0x50 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x100037e0                __wrap___aeabi_idivmod
-                0x100037e0                divmod_s32s32
-                0x100037e0                div_s32s32
-                0x100037e0                __wrap___aeabi_idiv
-                0x100037e8                divmod_s32s32_unsafe
-                0x10003814                divmod_s32s32_savestate
+                0x1000394c       0x50 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x1000394c                __wrap___aeabi_idivmod
+                0x1000394c                divmod_s32s32
+                0x1000394c                div_s32s32
+                0x1000394c                __wrap___aeabi_idiv
+                0x10003954                divmod_s32s32_unsafe
+                0x10003980                divmod_s32s32_savestate
  .text.__wrap___aeabi_uidiv
-                0x10003830       0x4c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x10003830                __wrap___aeabi_uidiv
-                0x10003830                __wrap___aeabi_uidivmod
-                0x10003830                div_u32u32
-                0x10003830                divmod_u32u32
-                0x10003838                divmod_u32u32_unsafe
-                0x10003860                divmod_u32u32_savestate
+                0x1000399c       0x4c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x1000399c                __wrap___aeabi_uidiv
+                0x1000399c                __wrap___aeabi_uidivmod
+                0x1000399c                div_u32u32
+                0x1000399c                divmod_u32u32
+                0x100039a4                divmod_u32u32_unsafe
+                0x100039cc                divmod_u32u32_savestate
  .text.__wrap___aeabi_ldiv
-                0x1000387c      0x424 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
-                0x1000387c                div_s64s64
-                0x1000387c                divmod_s64s64
-                0x1000387c                __wrap___aeabi_ldivmod
-                0x100038ac                div_u64u64
-                0x100038ac                divmod_u64u64
-                0x100038ac                __wrap___aeabi_uldivmod
-                0x100038bc                divmod_u64u64_savestate
-                0x100038dc                divmod_s64s64_unsafe
-                0x10003964                divmod_u64u64_unsafe
+                0x100039e8      0x424 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x100039e8                div_s64s64
+                0x100039e8                divmod_s64s64
+                0x100039e8                __wrap___aeabi_ldivmod
+                0x10003a18                div_u64u64
+                0x10003a18                divmod_u64u64
+                0x10003a18                __wrap___aeabi_uldivmod
+                0x10003a28                divmod_u64u64_savestate
+                0x10003a48                divmod_s64s64_unsafe
+                0x10003ad0                divmod_u64u64_unsafe
  .text.__wrap___aeabi_darithmetic
-                0x10003ca0       0x80 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003ca0                __wrap___aeabi_drsub
-                0x10003ca6                __wrap___aeabi_dsub
-                0x10003cb8                __wrap___aeabi_dadd
-                0x10003cca                __wrap___aeabi_ddiv
-                0x10003d06                __wrap___aeabi_dmul
+                0x10003e0c       0x80 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003e0c                __wrap___aeabi_drsub
+                0x10003e12                __wrap___aeabi_dsub
+                0x10003e24                __wrap___aeabi_dadd
+                0x10003e36                __wrap___aeabi_ddiv
+                0x10003e72                __wrap___aeabi_dmul
  .text.__wrap___aeabi_cdcmple
-                0x10003d20       0x6c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003d20                __wrap___aeabi_cdrcmple
-                0x10003d30                __wrap___aeabi_cdcmple
-                0x10003d30                __wrap___aeabi_cdcmpeq
+                0x10003e8c       0x6c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003e8c                __wrap___aeabi_cdrcmple
+                0x10003e9c                __wrap___aeabi_cdcmple
+                0x10003e9c                __wrap___aeabi_cdcmpeq
  .text.__wrap___aeabi_dcmplt
-                0x10003d8c        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003d8c                __wrap___aeabi_dcmplt
+                0x10003ef8        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003ef8                __wrap___aeabi_dcmplt
  .text.__wrap___aeabi_dcmpge
-                0x10003d98       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003d98                __wrap___aeabi_dcmpge
+                0x10003f04       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003f04                __wrap___aeabi_dcmpge
  .text.__wrap___aeabi_dcmpgt
-                0x10003da8        0xa CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003da8                __wrap___aeabi_dcmpgt
+                0x10003f14        0xa CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003f14                __wrap___aeabi_dcmpgt
  .text.__wrap___aeabi_dcmpun
-                0x10003db2       0x1c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003db2                __wrap___aeabi_dcmpun
- *fill*         0x10003dce        0x2 
+                0x10003f1e       0x1c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003f1e                __wrap___aeabi_dcmpun
+ *fill*         0x10003f3a        0x2 
  .text.__wrap___aeabi_i2d
-                0x10003dd0       0x38 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003dd0                __wrap___aeabi_ui2d
-                0x10003dd8                __wrap___aeabi_i2d
+                0x10003f3c       0x38 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003f3c                __wrap___aeabi_ui2d
+                0x10003f44                __wrap___aeabi_i2d
  .text.__wrap___aeabi_d2iz
-                0x10003e08       0x48 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003e08                __wrap___aeabi_d2iz
-                0x10003e08                double2int_z
+                0x10003f74       0x48 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003f74                __wrap___aeabi_d2iz
+                0x10003f74                double2int_z
  .text.__wrap___aeabi_d2uiz
-                0x10003e50       0x18 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
-                0x10003e50                double2uint
-                0x10003e50                __wrap___aeabi_d2uiz
+                0x10003fbc       0x18 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x10003fbc                double2uint
+                0x10003fbc                __wrap___aeabi_d2uiz
  .text.__aeabi_double_init
-                0x10003e68       0x98 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x10003e68                __aeabi_double_init
+                0x10003fd4       0x98 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x10003fd4                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x10003f00       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003f00                double_table_shim_on_use_helper
+                0x1000406c       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x1000406c                double_table_shim_on_use_helper
  .text.__wrap___aeabi_dsub
-                0x10003f2c       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003f2c                drsub_shim
-                0x10003f32                dsub_shim
+                0x10004098       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004098                drsub_shim
+                0x1000409e                dsub_shim
  .text.dadd_shim
-                0x10003f3c      0x15c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10003f3c                dadd_shim
+                0x100040a8      0x15c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x100040a8                dadd_shim
  .text.dmul_shim
-                0x10004098      0x15c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004098                dmul_shim
+                0x10004204      0x15c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004204                dmul_shim
  .text.ddiv_shim
-                0x100041f4      0x1b0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100041f4                ddiv_shim
+                0x10004360      0x1b0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004360                ddiv_shim
  .text.double2uint_shim
-                0x100043a4        0xe CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100043a4                double2uint_shim
-                0x100043a6                double2ufix_shim
- *fill*         0x100043b2        0x2 
+                0x10004510        0xe CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004510                double2uint_shim
+                0x10004512                double2ufix_shim
+ *fill*         0x1000451e        0x2 
  .text.double2uint64_shim
-                0x100043b4       0x70 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x100043b4                double2uint64_shim
-                0x100043b6                double2ufix64_shim
-                0x100043d6                d2fix_a
+                0x10004520       0x70 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004520                double2uint64_shim
+                0x10004522                double2ufix64_shim
+                0x10004542                d2fix_a
  .text.dunpacks
-                0x10004424       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x10004424                dunpacks
+                0x10004590       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x10004590                dunpacks
  .text.__aeabi_lmul
-                0x10004460       0x32 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x10004460                __wrap___aeabi_lmul
- *fill*         0x10004492        0x2 
+                0x100045cc       0x32 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x100045cc                __wrap___aeabi_lmul
+ *fill*         0x100045fe        0x2 
  .text.__aeabi_float_init
-                0x10004494       0x64 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x10004494                __aeabi_float_init
+                0x10004600       0x64 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x10004600                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x100044f8       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x100044f8                float_table_shim_on_use_helper
+                0x10004664       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x10004664                float_table_shim_on_use_helper
  .text.__wrap_malloc
-                0x10004524       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
-                0x10004524                __wrap_malloc
+                0x10004690       0x24 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+                0x10004690                __wrap_malloc
  .text.__wrap_free
-                0x10004548        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
-                0x10004548                __wrap_free
- .text          0x10004550       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10004550                __aeabi_mem_init
- .text.memcpy   0x10004560        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x10004560                __wrap___aeabi_memcpy
-                0x10004560                __wrap_memcpy
+                0x100046b4        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+                0x100046b4                __wrap_free
+ .text          0x100046bc       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x100046bc                __aeabi_mem_init
+ .text.memcpy   0x100046cc        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x100046cc                __wrap___aeabi_memcpy
+                0x100046cc                __wrap_memcpy
  .text.stdio_out_chars_crlf
-                0x1000456c       0xbc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x100046d8       0xbc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_putchar
-                0x10004628       0x98 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x10004628                __wrap_putchar
+                0x10004794       0x98 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x10004794                __wrap_putchar
  .text.__wrap_puts
-                0x100046c0       0xe0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x100046c0                __wrap_puts
+                0x1000482c       0xe0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1000482c                __wrap_puts
+ .text.stdio_set_driver_enabled
+                0x1000490c       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1000490c                stdio_set_driver_enabled
+ .text.stdio_init_all
+                0x1000493c        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x1000493c                stdio_init_all
+ .text.stdio_uart_out_chars
+                0x10004948       0x4c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .text.stdio_uart_in_chars
+                0x10004994       0x98 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10004994                stdio_uart_in_chars
+ .text.on_uart_rx
+                0x10004a2c       0x28 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .text.stdio_uart_set_chars_available_callback
+                0x10004a54       0x8c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .text.stdio_uart_init
+                0x10004ae0       0x48 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x10004ae0                stdio_uart_init
  .text.i2c_set_baudrate
-                0x100047a0       0xc4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-                0x100047a0                i2c_set_baudrate
+                0x10004b28       0xc4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10004b28                i2c_set_baudrate
  .text.i2c_init
-                0x10004864       0x54 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-                0x10004864                i2c_init
+                0x10004bec       0x54 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10004bec                i2c_init
  .text.i2c_write_blocking
-                0x100048b8       0xd0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-                0x100048b8                i2c_write_blocking
+                0x10004c40       0xd0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10004c40                i2c_write_blocking
  .text.i2c_read_blocking
-                0x10004988       0x90 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-                0x10004988                i2c_read_blocking
- .text          0x10004a18       0x28 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
-                0x10004a18                malloc
-                0x10004a2c                free
- .text          0x10004a40      0x574 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mallocr.o)
-                0x10004a40                _malloc_r
- .text          0x10004fb4        0x8 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mlock.o)
-                0x10004fb4                __malloc_lock
-                0x10004fb8                __malloc_unlock
- .text          0x10004fbc       0x24 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-sbrkr.o)
-                0x10004fbc                _sbrk_r
- .text          0x10004fe0       0x5c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
-                0x10004fe0                strlen
- .text          0x1000503c      0x260 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-freer.o)
-                0x1000503c                _malloc_trim_r
-                0x100050d8                _free_r
+                0x10004d10       0x90 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x10004d10                i2c_read_blocking
+ .text          0x10004da0       0x28 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
+                0x10004da0                malloc
+                0x10004db4                free
+ .text          0x10004dc8      0x574 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mallocr.o)
+                0x10004dc8                _malloc_r
+ .text          0x1000533c        0x8 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mlock.o)
+                0x1000533c                __malloc_lock
+                0x10005340                __malloc_unlock
+ .text          0x10005344       0x24 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-sbrkr.o)
+                0x10005344                _sbrk_r
+ .text          0x10005368       0x5c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+                0x10005368                strlen
+ .text          0x100053c4      0x260 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-freer.o)
+                0x100053c4                _malloc_trim_r
+                0x10005460                _free_r
  *(.fini)
- .fini          0x1000529c        0x4 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crti.o
-                0x1000529c                _fini
- .fini.__stub   0x100052a0       0x40 linker stubs
+ .fini          0x10005624        0x4 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crti.o
+                0x10005624                _fini
+ .fini.__stub   0x10005628       0x40 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -1659,99 +1638,108 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x100052e0        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x100052e0                        . = ALIGN (0x4)
+ .eh_frame      0x10005668        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x10005668                        . = ALIGN (0x4)
 
-.glue_7         0x100052e0        0x0
- .glue_7        0x100052e0        0x0 linker stubs
+.glue_7         0x10005668        0x0
+ .glue_7        0x10005668        0x0 linker stubs
 
-.glue_7t        0x100052e0        0x0
- .glue_7t       0x100052e0        0x0 linker stubs
+.glue_7t        0x10005668        0x0
+ .glue_7t       0x10005668        0x0 linker stubs
 
-.vfp11_veneer   0x100052e0        0x0
- .vfp11_veneer  0x100052e0        0x0 linker stubs
+.vfp11_veneer   0x10005668        0x0
+ .vfp11_veneer  0x10005668        0x0 linker stubs
 
-.v4_bx          0x100052e0        0x0
- .v4_bx         0x100052e0        0x0 linker stubs
+.v4_bx          0x10005668        0x0
+ .v4_bx         0x10005668        0x0 linker stubs
 
-.iplt           0x100052e0        0x0
- .iplt          0x100052e0        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x10005668        0x0
+ .iplt          0x10005668        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x100052e0      0x2dc
+.rodata         0x10005668      0x314
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.main.str1.4
-                0x100052e0       0x11 CMakeFiles/clock.dir/main.c.obj
- *fill*         0x100052f1        0x3 
- .rodata.__bi_21.0
-                0x100052f4        0x8 CMakeFiles/clock.dir/main.c.obj
+                0x10005668        0xf CMakeFiles/clock.dir/main.c.obj
+ *fill*         0x10005677        0x1 
+ .rodata.__bi_23.0
+                0x10005678        0x8 CMakeFiles/clock.dir/main.c.obj
  .rodata.hardware_alarm_claim.str1.4
-                0x100052fc       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- *fill*         0x1000531e        0x2 
+                0x10005680       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x100056a2        0x2 
  .rodata.panic.str1.4
-                0x10005320       0x12 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
- *fill*         0x10005332        0x2 
+                0x100056a4       0x12 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+ *fill*         0x100056b6        0x2 
  .rodata.hard_assertion_failure.str1.4
-                0x10005334        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x100056b8        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata._ftoa.str1.4
-                0x10005340       0x15 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x10005355        0x3 
+                0x100056c4       0x15 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ *fill*         0x100056d9        0x3 
  .rodata._vsnprintf
-                0x10005358      0x19c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- *fill*         0x100054f4        0x4 
+                0x100056dc      0x19c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.pow10.0
-                0x100054f8       0x50 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x10005878       0x50 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .rodata.__wrap_malloc.str1.4
-                0x10005548        0xe CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
- *fill*         0x10005556        0x2 
+                0x100058c8        0xe CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+ *fill*         0x100058d6        0x2 
  .rodata.str1.4
-                0x10005558       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x100058d8       0x3c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_81
-                0x10005594        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10005914        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_75
-                0x100055a0        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10005920        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_44
-                0x100055ac        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1000592c        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.crlf_str.0
-                0x100055b8        0x2 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x100055bc                        . = ALIGN (0x4)
- *fill*         0x100055ba        0x2 
+                0x10005938        0x2 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x1000593a        0x2 
+ .rodata.str1.4
+                0x1000593c       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .rodata.__bi_33.4
+                0x10005968        0xc CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .rodata.__bi_34.5
+                0x10005974        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x1000597c                        . = ALIGN (0x4)
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x100055bc                        . = ALIGN (0x4)
+                0x1000597c                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x100055bc                        __exidx_start = .
+                0x1000597c                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x100055bc                        __exidx_end = .
-                0x100055bc                        . = ALIGN (0x4)
-                0x100055bc                        __binary_info_start = .
+                0x1000597c                        __exidx_end = .
+                0x1000597c                        . = ALIGN (0x4)
+                0x1000597c                        __binary_info_start = .
 
-.binary_info    0x100055bc       0x20
+.binary_info    0x1000597c       0x28
  *(.binary_info.keep.*)
- .binary_info.keep.__bi_ptr21
-                0x100055bc        0x4 CMakeFiles/clock.dir/main.c.obj
+ .binary_info.keep.__bi_ptr23
+                0x1000597c        0x4 CMakeFiles/clock.dir/main.c.obj
  .binary_info.keep.__bi_ptr81
-                0x100055c0        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10005980        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x100055c4        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10005984        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x100055c8        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10005988        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x100055cc        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x1000598c        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x100055d0        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10005990        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x100055d4        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10005994        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr22
-                0x100055d8        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x10005998        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
-                0x100055dc                        __binary_info_end = .
+ .binary_info.__bi_ptr34
+                0x1000599c        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .binary_info.__bi_ptr33
+                0x100059a0        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x100059a4                        __binary_info_end = .
 
-.rel.dyn        0x100055dc        0x0
- .rel.iplt      0x100055dc        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x100055dc                        . = ALIGN (0x4)
+.rel.dyn        0x100059a4        0x0
+ .rel.iplt      0x100059a4        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x100059a4                        . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -1760,7 +1748,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x20000000       0xc0 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
                 0x20000000                ram_vector_table
 
-.data           0x200000c0      0xcec load address 0x100055dc
+.data           0x200000c0      0xd04 load address 0x100059a4
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -1808,145 +1796,157 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x20000530       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
                 0x20000530                aeabi_mem_funcs
                 0x20000540                aeabi_mem_funcs_end
+ .data.stdio_uart
+                0x20000540       0x18 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+                0x20000540                stdio_uart
  .data.i2c1_inst
-                0x20000540        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-                0x20000540                i2c1_inst
+                0x20000558        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x20000558                i2c1_inst
  .data.i2c0_inst
-                0x20000548        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-                0x20000548                i2c0_inst
- .data          0x20000550      0x430 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
-                0x20000550                _impure_ptr
- .data          0x20000980      0x410 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mallocr.o)
-                0x20000980                __malloc_sbrk_base
-                0x20000984                __malloc_trim_threshold
-                0x20000988                __malloc_av_
-                0x20000d90                        . = ALIGN (0x4)
+                0x20000560        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x20000560                i2c0_inst
+ .data          0x20000568      0x430 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+                0x20000568                _impure_ptr
+ .data          0x20000998      0x410 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mallocr.o)
+                0x20000998                __malloc_sbrk_base
+                0x2000099c                __malloc_trim_threshold
+                0x200009a0                __malloc_av_
+                0x20000da8                        . = ALIGN (0x4)
  *(.after_data.*)
-                0x20000d90                        . = ALIGN (0x4)
-                0x20000d90                        PROVIDE (__mutex_array_start = .)
+                0x20000da8                        . = ALIGN (0x4)
+                0x20000da8                        PROVIDE (__mutex_array_start = .)
  *(SORT_BY_NAME(.mutex_array.*))
  *(.mutex_array)
- .mutex_array   0x20000d90        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
-                0x20000d98                        PROVIDE (__mutex_array_end = .)
-                0x20000d98                        . = ALIGN (0x4)
-                0x20000d98                        PROVIDE (__preinit_array_start = .)
+ .mutex_array   0x20000da8        0x8 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x20000db0                        PROVIDE (__mutex_array_end = .)
+                0x20000db0                        . = ALIGN (0x4)
+                0x20000db0                        PROVIDE (__preinit_array_start = .)
  *(SORT_BY_NAME(.preinit_array.*))
  .preinit_array.00001
-                0x20000d98        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x20000db0        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .preinit_array.00010
-                0x20000d9c        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x20000db4        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .preinit_array.00020
-                0x20000da0        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x20000db8        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
  .preinit_array.00020
-                0x20000da4        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x20000dbc        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
  *(.preinit_array)
-                0x20000da8                        PROVIDE (__preinit_array_end = .)
-                0x20000da8                        . = ALIGN (0x4)
-                0x20000da8                        PROVIDE (__init_array_start = .)
+                0x20000dc0                        PROVIDE (__preinit_array_end = .)
+                0x20000dc0                        . = ALIGN (0x4)
+                0x20000dc0                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x20000da8        0x4 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x20000dac                        PROVIDE (__init_array_end = .)
-                0x20000dac                        . = ALIGN (0x4)
-                0x20000dac                        PROVIDE (__fini_array_start = .)
+ .init_array    0x20000dc0        0x4 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x20000dc4                        PROVIDE (__init_array_end = .)
+                0x20000dc4                        . = ALIGN (0x4)
+                0x20000dc4                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
-                0x20000dac                        PROVIDE (__fini_array_end = .)
+                0x20000dc4                        PROVIDE (__fini_array_end = .)
  *(.jcr)
-                0x20000dac                        . = ALIGN (0x4)
-                0x20000dac                        __data_end__ = .
-                0x100055dc                        __etext = LOADADDR (.data)
+                0x20000dc4                        . = ALIGN (0x4)
+                0x20000dc4                        __data_end__ = .
+                0x100059a4                        __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x20000dac        0x0 load address 0x100062c8
+                0x20000dc4        0x0 load address 0x100066a8
  .tm_clone_table
-                0x20000dac        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x20000dc4        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
-                0x20000dac        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtend.o
+                0x20000dc4        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x20000dac        0x0 load address 0x100062c8
- .igot.plt      0x20000dac        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+.igot.plt       0x20000dc4        0x0 load address 0x100066a8
+ .igot.plt      0x20000dc4        0x0 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x20000dac        0x0 load address 0x100062c8
-                0x20000dac                        . = ALIGN (0x4)
+                0x20000dc4        0x0 load address 0x100066a8
+                0x20000dc4                        . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x20040000        0x0 load address 0x100062c8
+.scratch_x      0x20040000        0x0 load address 0x100066a8
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x100062c8                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x100066a8                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x100062c8
+.scratch_y      0x20041000        0x0 load address 0x100066a8
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x100062c8                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x100066a8                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
-.bss            0x20000db0      0x740
-                0x20000db0                        . = ALIGN (0x4)
-                0x20000db0                        __bss_start__ = .
+.bss            0x20000dc8      0x750
+                0x20000dc8                        . = ALIGN (0x4)
+                0x20000dc8                        __bss_start__ = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
  .bss.configured_freq
-                0x20000db0       0x28 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x20000dc8       0x28 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .bss.default_alarm_pool_entries
-                0x20000dd8      0x100 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
- .bss.displays  0x20000ed8       0x40 CMakeFiles/clock.dir/display.c.obj
-                0x20000ed8                displays
- .bss.sd_table  0x20000f18      0x100 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x20000f18                sd_table
- .bss.sf_table  0x20001018      0x100 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x20001018                sf_table
- .bss           0x20001118       0x1c /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
- .bss           0x20001134       0x34 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mallocr.o)
-                0x20001134                __malloc_top_pad
-                0x20001138                __malloc_current_mallinfo
-                0x20001160                __malloc_max_sbrked_mem
-                0x20001164                __malloc_max_total_mem
- .bss           0x20001168        0x4 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-reent.o)
-                0x20001168                errno
+                0x20000df0      0x100 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+ .bss.displays  0x20000ef0       0x40 CMakeFiles/clock.dir/display.c.obj
+                0x20000ef0                displays
+ .bss.sd_table  0x20000f30      0x100 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x20000f30                sd_table
+ .bss.sf_table  0x20001030      0x100 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x20001030                sf_table
+ .bss           0x20001130       0x1c /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
+ .bss           0x2000114c       0x34 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mallocr.o)
+                0x2000114c                __malloc_top_pad
+                0x20001150                __malloc_current_mallinfo
+                0x20001178                __malloc_max_sbrked_mem
+                0x2000117c                __malloc_max_total_mem
+ .bss           0x20001180        0x4 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-reent.o)
+                0x20001180                errno
  .bss.alarm_callbacks
-                0x2000116c       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20001184       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.alternate_characters
-                0x2000117c      0x2f8 CMakeFiles/clock.dir/display.c.obj
-                0x2000117c                alternate_characters
+                0x20001194      0x2f8 CMakeFiles/clock.dir/display.c.obj
+                0x20001194                alternate_characters
+ .bss.chars_available_callback
+                0x2000148c        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .bss.chars_available_param
+                0x20001490        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .bss.default_alarm_pool_entry_ids_high
-                0x20001474       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x20001494       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
  .bss.default_alarm_pool_heap_nodes
-                0x20001484       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
- .bss.drivers   0x200014b4        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
- .bss.filter    0x200014b8        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x200014a4       0x30 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+ .bss.drivers   0x200014d4        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .bss.filter    0x200014d8        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .bss.heap_end.0
-                0x200014bc        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x200014dc        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .bss.lazy_vsnprintf
-                0x200014c0        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
- .bss.pools     0x200014c4       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x200014e0        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+ .bss.pools     0x200014e4       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
  .bss.sf_clz_func
-                0x200014d4        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x200014d4                sf_clz_func
+                0x200014f4        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x200014f4                sf_clz_func
  .bss.sleep_notifier
-                0x200014d8        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
+                0x200014f8        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
  .bss.target_hi
-                0x200014dc       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
- .bss.claimed   0x200014ec        0x1 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x200014fc       0x10 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+ .bss.uart_char_to_line_feed
+                0x2000150c        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
+                0x2000150c                uart_char_to_line_feed
+ .bss.uart_instance
+                0x20001510        0x4 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+ .bss.claimed   0x20001514        0x1 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .bss.irq_hander_chain_free_slot_head
-                0x200014ed        0x1 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
+                0x20001515        0x1 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
  .bss.timer_callbacks_pending
-                0x200014ee        0x1 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
+                0x20001516        0x1 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  *(COMMON)
-                0x200014f0                        . = ALIGN (0x4)
- *fill*         0x200014ef        0x1 
-                0x200014f0                        __bss_end__ = .
+                0x20001518                        . = ALIGN (0x4)
+ *fill*         0x20001517        0x1 
+                0x20001518                        __bss_end__ = .
 
-.heap           0x200014f0      0x800
-                0x200014f0                        __end__ = .
-                0x200014f0                        end = __end__
+.heap           0x20001518      0x800
+                0x20001518                        __end__ = .
+                0x20001518                        end = __end__
  *(.heap*)
- .heap          0x200014f0      0x800 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
-                0x20001cf0                        __HeapLimit = .
+ .heap          0x20001518      0x800 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x20001d18                        __HeapLimit = .
 
 .stack1_dummy
  *(.stack1*)
@@ -1955,8 +1955,8 @@ LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x100062c8        0x0
-                0x100062c8                        PROVIDE (__flash_binary_end = .)
+.flash_end      0x100066a8        0x0
+                0x100066a8                        PROVIDE (__flash_binary_end = .)
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -2014,7 +2014,7 @@ LOAD CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_st
 LOAD CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 LOAD CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
 LOAD CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-LOAD /tmp/ccBjhYbB.o
+LOAD /tmp/ccFNuzde.o
 LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -2066,71 +2066,75 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000027c       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
  .ARM.attributes
-                0x000002a8       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x000002a8       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .ARM.attributes
-                0x000002d4       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
+                0x000002d4       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .ARM.attributes
-                0x00000300       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x00000300       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
  .ARM.attributes
-                0x0000032c       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x0000032c       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
  .ARM.attributes
-                0x00000358       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
+                0x00000358       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
  .ARM.attributes
-                0x00000384       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
+                0x00000384       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
  .ARM.attributes
-                0x000003b0       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x000003b0       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
  .ARM.attributes
-                0x000003d2       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x000003dc       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .ARM.attributes
-                0x000003fe       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
+                0x000003fe       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
  .ARM.attributes
-                0x00000420       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
+                0x0000042a       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
  .ARM.attributes
-                0x00000442       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x0000044c       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
  .ARM.attributes
-                0x0000046e       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x0000046e       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
  .ARM.attributes
-                0x00000490       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x0000049a       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
  .ARM.attributes
-                0x000004b2       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x000004bc       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
  .ARM.attributes
-                0x000004d4       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x000004de       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
  .ARM.attributes
-                0x00000500       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x00000500       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
  .ARM.attributes
-                0x00000522       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
+                0x0000052c       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
  .ARM.attributes
-                0x0000054e       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x0000054e       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
  .ARM.attributes
-                0x00000570       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
+                0x0000057a       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
  .ARM.attributes
-                0x00000592       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000059c       0x22 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
  .ARM.attributes
-                0x000005be       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+                0x000005be       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .ARM.attributes
-                0x000005ea       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
+                0x000005ea       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
  .ARM.attributes
-                0x00000616       0x22 /tmp/ccBjhYbB.o
+                0x00000616       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .ARM.attributes
-                0x00000638       0x1e /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x00000642       0x2c CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .ARM.attributes
-                0x00000656       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
+                0x0000066e       0x22 /tmp/ccFNuzde.o
  .ARM.attributes
-                0x00000682       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
+                0x00000690       0x1e /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x000006ae       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mallocr.o)
+                0x000006ae       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
  .ARM.attributes
-                0x000006da       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mlock.o)
+                0x000006da       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-malloc.o)
  .ARM.attributes
-                0x00000706       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-sbrkr.o)
+                0x00000706       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mallocr.o)
  .ARM.attributes
-                0x00000732       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+                0x00000732       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-mlock.o)
  .ARM.attributes
-                0x0000075e       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-freer.o)
+                0x0000075e       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-sbrkr.o)
  .ARM.attributes
-                0x0000078a       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-reent.o)
+                0x0000078a       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
  .ARM.attributes
-                0x000007b6       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtend.o
+                0x000007b6       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-freer.o)
+ .ARM.attributes
+                0x000007e2       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-reent.o)
+ .ARM.attributes
+                0x0000080e       0x2c /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtend.o
 
 .comment        0x00000000       0x59
  .comment       0x00000000       0x26 /usr/lib/gcc/arm-none-eabi/12.2.1/thumb/v6-m/nofp/crtbegin.o
@@ -2148,6 +2152,7 @@ LOAD linker stubs
  .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_time/time.c.obj
  .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
  .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/common/pico_util/pheap.c.obj
+ .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
  .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
  .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
  .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
@@ -2160,6 +2165,7 @@ LOAD linker stubs
  .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
  .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
  .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
+ .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
  .comment       0x00000026       0x27 CMakeFiles/clock.dir/home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .comment       0x00000026       0x33 /usr/lib/gcc/arm-none-eabi/12.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-impure.o)
                                  0x34 (size before relaxing)
