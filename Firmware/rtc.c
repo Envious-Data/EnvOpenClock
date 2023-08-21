@@ -25,7 +25,6 @@ void clock_set_time()
 	write_buffer[1]=0x23;
     i2c_write_blocking(CLOCK_I2C_LINE,CLOCK_ADDR,write_buffer,2,false);
 
-
 	//set weekday
 	write_buffer[0]=0x03;
 	write_buffer[1]=0x04;
@@ -36,7 +35,6 @@ void clock_set_time()
 	write_buffer[0]=0x04;
 	write_buffer[1]=0x05;
     i2c_write_blocking(CLOCK_I2C_LINE,CLOCK_ADDR,write_buffer,2,false);
-
 
 	//set month
 	write_buffer[0]=0x05;

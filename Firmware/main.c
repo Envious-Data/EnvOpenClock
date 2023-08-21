@@ -51,38 +51,33 @@ int main() {
     
     // Must be called otherwise it will cause the display not to function normally.
     pre_generate_alternate_characters();
-    
-    clock_read_time();
+    char *clock_string_buffer = malloc(9);
 
-    // Clock has been reset (MUST BE SET)
-    if (clock_buffer[6] == 0x00 && clock_buffer[5] == 0x01 && clock_buffer[4] == 0x01) {
-        clock_set_time(); 
-    }
-
-    // struct repeating_timer timer;
-    // if (add_repeating_timer_ms(-1000, update_clock, NULL, &timer) < 0) {
-    //     fprintf(stderr, "Error adding repeating timer.\n");
-    //     return 1;
-    // }
-
-    while (true) {
-        char *clock_string_buffer = malloc(9);
-        if (clock_string_buffer == NULL) {
-            return false;
-        }
-        
+    while(true)  
+    {
         clock_read_time();
+        
+        // Clock has been reset (MUST BE SET)
+		if(clock_buffer[6]==0x00 && clock_buffer[5]==0x01 && clock_buffer[4]==0x01)
+		{
+			clock_set_time(); 
+		}
 
         clock_buffer[0] &= 0x7F; //sec
         clock_buffer[1] &= 0x7F; //min
         clock_buffer[2] &= 0x3F; //hour
 
-        sprintf(clock_string_buffer, "%02x:%02x:%02x", clock_buffer[2], clock_buffer[1], clock_buffer[0]);
-        display_string(clock_string_buffer);    
-        free(clock_string_buffer);
+		//year/month/day
+		// sprintf(clock_string_buffer, "20%02x/%02x/%02x  ",clock_buffer[6],clock_buffer[5],clock_buffer[4]);
+		//hour:minute/second
+        // set_char(0, 'E', true);
+		sprintf(clock_string_buffer, "%02x:%02x:%02x",clock_buffer[2],clock_buffer[1],clock_buffer[0]);
+		//weekday
+		// sprintf(clock_string_buffer, "%s\n",week[(unsigned char)clock_buffer[3]-1]);
 
-        return true;
-    }  
+		// sprintf(clock_string_buffer, "%02x:%02x:%02x",clock_buffer[0],clock_buffer[0],clock_buffer[0]);
+        display_string(clock_string_buffer);
+	}  
 
     return 0;
 }
