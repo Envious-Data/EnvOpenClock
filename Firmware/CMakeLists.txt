@@ -17,7 +17,7 @@ add_executable(clock
 )   
 
 # pull in common dependencies
-target_link_libraries(clock pico_stdlib hardware_i2c hardware_pwm)
+target_link_libraries(clock pico_stdlib hardware_i2c hardware_pwm hardware_clocks)
 
 # create map/bin/hex file etc.
 pico_add_extra_outputs(clock)

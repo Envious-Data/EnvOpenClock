@@ -212,7 +212,7 @@ void update_display() {
 
         pre_mat_buf = prepend_address(addr, displays[i], count_of(displays[i]));
 
-        i2c_write_blocking_until(I2C_DISPLAY_LINE, addresses[i], pre_mat_buf, count_of(displays[i]) + 1, false, make_timeout_time_ms(100));
+        i2c_write_blocking(I2C_DISPLAY_LINE, addresses[i], pre_mat_buf, count_of(displays[i]) + 1, false);
 
         free(pre_mat_buf);
     }

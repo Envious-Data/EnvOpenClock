@@ -65,4 +65,7 @@ CMakeFiles/clock.dir/main.c.obj: \
  /home/rupirie/Templates/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
  /home/rupirie/Templates/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
  /home/rupirie/Templates/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h \
+ /home/rupirie/Templates/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h \
+ /home/rupirie/Templates/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/clocks.h \
+ /home/rupirie/Templates/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h \
  /home/rupirie/Documents/ClockPCB/Env-OpenClock/Firmware/rtc.h
