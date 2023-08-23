@@ -80,7 +80,7 @@ int main() {
 		// // sprintf(clock_string_buffer, "%02x:%02x:%02x",clock_buffer[0],clock_buffer[0],clock_buffer[0]);
         // display_string(clock_string_buffer);
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 2; i < 4; i++)
         {
             for (int x = 0; x < 5; x++)
             {
