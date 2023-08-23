@@ -1169,9 +1169,9 @@ Discarded input sections
                 0x00000000       0x3e CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .text.i2c_read_timeout_per_char_us
                 0x00000000       0x3e CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
- .text          0x00000000        0x0 C:\Users\ruben\AppData\Local\Temp\ccwJVrke.o
- .data          0x00000000        0x0 C:\Users\ruben\AppData\Local\Temp\ccwJVrke.o
- .bss           0x00000000        0x0 C:\Users\ruben\AppData\Local\Temp\ccwJVrke.o
+ .text          0x00000000        0x0 C:\Users\ruben\AppData\Local\Temp\cc8XZ84Z.o
+ .data          0x00000000        0x0 C:\Users\ruben\AppData\Local\Temp\cc8XZ84Z.o
+ .bss           0x00000000        0x0 C:\Users\ruben\AppData\Local\Temp\cc8XZ84Z.o
  .data          0x00000000        0x0 c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .bss           0x00000000        0x0 c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .text          0x00000000        0x0 c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg.a(lib_a-calloc.o)
@@ -1334,7 +1334,7 @@ LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.
 .boot2          0x10000000      0x100
                 0x10000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x10000000      0x100 C:\Users\ruben\AppData\Local\Temp\ccwJVrke.o
+ .boot2         0x10000000      0x100 C:\Users\ruben\AppData\Local\Temp\cc8XZ84Z.o
                 0x10000100                __boot2_end__ = .
                 0x00000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
@@ -2436,7 +2436,7 @@ LOAD CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk
 LOAD CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 LOAD CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
 LOAD CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
-LOAD C:\Users\ruben\AppData\Local\Temp\ccwJVrke.o
+LOAD C:\Users\ruben\AppData\Local\Temp\cc8XZ84Z.o
 LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libstdc++.a
 LOAD c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
 START GROUP
@@ -2535,7 +2535,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000620       0x2c CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj
  .ARM.attributes
-                0x0000064c       0x22 C:\Users\ruben\AppData\Local\Temp\ccwJVrke.o
+                0x0000064c       0x22 C:\Users\ruben\AppData\Local\Temp\cc8XZ84Z.o
  .ARM.attributes
                 0x0000066e       0x1e c:/progra~1/raspbe~1/picosd~1.1/gcc-ar~1/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
