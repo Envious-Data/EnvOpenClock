@@ -174,7 +174,7 @@ void set_option(int display, uint8_t address, uint8_t value) {
     buf[0] = address;
     buf[1] = value;
 
-    i2c_write_blocking_until(I2C_DISPLAY_LINE, addresses[display], buf, count_of(buf), false, , make_timeout_time_ms(100));
+    i2c_write_blocking_until(I2C_DISPLAY_LINE, addresses[display], buf, count_of(buf), false, make_timeout_time_ms(100));
 }
 
 uint8_t* prepend_address(uint8_t address, uint8_t buffer[], int buffer_size) {
