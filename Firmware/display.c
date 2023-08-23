@@ -174,7 +174,7 @@ void set_option(int display, uint8_t address, uint8_t value) {
     buf[0] = address;
     buf[1] = value;
 
-    i2c_write_blocking_until(I2C_DISPLAY_LINE, addresses[display], buf, count_of(buf), false, make_timeout_time_ms(100));
+    i2c_write_timeout_us(I2C_DISPLAY_LINE, addresses[display], buf, count_of(buf), false, 1000);
 }
 
 uint8_t* prepend_address(uint8_t address, uint8_t buffer[], int buffer_size) {
@@ -201,7 +201,7 @@ void update_display() {
         uint8_t mat_addr = i % 2 == 0 ? MATRIX_A_ADDR : MATRIX_B_ADDR;
 
         uint8_t* pre_mat_buf = prepend_address(mat_addr, displays[i], count_of(displays[i]));
-        i2c_write_blocking_until(I2C_DISPLAY_LINE, addresses[i], pre_mat_buf, count_of(displays[i]) + 1, false, make_timeout_time_ms(100));
+        i2c_write_timeout_us(I2C_DISPLAY_LINE, addresses[i], pre_mat_buf, count_of(displays[i]) + 1, false, 1000);
         free(pre_mat_buf);
 
         if (i % 2 != 0) {
