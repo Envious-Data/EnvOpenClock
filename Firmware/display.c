@@ -198,22 +198,18 @@ uint8_t* prepend_address(uint8_t address, uint8_t buffer[], int buffer_size) {
 void update_display() {
     for (int i = 0; i < count_of(displays); i++)
     {
-        if (i % 2 == 0) {
-            uint8_t* pre_mat_a_buf = prepend_address(MATRIX_A_ADDR, displays[i], count_of(displays[i]));
-            i2c_write_blocking(I2C_DISPLAY_LINE, addresses[i], pre_mat_a_buf, count_of(displays[i]) + 1, false);
-            free(pre_mat_a_buf);
+        uint8_t mat_addr = i % 2 == 0 ? MATRIX_A_ADDR : MATRIX_B_ADDR;
 
-        } else {
-            uint8_t* pre_mat_b_buf = prepend_address(MATRIX_B_ADDR, displays[i], count_of(displays[i]));
-            i2c_write_blocking(I2C_DISPLAY_LINE, addresses[i], pre_mat_b_buf, count_of(displays[i]) + 1, false);
-            free(pre_mat_b_buf);
+        uint8_t* pre_mat_buf = prepend_address(mat_addr, displays[i], count_of(displays[i]));
+        i2c_write_blocking(I2C_DISPLAY_LINE, addresses[i], pre_mat_buf, count_of(displays[i]) + 1, false);
+        free(pre_mat_buf);
 
-
+        if (i % 2 != 0) {
             set_option(i, MODE_ADDR, DEFAULT_MODE);
             set_option(i, OPTION_ADDR, DEFAULT_OPTIONS);
             set_option(i, BRIGHTNESS_ADDR, 0b00011111);
             set_option(i, UPDATE_ADDR, 0b00000001);
-        }    
+        }
     }
 }
 
