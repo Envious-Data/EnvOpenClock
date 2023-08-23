@@ -6807,7 +6807,7 @@
   (gr_text "Positive UP!" (at 167 108) (layer "F.SilkS") (tstamp e3ff79e5-251c-47ef-a41e-6a97ac6c10eb)
     (effects (font (size 1.5 1.5) (thickness 0.25) bold))
   )
-  (gr_text "<-CR1220" (at 167 86.25) (layer "F.SilkS") (tstamp edcc0a43-68d1-4e2e-8507-294acb6f6186)
+  (gr_text "CR1220" (at 173.7 97.075 90) (layer "F.SilkS") (tstamp edcc0a43-68d1-4e2e-8507-294acb6f6186)
     (effects (font (size 1.5 1.5) (thickness 0.25) bold))
   )
   (gr_text "env" (at 148.2 92.25) (layer "F.Mask") (tstamp 3277889a-cdf7-42eb-8279-254e192c1b7f)
