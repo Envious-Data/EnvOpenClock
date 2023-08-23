@@ -24,5 +24,6 @@
   "cmake.generator": "Ninja",
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
   "python.languageServer": "Pylance",
-  "python.linting.pylintEnabled": false
+  "python.linting.pylintEnabled": false,
+  "cortex-debug.variableUseNaturalFormat": true
 }
