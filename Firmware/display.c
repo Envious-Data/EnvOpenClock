@@ -18,7 +18,16 @@
 #define DEFAULT_MODE    0b00011000
 #define DEFAULT_OPTIONS 0b00001110
 
+/**
+ * @brief The addresses of the displays in order from left to right.
+    They are doubled up since there are 2 displays per chip.
+ */
 uint8_t addresses[8] = { 0x63, 0x63, 0x60, 0x60, 0x62, 0x62, 0x61, 0x61 };
+
+/**
+ * @brief 
+ * 
+ */
 uint8_t displays[8][8] = { 
     { 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000 },
     { 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000 },
@@ -30,6 +39,35 @@ uint8_t displays[8][8] = {
     { 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000 }
 };
 
+
+/**
+ * @brief Contains 8x8 bit patterns which correlate to various symbols
+    which may need to be displayed on the LTP-305's.
+
+    ASCII Based
+
+    @example
+    The symbol "+"
+    #Col   1 2 3 4 5
+    0b00000000, # Row 1
+    0b00000000, # Row 2
+    0b00000000, # Row 3
+    0b00000000, # Row 4
+    0b00000000, # Row 5
+    0b00000000, # Row 6
+    0b10000000, # Row 7, bit 8 =  decimal place
+    0b00000000
+
+    The array { 0x08, 0x08, 0x3e, 0x08, 0x08, 0x00, 0x00, 0x00 }
+    0b00001000,
+    0b00001000,
+    0b00111110,
+    0b00001000,
+    0b00001000,
+    0b00000000,
+    0b00000000,
+    0b00000000
+ */
 uint8_t characters[][8] = {
     { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 } ,  // (space)
     { 0x00, 0x00, 0x5f, 0x00, 0x00, 0x00, 0x00, 0x00 } ,  // !
@@ -128,18 +166,64 @@ uint8_t characters[][8] = {
     { 0x08, 0x08, 0x2a, 0x1c, 0x08, 0x00, 0x00, 0x00 } ,  // ~
 };
 
+
+/**
+ * @brief In order for characters to be displayed on the second display they
+    will need to be translated into the correct bit pattern. This is since
+    the first matrix is represented by the 8 byte buffer in the form
+
+    #Col   1 2 3 4 5
+    0b00000000, # Row 1
+    0b00000000, # Row 2
+    0b00000000, # Row 3
+    0b00000000, # Row 4
+    0b00000000, # Row 5
+    0b00000000, # Row 6
+    0b10000000, # Row 7, bit 8 =  decimal place
+    0b00000000
+
+    This is compared to the second display which is represented as the first
+    but reflected in the line y=x.
+
+    #Row 8 7 6 5 4 3 2 1
+    0b01111111, # Col 1, bottom to top
+    0b01111111, # Col 2
+    0b01111111, # Col 3
+    0b01111111, # Col 4
+    0b01111111, # Col 5
+    0b00000000,
+    0b00000000,
+    0b01000000  # bit 7, decimal place
+
+    To save on processing time these are precalculated at the start of the 
+    program.
+ */
 uint8_t alternate_characters[count_of(characters)][8];
 
+/**
+ * @brief A helper function to add an amount num_chars to of a specific character
+    character_to_append to the end of a string. 
+
+    This is used to add whitespace to the end of a scrolling string.
+ * 
+ * @param original The original string to have letters appended to.
+ * @param character_to_append The character to append to the string
+ * @param num_chars The number of character_to_append to be appended
+ * 
+ * @return char* The new string
+ */
 char *append_chars(const char *original, char character_to_append, size_t num_chars) {
     size_t original_length = strlen(original);
-    char *new_string = (char *)malloc(original_length + num_chars + 1); // +1 for the null terminator
+    char *new_string = (char *)malloc(original_length + num_chars + 1); // Don't forget +1 for null terminator
 
     if (new_string == NULL) {
         return NULL; // Memory allocation failed
     }
 
+    // Copy the original string into the new longer one
     strcpy(new_string, original);
     
+    // Append desired amount of characters
     for (size_t i = 0; i < num_chars; i++) {
         new_string[original_length + i] = character_to_append;
     }
@@ -149,7 +233,16 @@ char *append_chars(const char *original, char character_to_append, size_t num_ch
     return new_string;
 }
 
+/**
+ * @brief This is another helper function that converts an array of
+    uint8_t's from a left matrix, the one defined with columns
+    v rows into a right matrix in the form rows v columns.
 
+    Essentially this is a reflection in the line y=x of a 2D matrix.
+ * 
+ * @param left_matrix The original matrix in the form columns vs rows
+ * @param right_matrix The generated matrix in the form rows vs columns
+ */
 void convertLeftToRight(const uint8_t *left_matrix, uint8_t *right_matrix) {
     for (int row = 0; row < 8; row++) {
         for (int col = 0; col < 8; col++) {
@@ -159,6 +252,12 @@ void convertLeftToRight(const uint8_t *left_matrix, uint8_t *right_matrix) {
     }
 }
 
+
+/**
+ * @brief This MUST be called at the start of the program otherwise the 
+    letters for the right matrix will not be generated and will
+    not display properly if at all.
+ */
 void pre_generate_alternate_characters() {
     for (int i = 0; i < count_of(characters); i++)
     {
@@ -166,6 +265,15 @@ void pre_generate_alternate_characters() {
     }   
 }
 
+
+/**
+ * @brief Set the option function is used to change a setting on the
+    IS31FL3730-QFLS2-TR chips such as brightness or a configuration setting.
+ * 
+ * @param display The 0 indexed display to update [0,8)
+ * @param address The address of the register to update on the IS31FL3730
+ * @param value The value to send over i2c to the register
+ */
 void set_option(int display, uint8_t address, uint8_t value) {
     if (display < 0 || display > 7) return;
 
@@ -177,7 +285,18 @@ void set_option(int display, uint8_t address, uint8_t value) {
     i2c_write_timeout_us(I2C_DISPLAY_LINE, addresses[display], buf, count_of(buf), false, 1000);
 }
 
-uint8_t* prepend_address(uint8_t address, uint8_t buffer[], int buffer_size) {
+/**
+ * @brief This is used when updating the displays, in order to update specific rows
+    a certain address must be used before the buffer. This function prepends this 
+    address.
+ * 
+ * @param address The address of the register to be prepended to the start of the buffer 
+ * @param buffer The pointer to the current buffer to have an address prepended
+ * @param buffer_size The size of the buffer to be prepended
+ * 
+ * @return uint8_t* The pointer in memory of the new altered buffer
+ */
+uint8_t* prepend_address(uint8_t address, uint8_t *buffer, int buffer_size) {
     int new_buffer_size = buffer_size + 1;
     
     uint8_t* new_buffer = (uint8_t*)malloc(new_buffer_size * sizeof(uint8_t));
@@ -195,6 +314,10 @@ uint8_t* prepend_address(uint8_t address, uint8_t buffer[], int buffer_size) {
     return new_buffer;
 }
 
+/**
+ * @brief Used to update all displays all at once. Once called it will push
+    what is currently stored in displays to each of the 4 IS31FL3730's
+ */
 void update_display() {
     for (int i = 0; i < count_of(displays); i++)
     {
@@ -203,6 +326,7 @@ void update_display() {
         uint8_t* pre_mat_buf = prepend_address(mat_addr, displays[i], count_of(displays[i]));
         i2c_write_timeout_us(I2C_DISPLAY_LINE, addresses[i], pre_mat_buf, count_of(displays[i]) + 1, false, 1000);
         free(pre_mat_buf);
+
 
         if (i % 2 != 0) {
             set_option(i, MODE_ADDR, DEFAULT_MODE);
@@ -213,7 +337,15 @@ void update_display() {
     }
 }
 
-// Set a pixel on a display zero base indexed
+/**
+ * @brief Set a specific pixel on a display to on or off.
+ * 
+ * @param display The 0 indexed display to update [0,8)
+ * @param x The 0 indexed x value of the pixel to be updated [0, 5)
+ * @param y The 0 indexed y value of the pixel to be updated [0, 7)
+ * @param status Whether the pixel on the LTP305 should be set to on or off
+ * @param update Update the display after changing the pixel
+ */
 void set_pixel(int display, uint8_t x, uint8_t y, bool status, bool update) {
     if (display < 0 || display > 7) return;
 
@@ -239,11 +371,11 @@ void set_pixel(int display, uint8_t x, uint8_t y, bool status, bool update) {
     if (update) update_display();
 }
 
-
-void set_brightness(double value) {
-
-}
-
+/**
+ * @brief Clear the buffer and reset all values to 0
+ * 
+ * @param update Update the screen after clearing all buffers
+ */
 void clear_all(bool update) {
     for (int i = 0; i < count_of(displays); i++)
     {
@@ -257,6 +389,12 @@ void clear_all(bool update) {
     if (update) update_display();
 }
 
+/**
+ * @brief Clear a specific display by resetting all values to 0
+ * 
+ * @param display The 0 indexed display to update [0,8)
+ * @param update Update the screen after clearing the display buffer
+ */
 void clear(int display, bool update) {
     if (display < 0 || display > 7) return;
     for (int i = 0; i < 8; i++)
@@ -268,6 +406,13 @@ void clear(int display, bool update) {
     if (update) update_display();
 }
 
+/**
+ * @brief Set a specific display to a certain ASCII character;
+ * 
+ * @param display The 0 indexed display to update [0,8)
+ * @param letter The ASCII character to be displayed
+ * @param update Update the display after setting the buffer to a character
+ */
 void set_char(int display, char letter, bool update) {
     if (display < 0 || display > 7) return;
 
@@ -286,6 +431,11 @@ void set_char(int display, char letter, bool update) {
     if (update) update_display();
 }
 
+/**
+ * @brief Marque a string across the displays with trailing whitespace
+ * 
+ * @param string The string to be displayed
+ */
 void scroll_display_string(char *string) {
     string = append_chars(string, ' ', 8);
     int string_length = strlen(string);
@@ -318,6 +468,11 @@ void scroll_display_string(char *string) {
     clear_all(true);
 }
 
+/**
+ * @brief Set the screen to display the first 6 letters of an ASCII string.
+ * 
+ * @param string The string whose first 6 chars should be displayed.
+ */
 void display_string(char *string) {
     clear_all(false);
 

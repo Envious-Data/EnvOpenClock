@@ -25,5 +25,10 @@
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
   "python.languageServer": "Pylance",
   "python.linting.pylintEnabled": false,
-  "cortex-debug.variableUseNaturalFormat": true
+  "cortex-debug.variableUseNaturalFormat": true,
+  "files.associations": {
+    "stdio.h": "c",
+    "stdlib.h": "c",
+    "string.h": "c"
+  }
 }
