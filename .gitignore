@@ -26,3 +26,4 @@ fp-info-cache
 
 # Exported BOM files
 !KiCad Files/production/
+*.lck

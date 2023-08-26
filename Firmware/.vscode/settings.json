@@ -1,6 +1,34 @@
 {
-    "files.associations": {
-        "display.h": "c",
-        "stdio.h": "c"
+  // These settings tweaks to the cmake plugin will ensure
+  // that you debug using cortex-debug instead of trying to launch
+  // a Pico binary on the host
+  "cmake.statusbar.advanced": {
+    "debug": {
+      "visibility": "hidden"
+    },
+    "launch": {
+      "visibility": "hidden"
+    },
+    "build": {
+      "visibility": "hidden"
+    },
+    "buildTarget": {
+      "visibility": "hidden"
     }
+  },
+  "cmake.buildBeforeRun": true,
+  "cmake.configureOnOpen": true,
+  "cmake.configureSettings": {
+    "CMAKE_MODULE_PATH": "${env:PICO_INSTALL_PATH}/pico-sdk-tools"
+  },
+  "cmake.generator": "Ninja",
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "python.languageServer": "Pylance",
+  "python.linting.pylintEnabled": false,
+  "cortex-debug.variableUseNaturalFormat": true,
+  "files.associations": {
+    "stdio.h": "c",
+    "stdlib.h": "c",
+    "string.h": "c"
+  }
 }

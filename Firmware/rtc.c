@@ -51,7 +51,7 @@ void clock_set_time()
 void clock_read_time() 
 {   
 	uint8_t start_point = 0x00;  
-	i2c_write_blocking(CLOCK_I2C_LINE,CLOCK_ADDR,&start_point,1,true);
-	i2c_read_blocking(CLOCK_I2C_LINE,CLOCK_ADDR,clock_buffer,7,false);
+	i2c_write_timeout_us(CLOCK_I2C_LINE,CLOCK_ADDR,&start_point,1,true, 1000);
+	i2c_read_timeout_us(CLOCK_I2C_LINE,CLOCK_ADDR,clock_buffer,7,false, 1000);
 } 
 
