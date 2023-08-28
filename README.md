@@ -13,5 +13,7 @@ Some aspects may change but I generally intend to keep the formfactor the same a
 
 since the board uses 8x LTP305s you can also display the date instead of the time, the RTC does store the date as well as the time, currently as of writing this the firmware only displays the current time stored on the DS3231 RTC, but the main planned features are day/date/time setting and then goals can expand. Its possible to add text marquee too.
 
-https://github.com/Envious-Data/Env-OpenClock/assets/5001879/fdac6cdb-803a-443c-b91d-f5f40f54c28f
 
+## PCBWAY
+[PCBWAY](https://www.pcbway.com/) Kindly sponsored a batch of PCBs of which you can see a video of the board working below.
+https://github.com/Envious-Data/Env-OpenClock/assets/5001879/fdac6cdb-803a-443c-b91d-f5f40f54c28f
