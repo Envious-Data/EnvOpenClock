@@ -16,4 +16,3 @@ since the board uses 8x LTP305s you can also display the date instead of the tim
 
 ## PCBWAY
 [PCBWAY](https://www.pcbway.com/) Kindly sponsored a batch of PCBs of which you can see a video of the board working below.
-https://github.com/Envious-Data/Env-OpenClock/assets/5001879/fdac6cdb-803a-443c-b91d-f5f40f54c28f
