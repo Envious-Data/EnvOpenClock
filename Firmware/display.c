@@ -331,7 +331,7 @@ void update_display() {
         if (i % 2 != 0) {
             set_option(i, MODE_ADDR, DEFAULT_MODE);
             set_option(i, OPTION_ADDR, DEFAULT_OPTIONS);
-            set_option(i, BRIGHTNESS_ADDR, 0b00011111);
+            set_option(i, BRIGHTNESS_ADDR, 0b1111111);
             set_option(i, UPDATE_ADDR, 0b00000001);
         }
     }

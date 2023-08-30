@@ -81,7 +81,7 @@ int main() {
     gpio_init(25);
     gpio_set_dir(25, GPIO_OUT);
 
-    if (i2c_init(I2C_DISPLAY_LINE, 100 * 1000) < 0) {
+    if (i2c_init(I2C_DISPLAY_LINE, 400 * 1000) < 0) {
         fprintf(stderr, "Error initializing I2C.\n");
         return 1;
     }
@@ -148,23 +148,9 @@ int main() {
 		{
 			clock_set_time(); 
 		}
-
-        for (int n = 0; n < 8; n++)
-        {
-            for (int x = 0; x < 5; x++)
-            {
-                for (int y = 0; y < 7; y++)
-                {
-               
-                    set_pixel(n, x, y, value, true);
-                }
-            }
-        }
-
-        value = !value;
     
-        // update_clock();
-        // sleep_ms(1000);        
+        update_clock();
+        sleep_ms(1000);        
 	}  
 
     return 0;
