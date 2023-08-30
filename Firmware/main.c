@@ -77,6 +77,7 @@ int calculate_frequency(uint frequency) {
 
 int main() {
     stdio_init_all();
+    printf("start\n");
 
     gpio_init(25);
     gpio_set_dir(25, GPIO_OUT);
@@ -149,6 +150,18 @@ int main() {
 			clock_set_time(); 
 		}
     
+        // for (int i = 0; i < 8; i++)
+        // {
+        //     for (int x = 0; x < 5; x++)
+        //     {
+        //         for (int y = 0; y < 7; y++)
+        //         {
+        //             set_pixel(i, x, y, value, true);
+        //         }
+        //     }
+        // }
+        // value = !value;
+        
         update_clock();
         sleep_ms(1000);        
 	}  
