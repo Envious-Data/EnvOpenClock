@@ -10,19 +10,19 @@ void clock_set_time()
 
 	//set second
 	write_buffer[0]=0x00;
-	write_buffer[1]=0x50;
+	write_buffer[1]=0x55;
     i2c_write_blocking(CLOCK_I2C_LINE,CLOCK_ADDR,write_buffer,2,false);
 
 
 	//set minute
 	write_buffer[0]=0x01;
-	write_buffer[1]=0x59;
+	write_buffer[1]=0x46;
     i2c_write_blocking(CLOCK_I2C_LINE,CLOCK_ADDR,write_buffer,2,false)  ;
 
 
 	//set hour
 	write_buffer[0]=0x02;
-	write_buffer[1]=0x23;
+	write_buffer[1]=0x11;
     i2c_write_blocking(CLOCK_I2C_LINE,CLOCK_ADDR,write_buffer,2,false);
 
 	//set weekday

@@ -1,4 +1,5 @@
 # ninja log v5
+<<<<<<< HEAD
 13	101	7145236505515288	pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj	3f292a97c00b5c57
 52	279	7145301073781697	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/sem.c.obj	64d78490588e322d
 344	520	7145236509526265	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_platform/platform.c.obj	3d6d63513fa55d65
@@ -95,3 +96,77 @@
 186	436	7145944933098211	clock.elf	73b7a36cc93d9065
 29	203	7145963876338428	CMakeFiles/clock.dir/display.c.obj	e927699b6b7d54b7
 203	469	7145963877828765	clock.elf	73b7a36cc93d9065
+=======
+28	129	7148402341906329	pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default.dir/compile_time_choice.S.obj	2797ffcda43d934b
+2774	3728	7148451593517226	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj	abe838cf50c68f66
+131	347	7148402343019448	pico-sdk/src/rp2_common/boot_stage2/bs2_default.elf	2a4d3389afdc2bde
+1084	3411	7148451589710006	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_math.c.obj	c40462df49b21d98
+673	2449	7148451579797570	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_printf/printf.c.obj	2b8442c04d9bdfd9
+347	388	7148402344510312	C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin	79249a702dcd988c
+802	2088	7148451576064640	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj	19357bb4bc854a38
+388	501	7148402345510882	C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S	72f2646abd7849a2
+388	501	7148402345510882	pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S	72f2646abd7849a2
+347	388	7148402344510312	pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin	79249a702dcd988c
+1226	2250	7148451578475964	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj	15121ef4034224b9
+121	360	7148449556510605	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj	9aebd4b6a33ae29
+39	301	7150964708333632	CMakeFiles/clock.dir/main.c.obj	8591ca6a2c63677a
+87	665	7148449559329293	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj	1eb20d3d633fec3b
+78	562	7148449558242849	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_platform/platform.c.obj	f6c110a3ded16493
+361	1136	7148449564221888	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/sem.c.obj	6bd33fbf62ad4707
+99	1003	7148449562736170	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj	6cbc6d54ab4ce85d
+1873	2556	7148451580874559	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj	6eb235ff2fe417a6
+2251	2774	7148451583556789	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj	2d0240bc6c7f3c96
+61	987	7148449562108673	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj	904e7da125383c4e
+47	471	7150956558726844	CMakeFiles/clock.dir/rtc.c.obj	9b831422803d09dc
+70	752	7148449559976678	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj	74c823f377583f0e
+111	1062	7148449562529954	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj	2be7c1654448f4d6
+54	524	7150956559664014	CMakeFiles/clock.dir/display.c.obj	66f92bdcbf7a3724
+562	1424	7148449566962877	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/lock_core.c.obj	827600c631e8fd21
+874	1873	7148451574021857	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj	5b77374c518abcc0
+665	1430	7148449567008239	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/mutex.c.obj	30774a6c7a861f14
+752	1516	7148449568267323	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/critical_section.c.obj	4064a49e5992f38b
+928	2566	7148451581341593	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj	e2335bc2ca15f776
+988	1508	7148449567891156	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/timeout_helper.c.obj	35d865dcae4b28e5
+1003	1626	7148449569308942	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj	1ad4b3426a97df36
+1062	1637	7148449569529477	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_util/datetime.c.obj	8bfbfdd5d18b3444
+43	874	7148451563591093	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_util/pheap.c.obj	42b6fde2bf08f2ef
+748	1673	7148451571697548	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj	601ecdc8c2bb3e93
+2566	3622	7148451592458044	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj	4303cbb7f7495249
+53	673	7148451562317390	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj	174773845b40e1bb
+48	835	7148451563437443	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_util/queue.c.obj	33da33810ef0e9b3
+67	1097	7148451564191579	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj	f42b4e2699deb6f0
+77	748	7148451563098225	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj	1f0946d339bb3a0a
+3108	4267	7150963107992468	clock.elf	1cf641f0350fbdab
+60	927	7148451563962003	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj	172b53d4c0ddfbaf
+769	1885	7148449572018311	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_time/time.c.obj	d2c1f95480936ea2
+88	801	7148451563575327	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj	148aa8d663d76b4f
+113	649	7148451562005080	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj	d4cf260264d2631d
+100	1084	7148451563303502	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj	977932c9716dc9d7
+835	1654	7148451571823664	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_divider/divider.S.obj	faf8cf0211b7a3e3
+1655	2433	7148451580068611	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj	2a8acf4a2230ecde
+1097	1862	7148451574388877	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj	ae01e2400060e30c
+1673	2614	7148451581692955	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj	db9154ab8950af79
+651	2575	7148451581331595	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj	1962d38f5881a359
+2433	2970	7148451585340093	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj	604e9bf334786f46
+2088	3116	7148451586494230	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj	543b16c3b01c1d28
+2556	3237	7148451588037693	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj	72dcb1b11ec87bd2
+2450	3580	7148451591719834	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj	8503d538c0cd657a
+2575	3454	7148451590291945	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj	e89b70505bf7f684
+2614	3562	7148451591042535	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/i2c.c.obj	8d968651afa12038
+1862	3495	7148451590447678	CMakeFiles/clock.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_math.c.obj	76b6e43aef2de8bc
+44	276	7150968742024091	CMakeFiles/clock.dir/main.c.obj	8591ca6a2c63677a
+29	436	7150968910173899	CMakeFiles/clock.dir/main.c.obj	8591ca6a2c63677a
+438	964	7150968912888390	clock.elf	1cf641f0350fbdab
+42	485	7150972388402984	CMakeFiles/clock.dir/main.c.obj	8591ca6a2c63677a
+486	1341	7150972393604375	clock.elf	1cf641f0350fbdab
+62	409	7150984250600998	CMakeFiles/clock.dir/main.c.obj	8591ca6a2c63677a
+410	1115	7150984254346518	clock.elf	1cf641f0350fbdab
+31	264	7150984856609710	CMakeFiles/clock.dir/main.c.obj	8591ca6a2c63677a
+265	1045	7150984859660609	clock.elf	1cf641f0350fbdab
+59	451	7150985966379814	CMakeFiles/clock.dir/main.c.obj	8591ca6a2c63677a
+452	1409	7150985970960707	clock.elf	1cf641f0350fbdab
+52	288	7150986316988769	CMakeFiles/clock.dir/main.c.obj	8591ca6a2c63677a
+289	1009	7150986320538190	clock.elf	1cf641f0350fbdab
+49	520	7150986832938526	CMakeFiles/clock.dir/main.c.obj	8591ca6a2c63677a
+521	1376	7150986837296148	clock.elf	1cf641f0350fbdab
+>>>>>>> 59d655825c17bfacb8fce536c905feafdf891cca

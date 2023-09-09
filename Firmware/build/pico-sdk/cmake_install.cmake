@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/ruben/Documents/Programming/Env-OpenClock/Firmware/build/pico-sdk/tools/cmake_install.cmake")
-  include("C:/Users/ruben/Documents/Programming/Env-OpenClock/Firmware/build/pico-sdk/src/cmake_install.cmake")
-  include("C:/Users/ruben/Documents/Programming/Env-OpenClock/Firmware/build/pico-sdk/docs/cmake_install.cmake")
+  include("C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build/pico-sdk/tools/cmake_install.cmake")
+  include("C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build/pico-sdk/src/cmake_install.cmake")
+  include("C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build/pico-sdk/docs/cmake_install.cmake")
 
 endif()
 
