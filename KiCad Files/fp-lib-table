@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "LTP-305G")(type "KiCad")(uri "${KIPRJMOD}/Resources/LTP-305G.pretty")(options "")(descr ""))
   (lib (name "MCU_RaspberryPi_and_Boards")(type "KiCad")(uri "${KIPRJMOD}/Resources/MCU_RaspberryPi_and_Boards.pretty")(options "")(descr ""))
+  (lib (name "TS-1109S-X-X")(type "KiCad")(uri "${KIPRJMOD}/Resources/TS-1109S-X-X.pretty")(options "")(descr ""))
 )
