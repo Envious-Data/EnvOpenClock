@@ -2,9 +2,12 @@
 
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
+#include "pico/multicore.h"
 #include "hardware/clocks.h"
 #include "hardware/i2c.h"
 #include "hardware/pwm.h"
+#include "hardware/gpio.h"
+#include "hardware/structs/timer.h"
 
 #include "display.h"
 #include "rtc.h"
@@ -43,12 +46,21 @@ const int song[] = {
   
 };
 
+struct {
+    uint8_t set_time            : 1;
+    uint8_t increment_counter   : 1;
+    uint8_t decrement_counter   : 1;
+    uint8_t set_confirm         : 1;
+} gpio_irq_flags;
+
 extern char clock_buffer[];
 extern char *week[];
-bool update = true;
+
+bool clock_busy = false;
+bool clock_set = true;
 
 bool update_clock() {
-    if (update) {
+    if (clock_set) {
         char *clock_string_buffer = malloc(9);
         if (clock_string_buffer == NULL) {
             return false;
@@ -68,6 +80,25 @@ bool update_clock() {
     }
 }
 
+bool update_date() {    
+    char *date_string_buffer = malloc(100);
+    if (date_string_buffer == NULL) {
+        return false;
+    }
+    
+    clock_read_time();
+
+    clock_buffer[4] &= 0x7F; //sec
+    clock_buffer[5] &= 0x7F; //min
+    clock_buffer[6] &= 0x3F; //hour
+
+    sprintf(date_string_buffer, "%02x/%02x/%02x", clock_buffer[4], clock_buffer[5], clock_buffer[6]);
+    display_string(date_string_buffer);    
+    free(date_string_buffer);
+
+    return true;    
+}
+
 int calculate_frequency(uint frequency) {
     // 1Hz is once per second
     // Delay is the time in microseconds to sleep
@@ -75,7 +106,159 @@ int calculate_frequency(uint frequency) {
     return delay >> 1;
 }
 
-int main() {
+void set_date_and_time() {
+    clear_all(false);
+    clock_set = true;
+
+    // Year
+    int year = 23;
+    while (!gpio_irq_flags.set_confirm) {
+        if (!gpio_irq_flags.decrement_counter || !gpio_irq_flags.increment_counter) {
+            if (gpio_irq_flags.decrement_counter)  {
+                year = year > 0 ? year - 1 : 99;
+                gpio_irq_flags.decrement_counter = 0;
+            }
+            if (gpio_irq_flags.increment_counter) {
+                year = year < 99 ? year + 1: 0;
+                gpio_irq_flags.increment_counter = 0;      
+            }
+
+            display_string("Year:");
+            set_char(6, '0' + (year / 10), false);
+            set_char(7, '0' + (year % 10), true);
+        }
+    }
+
+    gpio_irq_flags.set_confirm = 0;
+
+    // month
+    int month = 1;
+    while (!gpio_irq_flags.set_confirm) {
+        if (!gpio_irq_flags.decrement_counter || !gpio_irq_flags.increment_counter) {
+            if (gpio_irq_flags.decrement_counter)  {
+                month = month > 1 ? month - 1 : 12;
+                gpio_irq_flags.decrement_counter = 0;
+            }
+            if (gpio_irq_flags.increment_counter) {
+                month = month < 12 ? month + 1: 1;
+                gpio_irq_flags.increment_counter = 0;      
+            }
+
+            display_string("Month:");
+            set_char(6, '0' + (month / 10), false);
+            set_char(7, '0' + (month % 10), true);
+        }
+    }
+    gpio_irq_flags.set_confirm = 0;
+
+    int max_days[] = {31, 28, 31, 30,31, 30, 31, 31, 30, 31, 30, 31};
+    int day = 1;
+    while (!gpio_irq_flags.set_confirm) {
+        if (!gpio_irq_flags.decrement_counter || !gpio_irq_flags.increment_counter) {
+            if (gpio_irq_flags.decrement_counter)  {
+                day = day > 1 ? day - 1 : max_days[month - 1];
+                gpio_irq_flags.decrement_counter = 0;
+            }
+            if (gpio_irq_flags.increment_counter) {
+                day = day < max_days[month - 1] ? day + 1: 1;
+                gpio_irq_flags.increment_counter = 0;      
+            }
+
+            display_string("Day:");
+            set_char(6, '0' + (day / 10), false);
+            set_char(7, '0' + (day % 10), true);
+        }
+    }
+    gpio_irq_flags.set_confirm = 0;
+
+    display_string("00:00:00");
+    int hour = 0;
+    while (!gpio_irq_flags.set_confirm) {
+        if (!gpio_irq_flags.decrement_counter || !gpio_irq_flags.increment_counter) {
+            if (gpio_irq_flags.decrement_counter)  {
+                hour = hour > 0 ? hour - 1 : 23;
+                gpio_irq_flags.decrement_counter = 0;
+            }
+            if (gpio_irq_flags.increment_counter) {
+                hour = hour < 23 ? hour + 1: 0;
+                gpio_irq_flags.increment_counter = 0;      
+            }
+
+            set_char(0, '0' + (hour / 10), false);
+            set_char(1, '0' + (hour % 10), true);
+        }
+    }
+    gpio_irq_flags.set_confirm = 0;
+
+    int minute = 0;
+    while (!gpio_irq_flags.set_confirm) {
+        if (!gpio_irq_flags.decrement_counter || !gpio_irq_flags.increment_counter) {
+            if (gpio_irq_flags.decrement_counter)  {
+                minute = minute > 0 ? minute - 1 : 59;
+                gpio_irq_flags.decrement_counter = 0;
+            }
+            if (gpio_irq_flags.increment_counter) {
+                minute = minute < 59 ? minute + 1: 0;
+                gpio_irq_flags.increment_counter = 0;      
+            }
+
+            set_char(3, '0' + (minute / 10), false);
+            set_char(4, '0' + (minute % 10), true);
+        }
+    }
+    gpio_irq_flags.set_confirm = 0;
+
+    int second = 0;
+    while (!gpio_irq_flags.set_confirm) {
+        if (!gpio_irq_flags.decrement_counter || !gpio_irq_flags.increment_counter) {
+            if (gpio_irq_flags.decrement_counter)  {
+                second = second > 0 ? second - 1 : 59;
+                gpio_irq_flags.decrement_counter = 0;
+            }
+            if (gpio_irq_flags.increment_counter) {
+                second = second < 59 ? second + 1: 0;
+                gpio_irq_flags.increment_counter = 0;      
+            }
+
+            set_char(6, '0' + (second / 10), false);
+            set_char(7, '0' + (second % 10), true);
+        }
+    }
+    gpio_irq_flags.set_confirm = 0;
+
+    clock_set_time(
+        int_to_bcd(second),
+        int_to_bcd(minute),
+        int_to_bcd(hour),
+        int_to_bcd(day),
+        int_to_bcd(month),
+        int_to_bcd(year)
+    );
+
+    clock_read_time();
+    return;
+}
+
+void gpio_iqr_handler(uint gpio, uint32_t event) {
+    switch (gpio) {
+        case 2:
+            gpio_irq_flags.set_time = 1;
+            break;
+        case 3:
+            gpio_irq_flags.increment_counter = 1;
+            break;
+        case 4:
+            gpio_irq_flags.decrement_counter = 1;
+            break;
+        case 5: 
+            gpio_irq_flags.set_confirm = 1;
+            break;
+    }
+
+    return;
+}
+
+    int main() {
     stdio_init_all();
     printf("start\n");
 
@@ -89,18 +272,33 @@ int main() {
 
     gpio_set_function(I2C_DISPLAY_SCL, GPIO_FUNC_I2C);
     gpio_set_function(I2C_DISPLAY_SDA, GPIO_FUNC_I2C);
-    gpio_pull_up(I2C_DISPLAY_SCL);
-    gpio_pull_up(I2C_DISPLAY_SDA);
     
     bi_decl(bi_2pins_with_func(I2C_DISPLAY_SDA, I2C_DISPLAY_SCL, GPIO_FUNC_I2C));
     
     // Must be called otherwise it will cause the display not to function normally.
-
     pre_generate_alternate_characters();
     char *clock_string_buffer = malloc(9);
 
     gpio_init(28);
+    gpio_init(2);
+    gpio_init(3);
+    gpio_init(4);
+    gpio_init(5);
     gpio_set_dir(28, GPIO_OUT);
+    gpio_set_dir(2, GPIO_IN);
+    gpio_set_dir(3, GPIO_IN);
+    gpio_set_dir(4, GPIO_IN);
+    gpio_set_dir(5, GPIO_IN);
+
+    gpio_pull_up(2);
+    gpio_pull_up(3);
+    gpio_pull_up(4);
+    gpio_pull_up(5);
+
+    gpio_set_irq_enabled_with_callback(2, GPIO_IRQ_EDGE_RISE, true, &gpio_iqr_handler);
+    gpio_set_irq_enabled(3, GPIO_IRQ_EDGE_RISE, true);
+    gpio_set_irq_enabled(4, GPIO_IRQ_EDGE_RISE, true);
+    gpio_set_irq_enabled(5, GPIO_IRQ_EDGE_RISE, true);
 
     // // Beats per minute
     // int tempo = 120;
@@ -140,30 +338,33 @@ int main() {
     //     sleep_us(rest_time * (beat_loop_count * 0.1));
     // }
 
-    bool value = true;
+   bool show = true;
 
     while(true)  
     {        
+        if (gpio_irq_flags.set_time) {
+            set_date_and_time();
+            gpio_irq_flags.set_time = 0;
+        } else if (gpio_irq_flags.set_confirm)  {
+            show = !show;
+            gpio_irq_flags.set_confirm = 0;
+        }
+
         // Clock has been reset (MUST BE SET)
 		if(clock_buffer[6]==0x00 && clock_buffer[5]==0x01 && clock_buffer[4]==0x01)
 		{
-			clock_set_time(); 
+            clock_set = false;
+			display_string("SET TIME");
+            sleep_ms(500);
+            clear_all(true);
+            sleep_ms(500);
 		}
     
-        // for (int i = 0; i < 8; i++)
-        // {
-        //     for (int x = 0; x < 5; x++)
-        //     {
-        //         for (int y = 0; y < 7; y++)
-        //         {
-        //             set_pixel(i, x, y, value, true);
-        //         }
-        //     }
-        // }
-        // value = !value;
-        
-        update_clock();
-        sleep_ms(1000);        
+        if (clock_set)
+        {
+            if (show) update_clock();
+            else update_date();
+        }
 	}  
 
     return 0;
