@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LTP-305G
+D LED Matrix
+F https://media.digikey.com/pdf/Data%20Sheets/Lite-On%20PDFs/LTP-305G.pdf
+$ENDCMP
+#
+#End Doc Library
