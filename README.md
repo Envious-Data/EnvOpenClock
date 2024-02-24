@@ -7,6 +7,25 @@ This clock features a DS3231 but it doesnt have its own onboard battery manageme
 
 There are 4 buttons and a switch, The switch is meant for Summer time adjustment and the 4 buttons are for setting the time or alarm.
 
+## Implemented Features
+- Time Setting
+- Date Mode
+
+## Planned software features
+(Some ideas, may not get implemented)
+- Animated text to show time has been set?
+- Animated Transition to menus?
+- A menu system
+- Alarm system
+- Text Marquee modes
+
+## Planned Hardware features
+In the current version of the board there is a a DS3231 w/ CR1220 battery, Raspberry pi pico, 4x tactile buttons, 4x IS31FL37s, a small piezo speaker and amp and obviously the 8x LTP305 sockets.
+
+We'd like to change this to have easier to press buttons, a larger battery holder, the speaker may not get re-implemented, we'll see when we decide to move toward finalizing the design and preparing for order. Keep in mind that TIL305s have been discontinued for a long time and LTP305s are now discontinued and hard to get so we'll substitute our own "DIY305" which is a dip14 sized PCB with standard headers and 0402 leds but we have made a 0201 version but may not use it due to cost.
+
+
+
 ## Hardware
 I designed the board in KiCad, you can use various plugins to generate production files for your chosen PCB FAB
 Some aspects may change but I generally intend to keep the formfactor the same and all the components on one side for cheaper manufacturing.
