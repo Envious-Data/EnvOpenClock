@@ -3491,7 +3491,7 @@
     (effects (font (size 5 5) (thickness 1) bold) (justify left bottom))
     (uuid 25121d37-3ad0-4d9a-9aff-3b0dd0ebac16)
   )
-  (text "MCU, RTC and related Circuitry" (at 13.335 147.32 0)
+  (text "MCU, RTC and related Circuitry" (at 15.875 151.765 0)
     (effects (font (size 5 5) (thickness 1) bold) (justify left bottom))
     (uuid 76e3be41-ad05-420c-8728-a7a70c19490b)
   )

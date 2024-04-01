@@ -4622,7 +4622,7 @@
     (property "Reference" "U2" (at 111.76 38.3032 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "SOT-23-5 5.5V 3.3V 500mA" (at 111.76 40.6146 0)
+    (property "Value" "TLV75733PDBVR" (at 111.76 40.6146 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5" (at 111.76 38.735 0)
