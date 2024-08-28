@@ -18,6 +18,8 @@
 #define DEFAULT_MODE    0b00011000
 #define DEFAULT_OPTIONS 0b00001110
 
+uint8_t brightness_level = 0b1101000;
+
 /**
  * @brief The addresses of the displays in order from left to right.
     They are doubled up since there are 2 displays per chip.
@@ -331,7 +333,7 @@ void update_display() {
         if (i % 2 != 0) {
             set_option(i, MODE_ADDR, DEFAULT_MODE);
             set_option(i, OPTION_ADDR, DEFAULT_OPTIONS);
-            set_option(i, BRIGHTNESS_ADDR, 0b1111111);
+            set_option(i, BRIGHTNESS_ADDR, brightness_level);
             set_option(i, UPDATE_ADDR, 0b00000001);
         }
     }

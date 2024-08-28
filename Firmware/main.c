@@ -59,6 +59,16 @@ extern char *week[];
 bool clock_busy = false;
 bool clock_set = true;
 
+void timer_callback(struct repeating_timer *t) {
+    // if after 10pm and before 6am
+    if (clock_buffer[2] >= 0x22 || clock_buffer[2] <= 0x06) {
+        brightness_level = 0b0000001;
+    } else {
+        brightness_level =  0b1101000 ;
+    }   
+}
+
+
 bool update_clock() {
     if (clock_set) {
         char *clock_string_buffer = malloc(9);
@@ -80,6 +90,8 @@ bool update_clock() {
     }
 }
 
+
+
 bool update_date() {    
     char *date_string_buffer = malloc(100);
     if (date_string_buffer == NULL) {
@@ -88,9 +100,9 @@ bool update_date() {
     
     clock_read_time();
 
-    clock_buffer[4] &= 0x7F; //sec
-    clock_buffer[5] &= 0x7F; //min
-    clock_buffer[6] &= 0x3F; //hour
+    clock_buffer[4] &= 0x7F; //day
+    clock_buffer[5] &= 0x7F; //month
+    clock_buffer[6] &= 0x3F; //year
 
     sprintf(date_string_buffer, "%02x/%02x/%02x", clock_buffer[4], clock_buffer[5], clock_buffer[6]);
     display_string(date_string_buffer);    
@@ -338,6 +350,9 @@ void gpio_iqr_handler(uint gpio, uint32_t event) {
     //     sleep_us(rest_time * (beat_loop_count * 0.1));
     // }
 
+    struct repeating_timer timer;
+    add_repeating_timer_ms(-60000, timer_callback, NULL, &timer);
+
    bool show = true;
 
     while(true)  
@@ -364,6 +379,7 @@ void gpio_iqr_handler(uint gpio, uint32_t event) {
         {
             if (show) update_clock();
             else update_date();
+
         }
 	}  
 

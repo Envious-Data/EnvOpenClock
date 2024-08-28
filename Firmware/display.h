@@ -17,6 +17,7 @@
 #define DEFAULT_MODE    0b00011000
 #define DEFAULT_OPTIONS 0b00001110
 
+extern uint8_t brightness_level;
 extern uint8_t addresses[8];
 extern uint8_t displays[8][8];
 

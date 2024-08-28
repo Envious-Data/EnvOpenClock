@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware
+# Install script for directory: P:/Embedded/EnvOpenClock/Firmware
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build/pico-sdk/cmake_install.cmake")
+  include("P:/Embedded/EnvOpenClock/Firmware/build/pico-sdk/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "P:/Embedded/EnvOpenClock/Firmware/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

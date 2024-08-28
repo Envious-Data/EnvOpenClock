@@ -619,8 +619,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/ruben/Documents/Programming/Env-OpenClock/Firmware/build",
-		"source" : "C:/Users/ruben/Documents/Programming/Env-OpenClock/Firmware"
+		"build" : "P:/Embedded/EnvOpenClock/Firmware/build",
+		"source" : "P:/Embedded/EnvOpenClock/Firmware"
 	},
 	"version" : 
 	{

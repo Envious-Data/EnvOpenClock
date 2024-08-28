@@ -1138,7 +1138,7 @@
 				{
 					"directoryIndex" : 43,
 					"id" : "bs2_default::@bc554eaed616d198a22d",
-					"jsonFile" : "target-bs2_default-Debug-d0bd552f14483e27b13c.json",
+					"jsonFile" : "target-bs2_default-Debug-0a071fcacc6c816de7c7.json",
 					"name" : "bs2_default",
 					"projectIndex" : 1
 				},
@@ -1159,7 +1159,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "clock::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-clock-Debug-235083b7e4d1c5ed2592.json",
+					"jsonFile" : "target-clock-Debug-62976b101b387bc5084d.json",
 					"name" : "clock",
 					"projectIndex" : 0
 				},
@@ -1190,8 +1190,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/ruben/Documents/Programming/Env-OpenClock/Firmware/build",
-		"source" : "C:/Users/ruben/Documents/Programming/Env-OpenClock/Firmware"
+		"build" : "P:/Embedded/EnvOpenClock/Firmware/build",
+		"source" : "P:/Embedded/EnvOpenClock/Firmware"
 	},
 	"version" : 
 	{

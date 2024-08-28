@@ -195,7 +195,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build"
+			"value" : "p:/Embedded/EnvOpenClock/Firmware/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -679,7 +679,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build/CMakeFiles/pkgRedirects"
+			"value" : "P:/Embedded/EnvOpenClock/Firmware/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -739,7 +739,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware"
+			"value" : "P:/Embedded/EnvOpenClock/Firmware"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -864,18 +864,6 @@
 			],
 			"type" : "STRING",
 			"value" : ""
-		},
-		{
-			"name" : "CMAKE_MODULE_PATH",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
-				}
-			],
-			"type" : "STRING",
-			"value" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk-tools"
 		},
 		{
 			"name" : "CMAKE_NM",
@@ -1319,7 +1307,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[C:/Users/Rubens Pirie/AppData/Local/Programs/Python/Python311/python.exe][cfound components: Interpreter ][v3.11.2()]"
+			"value" : "[C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0/python3.12.exe][cfound components: Interpreter ][v3.12.5()]"
 		},
 		{
 			"name" : "PICO_BOARD",
@@ -1475,7 +1463,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : " C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs"
+			"value" : " C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/cmsis C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2040/hardware_regs"
 		},
 		{
 			"name" : "PICO_DOXYGEN_PATHS",
@@ -1703,7 +1691,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Rubens Pirie/AppData/Local/Programs/Python/Python311/python.exe"
+			"value" : "C:/Program Files/WindowsApps/PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0/python3.12.exe"
 		},
 		{
 			"name" : "_Python3_INTERPRETER_PROPERTIES",
@@ -1715,7 +1703,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Python;3;11;2;32;;;C:\\Users\\Rubens Pirie\\AppData\\Local\\Programs\\Python\\Python311\\Lib;C:\\Users\\Rubens Pirie\\AppData\\Local\\Programs\\Python\\Python311\\Lib;C:\\Users\\Rubens Pirie\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages;C:\\Users\\Rubens Pirie\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages"
+			"value" : "Python;3;12;5;32;;;C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\\Lib;C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\\Lib;C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\\Lib\\site-packages;C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.1520.0_x64__qbz5n2kfra8p0\\Lib\\site-packages"
 		},
 		{
 			"name" : "_Python3_INTERPRETER_SIGNATURE",
@@ -1727,7 +1715,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "997c5fc4db713bd237be2895dfca730d"
+			"value" : "e59e1b46842c5160682ca2df7edee22f"
 		},
 		{
 			"name" : "_Python3_Interpreter_REASON_FAILURE",
@@ -1763,7 +1751,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build"
+			"value" : "P:/Embedded/EnvOpenClock/Firmware/build"
 		},
 		{
 			"name" : "env_open_clock_IS_TOP_LEVEL",
@@ -1787,7 +1775,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware"
+			"value" : "P:/Embedded/EnvOpenClock/Firmware"
 		},
 		{
 			"name" : "pico-sdk-tools_DIR",
@@ -1811,7 +1799,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Rubens Pirie/Documents/Programming/Env-OpenClock/Firmware/build/pico-sdk"
+			"value" : "P:/Embedded/EnvOpenClock/Firmware/build/pico-sdk"
 		},
 		{
 			"name" : "pico_sdk_IS_TOP_LEVEL",
