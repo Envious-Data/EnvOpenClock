@@ -7272,6 +7272,50 @@
 			)
 		)
 	)
+	(global_label "GPIO0"
+		(shape input)
+		(at 258.445 111.76 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "71c9a580-28df-487d-9f0e-90ea189f17da")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 249.775 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3v3_i2c_sda"
+		(shape input)
+		(at 258.445 111.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "721c8ff7-6f75-4501-88b8-6f5350f8318f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 272.981 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "XOUT"
 		(shape input)
 		(at 166.37 152.4 180)
@@ -7482,6 +7526,28 @@
 		(uuid "aaa4102b-6e2f-4ed0-8cca-ab1bfbe55e88")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at -26.9621 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "3v3_i2c_scl"
+		(shape input)
+		(at 258.445 114.3 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ae074a64-aebb-4f58-9592-6af6bfdd7c18")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 272.4368 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7729,6 +7795,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GPIO1"
+		(shape input)
+		(at 258.445 114.3 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ef459d8a-26c2-4459-8c57-e9549a9afdd5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 249.775 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
