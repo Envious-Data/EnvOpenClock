@@ -15392,7 +15392,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "9e92950b-6e38-4c0b-91de-f7beaecfc16c")
 		(property "Reference" "R9"
 			(at 88.9 172.7199 0)
@@ -15404,12 +15403,11 @@
 			)
 		)
 		(property "Value" "10kΩ 20kΩ 3.4mm"
-			(at 88.9 175.2599 0)
+			(at 80.645 173.99 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" "OptoDevice:R_LDR_5.1x4.3mm_P3.4mm_Vertical"
