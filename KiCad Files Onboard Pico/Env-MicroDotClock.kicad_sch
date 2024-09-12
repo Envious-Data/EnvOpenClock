@@ -6772,18 +6772,6 @@
 		)
 		(uuid "25121d37-3ad0-4d9a-9aff-3b0dd0ebac16")
 	)
-	(text "THE IS31FL3730S NEED TO RUN OFF 5V, LEVEL SHIFT THE GPIO"
-		(exclude_from_sim no)
-		(at 210.058 1.524 0)
-		(effects
-			(font
-				(size 7.62 7.62)
-				(thickness 1.524)
-				(bold yes)
-			)
-		)
-		(uuid "683ed8ae-f9c4-4ba7-b1d5-172bc8bc944c")
-	)
 	(text "MCU, RTC and related Circuitry"
 		(exclude_from_sim no)
 		(at 12.7 136.525 0)
