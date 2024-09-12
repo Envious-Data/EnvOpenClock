@@ -4678,19 +4678,13 @@
 		)
 	)
 	(junction
-		(at 13.97 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "02132906-14c6-4dea-af73-62efb2cdb0c2")
-	)
-	(junction
-		(at 88.9 33.02)
+		(at 95.25 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0f0ed7d1-7310-4a8b-a548-94e86eca4e9a")
 	)
 	(junction
-		(at 92.71 33.02)
+		(at 99.06 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1444b859-cc24-4362-879c-97da5cadddb9")
@@ -4726,7 +4720,7 @@
 		(uuid "223accdd-3d57-49fb-b526-b8f960a9b945")
 	)
 	(junction
-		(at 52.07 38.1)
+		(at 58.42 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "30249793-6a56-496e-bfc6-4f912908c694")
@@ -4744,7 +4738,7 @@
 		(uuid "376d4052-c15f-45f2-97bb-659f1bf8cd2f")
 	)
 	(junction
-		(at 86.36 33.02)
+		(at 92.71 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3da23960-3227-43f0-92e2-59338f9e4e23")
@@ -4786,7 +4780,7 @@
 		(uuid "44551fee-b8b3-47b9-962d-b03fcec0ecb7")
 	)
 	(junction
-		(at 73.66 58.42)
+		(at 80.01 58.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "49bda4f5-e2cb-40cf-b6b9-30a5eb6b76f5")
@@ -4808,12 +4802,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4e5bd5f8-e2ec-4a0c-8d97-72288bf50d13")
-	)
-	(junction
-		(at 48.26 33.02)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "520e2d88-9929-420a-b63c-67b37a256a86")
 	)
 	(junction
 		(at 205.74 81.28)
@@ -4846,13 +4834,13 @@
 		(uuid "5e5eadfb-67ad-4dd3-a6c9-9468ad820a7d")
 	)
 	(junction
-		(at 52.07 33.02)
+		(at 58.42 33.02)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "68d978fd-f433-4811-8477-4118ab8789b4")
 	)
 	(junction
-		(at 57.15 38.1)
+		(at 63.5 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6b1eb3f9-7886-440f-9f04-ae018d5d8dac")
@@ -4876,7 +4864,7 @@
 		(uuid "794bf37a-338b-4b3c-a653-0807781d16c8")
 	)
 	(junction
-		(at 92.71 38.1)
+		(at 99.06 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7e7c42fb-cccb-44c5-b139-4e206d591b31")
@@ -4904,6 +4892,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "99a10a08-84b0-4c14-bb1d-98d5128ed1e5")
+	)
+	(junction
+		(at 54.61 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b06b16a1-154f-40da-96a3-54146cf855cd")
 	)
 	(junction
 		(at 199.39 196.85)
@@ -4936,7 +4930,7 @@
 		(uuid "dda449f2-a6f5-4f75-96c4-ef70267e601c")
 	)
 	(junction
-		(at 48.26 43.18)
+		(at 54.61 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dfcc6eeb-f98d-4a48-96da-2b078ac0dba2")
@@ -4975,7 +4969,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 38.1) (xy 92.71 38.1)
+			(xy 95.25 38.1) (xy 99.06 38.1)
 		)
 		(stroke
 			(width 0)
@@ -5145,7 +5139,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 40.64) (xy 86.36 33.02)
+			(xy 92.71 40.64) (xy 92.71 33.02)
 		)
 		(stroke
 			(width 0)
@@ -5265,7 +5259,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 33.02) (xy 83.82 33.02)
+			(xy 92.71 33.02) (xy 90.17 33.02)
 		)
 		(stroke
 			(width 0)
@@ -5305,7 +5299,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 38.1) (xy 63.5 38.1)
+			(xy 63.5 38.1) (xy 69.85 38.1)
 		)
 		(stroke
 			(width 0)
@@ -5335,7 +5329,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 33.02) (xy 92.71 33.02)
+			(xy 95.25 33.02) (xy 99.06 33.02)
 		)
 		(stroke
 			(width 0)
@@ -5375,7 +5369,7 @@
 	)
 	(wire
 		(pts
-			(xy -33.02 71.12) (xy -40.64 71.12)
+			(xy 24.13 71.12) (xy 16.51 71.12)
 		)
 		(stroke
 			(width 0)
@@ -5425,7 +5419,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 38.1) (xy 57.15 35.56)
+			(xy 63.5 38.1) (xy 63.5 35.56)
 		)
 		(stroke
 			(width 0)
@@ -5525,16 +5519,6 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 33.02) (xy 48.26 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5987589b-0ea2-4a97-9ef7-2fb5c710ed69")
-	)
-	(wire
-		(pts
 			(xy 158.75 71.12) (xy 158.75 72.39)
 		)
 		(stroke
@@ -5575,7 +5559,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 50.8) (xy 63.5 53.34)
+			(xy 69.85 50.8) (xy 69.85 53.34)
 		)
 		(stroke
 			(width 0)
@@ -5785,7 +5769,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 40.64) (xy 57.15 40.64)
+			(xy 69.85 40.64) (xy 63.5 40.64)
 		)
 		(stroke
 			(width 0)
@@ -5805,7 +5789,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 43.18) (xy 48.26 38.1)
+			(xy 54.61 43.18) (xy 54.61 38.1)
 		)
 		(stroke
 			(width 0)
@@ -5815,7 +5799,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 53.34) (xy 30.48 53.34)
+			(xy 39.37 53.34) (xy 40.64 53.34)
 		)
 		(stroke
 			(width 0)
@@ -5845,7 +5829,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 33.02) (xy 63.5 33.02)
+			(xy 58.42 33.02) (xy 69.85 33.02)
 		)
 		(stroke
 			(width 0)
@@ -5855,7 +5839,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 58.42) (xy 71.12 58.42)
+			(xy 80.01 58.42) (xy 77.47 58.42)
 		)
 		(stroke
 			(width 0)
@@ -5885,7 +5869,7 @@
 	)
 	(wire
 		(pts
-			(xy 29.21 50.8) (xy 30.48 50.8)
+			(xy 39.37 50.8) (xy 40.64 50.8)
 		)
 		(stroke
 			(width 0)
@@ -5902,16 +5886,6 @@
 			(type default)
 		)
 		(uuid "9c823d2f-0242-4494-a587-24c52522b25e")
-	)
-	(wire
-		(pts
-			(xy -10.16 33.02) (xy -5.08 33.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e3c47ea-0603-42d6-81b8-8a8e8d408548")
 	)
 	(wire
 		(pts
@@ -5935,7 +5909,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 43.18) (xy 52.07 43.18)
+			(xy 54.61 43.18) (xy 58.42 43.18)
 		)
 		(stroke
 			(width 0)
@@ -5995,7 +5969,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 33.02) (xy 88.9 33.02)
+			(xy 92.71 33.02) (xy 95.25 33.02)
 		)
 		(stroke
 			(width 0)
@@ -6015,6 +5989,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.165 33.02) (xy 54.61 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aca5f172-7651-4043-80b3-5b0ac07cb7fb")
+	)
+	(wire
+		(pts
 			(xy 208.28 81.28) (xy 212.09 81.28)
 		)
 		(stroke
@@ -6025,7 +6009,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 35.56) (xy 63.5 35.56)
+			(xy 63.5 35.56) (xy 69.85 35.56)
 		)
 		(stroke
 			(width 0)
@@ -6075,6 +6059,16 @@
 	)
 	(wire
 		(pts
+			(xy 42.545 33.02) (xy 39.37 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd466a1a-3a58-496b-b338-a96349a61f20")
+	)
+	(wire
+		(pts
 			(xy 71.12 100.33) (xy 71.12 111.76)
 		)
 		(stroke
@@ -6105,7 +6099,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 45.72) (xy 29.21 45.72)
+			(xy 40.64 45.72) (xy 39.37 45.72)
 		)
 		(stroke
 			(width 0)
@@ -6175,7 +6169,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 40.64) (xy 86.36 40.64)
+			(xy 90.17 40.64) (xy 92.71 40.64)
 		)
 		(stroke
 			(width 0)
@@ -6195,7 +6189,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 33.02) (xy 52.07 33.02)
+			(xy 54.61 33.02) (xy 58.42 33.02)
 		)
 		(stroke
 			(width 0)
@@ -6245,7 +6239,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 38.1) (xy 57.15 40.64)
+			(xy 63.5 38.1) (xy 63.5 40.64)
 		)
 		(stroke
 			(width 0)
@@ -6345,23 +6339,13 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 43.18) (xy 63.5 45.72)
+			(xy 69.85 43.18) (xy 69.85 45.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "eca92532-8239-40cd-a99b-93737a3b3351")
-	)
-	(wire
-		(pts
-			(xy 13.97 73.66) (xy 13.97 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ed52fe13-ecac-477c-ac22-91aff2c85b13")
 	)
 	(wire
 		(pts
@@ -6375,7 +6359,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 48.26) (xy 29.21 48.26)
+			(xy 40.64 48.26) (xy 39.37 48.26)
 		)
 		(stroke
 			(width 0)
@@ -6405,17 +6389,7 @@
 	)
 	(wire
 		(pts
-			(xy 6.35 71.12) (xy 13.97 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f46be3f7-3030-48ad-ad19-0df7be477e33")
-	)
-	(wire
-		(pts
-			(xy 52.07 38.1) (xy 57.15 38.1)
+			(xy 58.42 38.1) (xy 63.5 38.1)
 		)
 		(stroke
 			(width 0)
@@ -6701,7 +6675,7 @@
 		(uuid "111befcf-8a8b-4627-aa96-c209c5e27b99")
 	)
 	(label "USB_D-"
-		(at 30.48 45.72 0)
+		(at 40.64 45.72 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6744,8 +6718,19 @@
 		)
 		(uuid "23ca0619-6f05-473d-8356-8588c4d103bb")
 	)
+	(label "VSYS"
+		(at 59.69 33.02 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2d6b7cb4-95d5-4cce-87dc-72b4a499d69f")
+	)
 	(label "USB_D-"
-		(at 30.48 48.26 0)
+		(at 40.64 48.26 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6843,6 +6828,17 @@
 		)
 		(uuid "74ebcb56-a421-4c1f-99e3-eb0be27b62e5")
 	)
+	(label "VBUS"
+		(at 39.37 33.02 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "75ce6870-9b65-4f48-aefb-9f894f14b486")
+	)
 	(label "~{USB_BOOT}"
 		(at 39.37 111.76 0)
 		(fields_autoplaced yes)
@@ -6866,7 +6862,7 @@
 		(uuid "887d7dda-57df-40fe-98af-03cb9480ab43")
 	)
 	(label "USB_D+"
-		(at 30.48 50.8 0)
+		(at 40.64 50.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6888,7 +6884,7 @@
 		(uuid "c5234dac-bb6c-465e-b20a-54769a1fc4c1")
 	)
 	(label "USB_D+"
-		(at 30.48 53.34 0)
+		(at 40.64 53.34 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7021,6 +7017,28 @@
 		(uuid "270ecf2c-4c97-49a9-9c7e-eb888cfc3d0d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 241.0195 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Buzzer GPIO"
+		(shape input)
+		(at 268.605 170.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3e472642-2f8f-4e03-9b09-b8a73b72c027")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 283.3037 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7206,28 +7224,6 @@
 			)
 		)
 	)
-	(global_label "GND"
-		(shape input)
-		(at 13.97 73.66 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "69469c97-4998-4576-b79f-fd708539a1af")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 20.0279 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "GPIO6"
 		(shape input)
 		(at 231.14 127 0)
@@ -7351,28 +7347,6 @@
 		(uuid "7bc31548-4075-4c6a-99fd-127830583a81")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 241.0195 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "VSYS"
-		(shape input)
-		(at -5.08 33.02 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8452898f-c658-49ae-8b99-528af8afbf92")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 2.5014 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7515,7 +7489,7 @@
 	)
 	(global_label "GND"
 		(shape input)
-		(at -33.02 71.12 0)
+		(at 24.13 71.12 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7525,7 +7499,7 @@
 		)
 		(uuid "aaa4102b-6e2f-4ed0-8cca-ab1bfbe55e88")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -26.9621 71.12 0)
+			(at 30.1879 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7548,6 +7522,29 @@
 		(uuid "ae074a64-aebb-4f58-9592-6af6bfdd7c18")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 272.4368 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VSYS"
+		(shape input)
+		(at 54.61 33.02 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "b7bb5d82-e68c-4ac0-a5c7-acbeb7708f21")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 54.61 24.9626 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7641,6 +7638,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GPIO23"
+		(shape input)
+		(at 268.605 170.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d9de2cd6-06d9-456a-86fc-58b8d5f1c5a5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 258.7255 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -7821,28 +7840,6 @@
 			)
 		)
 	)
-	(global_label "VSYS"
-		(shape input)
-		(at 39.37 33.02 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f4915028-92c4-416f-b5a6-878eea2e445c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.37 25.4386 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "XIN"
 		(shape input)
 		(at 166.37 147.32 180)
@@ -7932,7 +7929,7 @@
 	)
 	(symbol
 		(lib_id "Device:L_Small")
-		(at 63.5 48.26 0)
+		(at 69.85 48.26 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7940,8 +7937,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00943f2c-c694-458d-b469-bef4131c53b7")
-		(property "Reference" "L1"
-			(at 57.785 49.53 0)
+		(property "Reference" "L201"
+			(at 64.135 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7950,7 +7947,7 @@
 			)
 		)
 		(property "Value" "SPH3015H2R2MT"
-			(at 61.595 43.18 90)
+			(at 67.945 43.18 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7959,7 +7956,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_Sunlord_SWPA3015S"
-			(at 63.5 48.26 0)
+			(at 69.85 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7968,7 +7965,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 63.5 48.26 0)
+			(at 69.85 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7977,7 +7974,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 63.5 48.26 0)
+			(at 69.85 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7994,7 +7991,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "L1")
+					(reference "L201")
 					(unit 1)
 				)
 			)
@@ -8009,7 +8006,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "02415af9-2dfe-479f-afa6-f822913d5ce0")
-		(property "Reference" "R21"
+		(property "Reference" "R207"
 			(at 72.898 95.3516 0)
 			(effects
 				(font
@@ -8072,7 +8069,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "R21")
+					(reference "R207")
 					(unit 1)
 				)
 			)
@@ -8092,31 +8089,31 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at -15.24 38.1 270)
+		(at 41.91 38.1 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "0b2b20a3-e6f5-4b86-bf15-c905e72ca2bc")
-		(property "Reference" "R14"
-			(at -15.24 35.56 90)
+		(property "Reference" "R201"
+			(at 41.91 35.56 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "5.1K 0805"
-			(at -15.24 38.1 90)
+		(property "Value" "5.1K 0402"
+			(at 41.91 38.1 90)
 			(effects
 				(font
 					(size 0.508 0.508)
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at -15.24 38.1 0)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 41.91 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8125,7 +8122,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at -15.24 38.1 0)
+			(at 41.91 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8134,7 +8131,7 @@
 			)
 		)
 		(property "Description" ""
-			(at -15.24 38.1 0)
+			(at 41.91 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8143,7 +8140,7 @@
 			)
 		)
 		(property "LCSC" " "
-			(at -15.24 38.1 0)
+			(at 41.91 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8160,7 +8157,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "R14")
+					(reference "R201")
 					(unit 1)
 				)
 			)
@@ -8175,7 +8172,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "12c1ea77-9d54-4f8d-a824-d755dbfd3ca2")
-		(property "Reference" "C29"
+		(property "Reference" "C216"
 			(at 265.811 64.8716 0)
 			(effects
 				(font
@@ -8239,7 +8236,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C29")
+					(reference "C216")
 					(unit 1)
 				)
 			)
@@ -8253,15 +8250,15 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 52.07 35.56 0)
+		(at 58.42 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "12e3ff68-5e89-4c4d-8ab0-9c486b8acb15")
-		(property "Reference" "R19"
-			(at 52.07 34.163 0)
+		(property "Reference" "R205"
+			(at 58.42 34.163 0)
 			(effects
 				(font
 					(size 0.25 0.25)
@@ -8269,7 +8266,7 @@
 			)
 		)
 		(property "Value" "100ohm 0402"
-			(at 52.07 35.814 90)
+			(at 58.42 35.814 90)
 			(effects
 				(font
 					(size 0.25 0.25)
@@ -8277,7 +8274,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 52.07 35.56 0)
+			(at 58.42 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8286,7 +8283,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 52.07 35.56 0)
+			(at 58.42 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8295,7 +8292,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 52.07 35.56 0)
+			(at 58.42 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8312,7 +8309,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "R19")
+					(reference "R205")
 					(unit 1)
 				)
 			)
@@ -8327,7 +8324,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1503eda7-1bcd-4824-a534-d4b385529663")
-		(property "Reference" "#PWR063"
+		(property "Reference" "#PWR0212"
 			(at 87.63 104.14 0)
 			(effects
 				(font
@@ -8377,7 +8374,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR063")
+					(reference "#PWR0212")
 					(unit 1)
 				)
 			)
@@ -8404,7 +8401,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "159e649a-0fb1-478a-992a-dabdcd74e013")
-		(property "Reference" "C31"
+		(property "Reference" "C218"
 			(at 283.21 63.5 0)
 			(effects
 				(font
@@ -8468,7 +8465,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C31")
+					(reference "C218")
 					(unit 1)
 				)
 			)
@@ -8489,7 +8486,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1c28d701-7f8e-4747-b241-c4f965adc52f")
-		(property "Reference" "R25"
+		(property "Reference" "R210"
 			(at 246.38 104.14 90)
 			(effects
 				(font
@@ -8550,7 +8547,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "R25")
+					(reference "R210")
 					(unit 1)
 				)
 			)
@@ -8571,7 +8568,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1cedd3a8-1ed1-47d8-bbd6-6f9f12a0f648")
-		(property "Reference" "#PWR075"
+		(property "Reference" "#PWR0221"
 			(at 215.9 63.5 0)
 			(effects
 				(font
@@ -8621,7 +8618,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR075")
+					(reference "#PWR0221")
 					(unit 1)
 				)
 			)
@@ -8636,7 +8633,7 @@
 	(symbol
 		(lib_name "GND_2")
 		(lib_id "power:GND")
-		(at 92.71 38.1 0)
+		(at 99.06 38.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8644,8 +8641,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "210bcc00-6cbe-4972-ab2f-1801565d9601")
-		(property "Reference" "#PWR033"
-			(at 92.71 44.45 0)
+		(property "Reference" "#PWR0214"
+			(at 99.06 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8654,7 +8651,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 92.71 43.18 0)
+			(at 99.06 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8662,7 +8659,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 92.71 38.1 0)
+			(at 99.06 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8671,7 +8668,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 38.1 0)
+			(at 99.06 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8680,7 +8677,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 92.71 38.1 0)
+			(at 99.06 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8694,120 +8691,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR033")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:USB_C_Receptacle_USB2.0_16P")
-		(at 13.97 48.26 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2301bd33-62a1-4422-be69-e56dc5b061ee")
-		(property "Reference" "J4"
-			(at 13.97 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "TYPE-C-31-M-12"
-			(at 13.97 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12"
-			(at 17.78 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
-			(at 17.78 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 13.97 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "B12"
-			(uuid "5dd67bd2-05e0-4284-8372-7f83cca6c341")
-		)
-		(pin "B9"
-			(uuid "7ae964a8-185c-449d-952a-ee01c0243566")
-		)
-		(pin "A12"
-			(uuid "4a4546ad-a65b-4c50-910e-a9cf9354f784")
-		)
-		(pin "B6"
-			(uuid "c5d5dd6c-dfa0-40e7-ab46-43c1b4dc9689")
-		)
-		(pin "A4"
-			(uuid "67a934ef-5b71-4a34-84b8-47b91968b1fc")
-		)
-		(pin "A8"
-			(uuid "c90bca41-3282-4ba5-97e3-cc2ac9aeab9b")
-		)
-		(pin "B8"
-			(uuid "a71d91f0-790d-4cbf-b148-2d5da534e644")
-		)
-		(pin "B4"
-			(uuid "ff1341bb-a7ee-4dda-a6fa-ba3296d56cbe")
-		)
-		(pin "S1"
-			(uuid "bdd1a571-da6a-4f9d-ac0d-9867e7d8b7ea")
-		)
-		(pin "A9"
-			(uuid "3cf7fa24-587a-4fb9-bbc3-5b761dba17e8")
-		)
-		(pin "B7"
-			(uuid "5ccbbf07-baac-45df-829e-71cd6b705fc6")
-		)
-		(pin "A5"
-			(uuid "d4df39ff-fb65-424e-81f5-fd96044903e9")
-		)
-		(pin "A7"
-			(uuid "9aa1ae1c-5bab-48b5-8dc3-3cd279952f15")
-		)
-		(pin "A1"
-			(uuid "999821c7-cb0b-445a-9c93-cccfa1cbb0a3")
-		)
-		(pin "B1"
-			(uuid "8d7ea5c9-ec93-4eb6-883c-fe1f25f8a85b")
-		)
-		(pin "B5"
-			(uuid "a6bf4600-2177-4ff8-a71c-8550adbb5bf6")
-		)
-		(pin "A6"
-			(uuid "5f1bd083-7700-4fb1-b28a-562b02436eea")
-		)
-		(instances
-			(project "Env-MicroDotClock"
-				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "J4")
+					(reference "#PWR0214")
 					(unit 1)
 				)
 			)
@@ -8822,7 +8706,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2464d5b3-425c-484b-95bf-96102dc1d60a")
-		(property "Reference" "#PWR070"
+		(property "Reference" "#PWR0216"
 			(at 158.75 78.74 0)
 			(effects
 				(font
@@ -8872,7 +8756,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR070")
+					(reference "#PWR0216")
 					(unit 1)
 				)
 			)
@@ -8893,7 +8777,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2512d65b-b324-491b-970f-d4ea7ad0ee5a")
-		(property "Reference" "#PWR071"
+		(property "Reference" "#PWR0217"
 			(at 172.72 95.25 0)
 			(effects
 				(font
@@ -8943,7 +8827,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR071")
+					(reference "#PWR0217")
 					(unit 1)
 				)
 			)
@@ -8964,7 +8848,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "27aaa413-481c-428e-94d0-c96141e11383")
-		(property "Reference" "C17"
+		(property "Reference" "C204"
 			(at 59.7916 249.809 0)
 			(effects
 				(font
@@ -9027,7 +8911,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C17")
+					(reference "C204")
 					(unit 1)
 				)
 			)
@@ -9041,15 +8925,15 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 48.26 35.56 0)
+		(at 54.61 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "29d1463d-0242-4300-a19d-3d3b71a7aa70")
-		(property "Reference" "C15"
-			(at 48.514 34.544 0)
+		(property "Reference" "C201"
+			(at 54.864 34.544 0)
 			(effects
 				(font
 					(size 0.25 0.25)
@@ -9058,7 +8942,7 @@
 			)
 		)
 		(property "Value" "10uF 0402"
-			(at 47.244 35.687 0)
+			(at 53.594 35.687 0)
 			(effects
 				(font
 					(size 0.25 0.25)
@@ -9067,7 +8951,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 48.26 35.56 0)
+			(at 54.61 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9076,7 +8960,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 48.26 35.56 0)
+			(at 54.61 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9085,7 +8969,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 48.26 35.56 0)
+			(at 54.61 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9102,7 +8986,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C15")
+					(reference "C201")
 					(unit 1)
 				)
 			)
@@ -9117,7 +9001,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2da1b6ab-c6c9-4ee1-8e1b-e8a21773093d")
-		(property "Reference" "#PWR076"
+		(property "Reference" "#PWR0222"
 			(at 224.79 90.17 0)
 			(effects
 				(font
@@ -9167,7 +9051,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR076")
+					(reference "#PWR0222")
 					(unit 1)
 				)
 			)
@@ -9188,7 +9072,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3377234e-711a-4c62-a0a9-e35f132d0925")
-		(property "Reference" "R24"
+		(property "Reference" "R209"
 			(at 246.38 96.52 90)
 			(effects
 				(font
@@ -9249,7 +9133,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "R24")
+					(reference "R209")
 					(unit 1)
 				)
 			)
@@ -9270,7 +9154,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "33e3863e-3c50-4237-8b86-824a95ef90a0")
-		(property "Reference" "C24"
+		(property "Reference" "C211"
 			(at 221.361 64.8716 0)
 			(effects
 				(font
@@ -9334,7 +9218,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C24")
+					(reference "C211")
 					(unit 1)
 				)
 			)
@@ -9355,7 +9239,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3755e0e1-ccba-4a2a-a9cb-84a07245bec0")
-		(property "Reference" "#PWR060"
+		(property "Reference" "#PWR0209"
 			(at 85.09 246.38 0)
 			(effects
 				(font
@@ -9406,7 +9290,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR060")
+					(reference "#PWR0209")
 					(unit 1)
 				)
 			)
@@ -9428,7 +9312,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "37ec1433-9183-4827-bb84-1a25fa9800d3")
-		(property "Reference" "FLASH1"
+		(property "Reference" "FLASH201"
 			(at 90.17 118.1099 0)
 			(effects
 				(font
@@ -9503,7 +9387,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "FLASH1")
+					(reference "FLASH201")
 					(unit 1)
 				)
 			)
@@ -9530,7 +9414,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4152ede7-7b85-4c0f-9592-a377992ed1c8")
-		(property "Reference" "RSW1"
+		(property "Reference" "RSW201"
 			(at 146.05 170.18 0)
 			(effects
 				(font
@@ -9538,7 +9422,7 @@
 				)
 			)
 		)
-		(property "Value" "TSA343G00-250J2"
+		(property "Value" "Button"
 			(at 147.32 167.64 0)
 			(effects
 				(font
@@ -9546,7 +9430,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_B3U-1000P-B"
 			(at 146.05 165.1 0)
 			(effects
 				(font
@@ -9582,7 +9466,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "RSW1")
+					(reference "RSW201")
 					(unit 1)
 				)
 			)
@@ -9603,7 +9487,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "52399e20-3837-404d-9a14-e0e00a35cd5e")
-		(property "Reference" "#G1"
+		(property "Reference" "#G201"
 			(at 309.88 263.7282 0)
 			(effects
 				(font
@@ -9651,7 +9535,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#G1")
+					(reference "#G201")
 					(unit 1)
 				)
 			)
@@ -9665,15 +9549,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at -12.7 40.64 90)
+		(at 44.45 40.64 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "54b9ebc9-8ec2-407f-942c-69d97d1b09a3")
-		(property "Reference" "#PWR030"
-			(at -6.35 40.64 0)
+		(property "Reference" "#PWR0202"
+			(at 50.8 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9682,7 +9566,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at -9.4488 40.513 90)
+			(at 47.7012 40.513 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9691,7 +9575,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at -12.7 40.64 0)
+			(at 44.45 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9700,7 +9584,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at -12.7 40.64 0)
+			(at 44.45 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9709,7 +9593,7 @@
 			)
 		)
 		(property "Description" ""
-			(at -12.7 40.64 0)
+			(at 44.45 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9723,7 +9607,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR030")
+					(reference "#PWR0202")
 					(unit 1)
 				)
 			)
@@ -9738,7 +9622,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5f7a7d51-850b-4093-95c5-b4109fbdab94")
-		(property "Reference" "C18"
+		(property "Reference" "C205"
 			(at 90.551 91.5416 0)
 			(effects
 				(font
@@ -9801,7 +9685,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C18")
+					(reference "C205")
 					(unit 1)
 				)
 			)
@@ -9828,7 +9712,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "65978b58-2a71-44ab-8fc1-ac6daec208a3")
-		(property "Reference" "C26"
+		(property "Reference" "C213"
 			(at 232.791 64.8716 0)
 			(effects
 				(font
@@ -9892,7 +9776,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C26")
+					(reference "C213")
 					(unit 1)
 				)
 			)
@@ -9913,7 +9797,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "661e350d-8fc8-439a-9bf4-cbd946f40b56")
-		(property "Reference" "#LOGO1"
+		(property "Reference" "#LOGO201"
 			(at 322.58 253.365 0)
 			(effects
 				(font
@@ -9961,7 +9845,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#LOGO1")
+					(reference "#LOGO201")
 					(unit 1)
 				)
 			)
@@ -9982,7 +9866,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "665f8f29-474b-4b1d-a889-4190775db0fc")
-		(property "Reference" "C30"
+		(property "Reference" "C217"
 			(at 275.971 64.8716 0)
 			(effects
 				(font
@@ -10046,95 +9930,13 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C30")
+					(reference "C217")
 					(unit 1)
 				)
 			)
 			(project "EnvOpenPico"
 				(path "/7b892ee5-f34f-4bca-8f87-a56522432f7c"
 					(reference "C16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 31.75 38.1 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6ce0dc0e-4ae6-4f7b-8e53-9079166ce8d0")
-		(property "Reference" "R16"
-			(at 31.75 35.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "5.1K 0402"
-			(at 31.75 38.1 90)
-			(effects
-				(font
-					(size 0.508 0.508)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 31.75 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 31.75 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" " "
-			(at 31.75 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d8863276-fff4-4ed0-8146-52805ccdbe09")
-		)
-		(pin "2"
-			(uuid "a9a3b860-29f8-4bfb-b37b-aed171cf3dc2")
-		)
-		(instances
-			(project "Env-MicroDotClock"
-				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "R16")
-					(unit 1)
-				)
-			)
-			(project "EnvOpenPico"
-				(path "/7b892ee5-f34f-4bca-8f87-a56522432f7c"
-					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -10149,7 +9951,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "71932082-c346-4bd5-a90f-1a9e4c3c72be")
-		(property "Reference" "C16"
+		(property "Reference" "C203"
 			(at 59.7916 237.109 0)
 			(effects
 				(font
@@ -10212,7 +10014,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C16")
+					(reference "C203")
 					(unit 1)
 				)
 			)
@@ -10225,91 +10027,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 33.02 33.02 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "76305ef7-e718-436f-8bf5-61eb7ff9e561")
-		(property "Reference" "D1"
-			(at 33.02 27.5082 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1N5819W"
-			(at 33.02 29.8196 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 33.02 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 33.02 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 33.02 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" " "
-			(at 33.02 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fbb08506-2aef-49cc-94f3-bee71f6575d6")
-		)
-		(pin "2"
-			(uuid "6f98b051-d8f3-4fdd-9089-b2220af77e86")
-		)
-		(instances
-			(project "Env-MicroDotClock"
-				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-			(project "EnvOpenPico"
-				(path "/7b892ee5-f34f-4bca-8f87-a56522432f7c"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 73.66 58.42 0)
+		(at 80.01 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10317,8 +10037,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7f1b633a-1642-4082-ad66-d40a2fc64167")
-		(property "Reference" "#PWR031"
-			(at 73.66 64.77 0)
+		(property "Reference" "#PWR0208"
+			(at 80.01 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10327,7 +10047,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 73.66 63.5 0)
+			(at 80.01 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10335,7 +10055,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 73.66 58.42 0)
+			(at 80.01 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10344,7 +10064,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 58.42 0)
+			(at 80.01 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10353,7 +10073,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 73.66 58.42 0)
+			(at 80.01 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10367,7 +10087,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR031")
+					(reference "#PWR0208")
 					(unit 1)
 				)
 			)
@@ -10382,7 +10102,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "83c620dd-48f6-4bef-be63-65fbd5208895")
-		(property "Reference" "TP2"
+		(property "Reference" "TP202"
 			(at 26.3652 83.2612 90)
 			(effects
 				(font
@@ -10442,7 +10162,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "TP2")
+					(reference "TP202")
 					(unit 1)
 				)
 			)
@@ -10463,7 +10183,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8451cd53-6b07-49e1-b3b4-93a96726cd3c")
-		(property "Reference" "C25"
+		(property "Reference" "C212"
 			(at 227.711 77.5716 0)
 			(effects
 				(font
@@ -10526,7 +10246,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C25")
+					(reference "C212")
 					(unit 1)
 				)
 			)
@@ -10540,15 +10260,15 @@
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
-		(at -13.97 33.02 180)
+		(at 46.355 33.02 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "9890a937-2d56-4425-85db-04a319b152c6")
-		(property "Reference" "D2"
-			(at -13.97 27.5082 0)
+		(property "Reference" "DI201"
+			(at 46.355 27.5082 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10556,7 +10276,7 @@
 			)
 		)
 		(property "Value" "1N5819W"
-			(at -13.97 29.8196 0)
+			(at 46.355 29.8196 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10564,7 +10284,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at -13.97 33.02 0)
+			(at 46.355 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10573,7 +10293,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at -13.97 33.02 0)
+			(at 46.355 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10582,7 +10302,7 @@
 			)
 		)
 		(property "Description" ""
-			(at -13.97 33.02 0)
+			(at 46.355 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10591,7 +10311,7 @@
 			)
 		)
 		(property "LCSC" " "
-			(at -13.97 33.02 0)
+			(at 46.355 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10608,7 +10328,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "D2")
+					(reference "DI201")
 					(unit 1)
 				)
 			)
@@ -10624,7 +10344,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9a5f4a78-6a8b-41a3-88af-8c8cefd1f0e8")
-		(property "Reference" "Y1"
+		(property "Reference" "Y201"
 			(at 74.93 246.38 90)
 			(effects
 				(font
@@ -10693,7 +10413,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "Y1")
+					(reference "Y201")
 					(unit 1)
 				)
 			)
@@ -10707,15 +10427,15 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 52.07 40.64 0)
+		(at 58.42 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "9bb829d2-8250-438f-b1e6-ebc654f5fab6")
-		(property "Reference" "C19"
-			(at 52.324 39.624 0)
+		(property "Reference" "C202"
+			(at 58.674 39.624 0)
 			(effects
 				(font
 					(size 0.25 0.25)
@@ -10724,7 +10444,7 @@
 			)
 		)
 		(property "Value" "0.1uF 0402"
-			(at 51.054 40.767 0)
+			(at 57.404 40.767 0)
 			(effects
 				(font
 					(size 0.25 0.25)
@@ -10733,7 +10453,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 52.07 40.64 0)
+			(at 58.42 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10742,7 +10462,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 52.07 40.64 0)
+			(at 58.42 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10751,7 +10471,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 52.07 40.64 0)
+			(at 58.42 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10768,7 +10488,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C19")
+					(reference "C202")
 					(unit 1)
 				)
 			)
@@ -10777,7 +10497,7 @@
 	(symbol
 		(lib_name "GND_1")
 		(lib_id "power:GND")
-		(at 48.26 43.18 0)
+		(at 54.61 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10785,8 +10505,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9e216ecf-3657-499b-90b1-a2ca84d58d90")
-		(property "Reference" "#PWR032"
-			(at 48.26 49.53 0)
+		(property "Reference" "#PWR0206"
+			(at 54.61 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10795,7 +10515,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 48.26 48.26 0)
+			(at 54.61 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10803,7 +10523,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 48.26 43.18 0)
+			(at 54.61 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10812,7 +10532,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 48.26 43.18 0)
+			(at 54.61 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10821,7 +10541,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 48.26 43.18 0)
+			(at 54.61 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10835,7 +10555,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR032")
+					(reference "#PWR0206")
 					(unit 1)
 				)
 			)
@@ -10843,15 +10563,15 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 92.71 35.56 0)
+		(at 99.06 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "a3cddca9-d697-43b9-a780-bbc8ca66933e")
-		(property "Reference" "C32"
-			(at 92.964 34.544 0)
+		(property "Reference" "C207"
+			(at 99.314 34.544 0)
 			(effects
 				(font
 					(size 0.25 0.25)
@@ -10860,7 +10580,7 @@
 			)
 		)
 		(property "Value" "10uF 0402"
-			(at 91.694 35.687 0)
+			(at 98.044 35.687 0)
 			(effects
 				(font
 					(size 0.25 0.25)
@@ -10869,7 +10589,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 92.71 35.56 0)
+			(at 99.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10878,7 +10598,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 92.71 35.56 0)
+			(at 99.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10887,7 +10607,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 92.71 35.56 0)
+			(at 99.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10904,7 +10624,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C32")
+					(reference "C207")
 					(unit 1)
 				)
 			)
@@ -10919,7 +10639,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a5258c38-8f0d-491c-ad36-521f4685c3c1")
-		(property "Reference" "#PWR062"
+		(property "Reference" "#PWR0211"
 			(at 81.28 140.97 0)
 			(effects
 				(font
@@ -10969,7 +10689,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR062")
+					(reference "#PWR0211")
 					(unit 1)
 				)
 			)
@@ -10996,7 +10716,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a94f68ec-ef65-4231-86d4-78ff9c55df6f")
-		(property "Reference" "#PWR073"
+		(property "Reference" "#PWR0219"
 			(at 186.69 204.47 0)
 			(effects
 				(font
@@ -11046,7 +10766,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR073")
+					(reference "#PWR0219")
 					(unit 1)
 				)
 			)
@@ -11067,7 +10787,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "aab4fea4-bec1-4db0-9834-308a57b3f012")
-		(property "Reference" "C22"
+		(property "Reference" "C209"
 			(at 173.101 64.8716 0)
 			(effects
 				(font
@@ -11130,7 +10850,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C22")
+					(reference "C209")
 					(unit 1)
 				)
 			)
@@ -11144,7 +10864,7 @@
 	)
 	(symbol
 		(lib_id "Regulator_Switching:TPS63001")
-		(at 73.66 43.18 0)
+		(at 80.01 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11152,8 +10872,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ac26ec22-a3a8-437b-82d4-740956a68799")
-		(property "Reference" "U2"
-			(at 73.66 25.4 0)
+		(property "Reference" "U201"
+			(at 80.01 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11161,7 +10881,7 @@
 			)
 		)
 		(property "Value" "TPS63001DRCR"
-			(at 73.66 27.94 0)
+			(at 80.01 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11169,7 +10889,7 @@
 			)
 		)
 		(property "Footprint" "Package_SON:Texas_DRC0010J_ThermalVias"
-			(at 95.25 57.15 0)
+			(at 101.6 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11178,7 +10898,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tps63000.pdf"
-			(at 66.04 29.21 0)
+			(at 72.39 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11187,7 +10907,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 73.66 43.18 0)
+			(at 80.01 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11231,7 +10951,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "U2")
+					(reference "U201")
 					(unit 1)
 				)
 			)
@@ -11246,7 +10966,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ad3aebdd-f274-44bb-9731-d9d79b669f39")
-		(property "Reference" "#PWR074"
+		(property "Reference" "#PWR0220"
 			(at 199.39 204.47 0)
 			(effects
 				(font
@@ -11296,7 +11016,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR074")
+					(reference "#PWR0220")
 					(unit 1)
 				)
 			)
@@ -11317,7 +11037,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "aec18135-0f22-4944-9b11-4e7f56d0c9b4")
-		(property "Reference" "TP3"
+		(property "Reference" "TP203"
 			(at 31.4452 87.0712 90)
 			(effects
 				(font
@@ -11377,85 +11097,13 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "TP3")
+					(reference "TP203")
 					(unit 1)
 				)
 			)
 			(project "EnvOpenPico"
 				(path "/7b892ee5-f34f-4bca-8f87-a56522432f7c"
 					(reference "TP3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 34.29 40.64 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "aef6d039-4b00-4979-8ef8-4a7217c5ff98")
-		(property "Reference" "#PWR055"
-			(at 40.64 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 37.5412 40.513 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 34.29 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 34.29 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 34.29 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7179a265-36d0-43ee-aa82-19147cf19b2a")
-		)
-		(instances
-			(project "Env-MicroDotClock"
-				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR055")
-					(unit 1)
-				)
-			)
-			(project "EnvOpenPico"
-				(path "/7b892ee5-f34f-4bca-8f87-a56522432f7c"
-					(reference "#PWR0108")
 					(unit 1)
 				)
 			)
@@ -11463,31 +11111,31 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at -15.24 40.64 270)
+		(at 41.91 40.64 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "c041a20b-5641-44a8-bcca-09557207855b")
-		(property "Reference" "R17"
-			(at -15.24 43.18 90)
+		(property "Reference" "R202"
+			(at 41.91 43.18 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "5.1K 0805"
-			(at -15.24 40.64 90)
+		(property "Value" "5.1K 0402"
+			(at 41.91 40.64 90)
 			(effects
 				(font
 					(size 0.508 0.508)
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at -15.24 40.64 0)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 41.91 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11496,7 +11144,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at -15.24 40.64 0)
+			(at 41.91 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11505,7 +11153,7 @@
 			)
 		)
 		(property "Description" ""
-			(at -15.24 40.64 0)
+			(at 41.91 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11514,7 +11162,7 @@
 			)
 		)
 		(property "LCSC" " "
-			(at -15.24 40.64 0)
+			(at 41.91 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11531,7 +11179,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "R17")
+					(reference "R202")
 					(unit 1)
 				)
 			)
@@ -11546,7 +11194,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c3945d03-7408-43bc-8c54-0d18e457ce85")
-		(property "Reference" "#PWR061"
+		(property "Reference" "#PWR0210"
 			(at 81.28 90.17 0)
 			(effects
 				(font
@@ -11596,7 +11244,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR061")
+					(reference "#PWR0210")
 					(unit 1)
 				)
 			)
@@ -11615,98 +11263,16 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small")
-		(at 31.75 40.64 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c61ef921-8272-4549-b657-4c272150ece3")
-		(property "Reference" "R15"
-			(at 31.75 38.1 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "5.1K 0402"
-			(at 31.75 40.64 90)
-			(effects
-				(font
-					(size 0.508 0.508)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 31.75 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 31.75 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" " "
-			(at 31.75 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5eec10c7-c416-4b8d-9547-dab8c58d58ee")
-		)
-		(pin "2"
-			(uuid "2a8e3243-6b66-4483-9bf6-9d4137f52435")
-		)
-		(instances
-			(project "Env-MicroDotClock"
-				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "R15")
-					(unit 1)
-				)
-			)
-			(project "EnvOpenPico"
-				(path "/7b892ee5-f34f-4bca-8f87-a56522432f7c"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
-		(at 88.9 35.56 0)
+		(at 95.25 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "c6540c4d-cd25-40b5-a28b-f9f14c2e999e")
-		(property "Reference" "C20"
-			(at 89.154 34.544 0)
+		(property "Reference" "C206"
+			(at 95.504 34.544 0)
 			(effects
 				(font
 					(size 0.25 0.25)
@@ -11715,7 +11281,7 @@
 			)
 		)
 		(property "Value" "10uF 0402"
-			(at 87.884 35.687 0)
+			(at 94.234 35.687 0)
 			(effects
 				(font
 					(size 0.25 0.25)
@@ -11724,7 +11290,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 88.9 35.56 0)
+			(at 95.25 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11733,7 +11299,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 88.9 35.56 0)
+			(at 95.25 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11742,7 +11308,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 88.9 35.56 0)
+			(at 95.25 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11759,7 +11325,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C20")
+					(reference "C206")
 					(unit 1)
 				)
 			)
@@ -11767,15 +11333,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at -12.7 38.1 90)
+		(at 44.45 38.1 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "cc77ca2b-a91f-4f02-bd5c-e3c95e20827f")
-		(property "Reference" "#PWR026"
-			(at -6.35 38.1 0)
+		(property "Reference" "#PWR0201"
+			(at 50.8 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11784,7 +11350,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at -9.4488 37.973 90)
+			(at 47.7012 37.973 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11793,7 +11359,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at -12.7 38.1 0)
+			(at 44.45 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11802,7 +11368,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at -12.7 38.1 0)
+			(at 44.45 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11811,7 +11377,7 @@
 			)
 		)
 		(property "Description" ""
-			(at -12.7 38.1 0)
+			(at 44.45 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11825,7 +11391,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR026")
+					(reference "#PWR0201")
 					(unit 1)
 				)
 			)
@@ -11833,7 +11399,7 @@
 	)
 	(symbol
 		(lib_id "Connector:USB_C_Receptacle_USB2.0_16P")
-		(at -33.02 48.26 0)
+		(at 24.13 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11841,8 +11407,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d0da77ee-5136-45f3-92a8-46004814d2d7")
-		(property "Reference" "J2"
-			(at -33.02 25.4 0)
+		(property "Reference" "J201"
+			(at 24.13 25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11850,7 +11416,7 @@
 			)
 		)
 		(property "Value" "GT-USB-7051A"
-			(at -33.02 27.94 0)
+			(at 24.13 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11858,7 +11424,7 @@
 			)
 		)
 		(property "Footprint" "Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7051x"
-			(at -29.21 48.26 0)
+			(at 27.94 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11867,7 +11433,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
-			(at -29.21 48.26 0)
+			(at 27.94 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11876,7 +11442,7 @@
 			)
 		)
 		(property "Description" ""
-			(at -33.02 48.26 0)
+			(at 24.13 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11938,7 +11504,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "J2")
+					(reference "J201")
 					(unit 1)
 				)
 			)
@@ -11953,7 +11519,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d1f512cd-8d9c-4c46-966c-11e71fcbe160")
-		(property "Reference" "R23"
+		(property "Reference" "R208"
 			(at 83.82 247.4722 90)
 			(effects
 				(font
@@ -12014,7 +11580,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "R23")
+					(reference "R208")
 					(unit 1)
 				)
 			)
@@ -12035,7 +11601,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d3a2f142-2267-48ed-a0e6-14c02074fadd")
-		(property "Reference" "U4"
+		(property "Reference" "U202"
 			(at 171.45 95.25 0)
 			(effects
 				(font
@@ -12261,7 +11827,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "U4")
+					(reference "U202")
 					(unit 1)
 				)
 			)
@@ -12276,7 +11842,7 @@
 	(symbol
 		(lib_name "+3V3_1")
 		(lib_id "power:+3V3")
-		(at 92.71 33.02 0)
+		(at 99.06 33.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12284,8 +11850,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc3870ce-f65b-472e-bb72-425e8c9565eb")
-		(property "Reference" "#PWR034"
-			(at 92.71 36.83 0)
+		(property "Reference" "#PWR0213"
+			(at 99.06 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12294,7 +11860,7 @@
 			)
 		)
 		(property "Value" "+3V3"
-			(at 92.71 27.94 0)
+			(at 99.06 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12302,7 +11868,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 92.71 33.02 0)
+			(at 99.06 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12311,7 +11877,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 33.02 0)
+			(at 99.06 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12320,7 +11886,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 92.71 33.02 0)
+			(at 99.06 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12334,7 +11900,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR034")
+					(reference "#PWR0213")
 					(unit 1)
 				)
 			)
@@ -12349,7 +11915,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dc9fb714-5f93-4891-b683-1455b89f84c6")
-		(property "Reference" "#PWR077"
+		(property "Reference" "#PWR0223"
 			(at 281.94 80.01 0)
 			(effects
 				(font
@@ -12399,7 +11965,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR077")
+					(reference "#PWR0223")
 					(unit 1)
 				)
 			)
@@ -12420,7 +11986,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e1f4f0dc-7e0b-42fa-99df-54378f0cc020")
-		(property "Reference" "R18"
+		(property "Reference" "R206"
 			(at 55.88 106.5022 90)
 			(effects
 				(font
@@ -12481,7 +12047,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "R18")
+					(reference "R206")
 					(unit 1)
 				)
 			)
@@ -12508,7 +12074,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e221825a-7c94-40bb-afda-6d1eb7ab7064")
-		(property "Reference" "C28"
+		(property "Reference" "C215"
 			(at 254.381 64.8716 0)
 			(effects
 				(font
@@ -12572,7 +12138,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C28")
+					(reference "C215")
 					(unit 1)
 				)
 			)
@@ -12593,7 +12159,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e4fc9e94-1cab-44d7-9565-6caec6f21481")
-		(property "Reference" "C23"
+		(property "Reference" "C210"
 			(at 175.641 83.9216 0)
 			(effects
 				(font
@@ -12656,7 +12222,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C23")
+					(reference "C210")
 					(unit 1)
 				)
 			)
@@ -12677,7 +12243,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e5716117-b737-46c4-96ca-b2aca18f02d7")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR0207"
 			(at 49.53 246.38 0)
 			(effects
 				(font
@@ -12727,85 +12293,13 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR058")
+					(reference "#PWR0207")
 					(unit 1)
 				)
 			)
 			(project "EnvOpenPico"
 				(path "/7b892ee5-f34f-4bca-8f87-a56522432f7c"
 					(reference "#PWR0107")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 34.29 38.1 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e824cd4b-f19c-47f6-a0e1-1c75c565fba5")
-		(property "Reference" "#PWR056"
-			(at 40.64 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 37.5412 37.973 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 34.29 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 34.29 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 34.29 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fb490879-d1d4-4676-9744-c483508a341c")
-		)
-		(instances
-			(project "Env-MicroDotClock"
-				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR056")
-					(unit 1)
-				)
-			)
-			(project "EnvOpenPico"
-				(path "/7b892ee5-f34f-4bca-8f87-a56522432f7c"
-					(reference "#PWR0109")
 					(unit 1)
 				)
 			)
@@ -12820,7 +12314,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ea8029bd-73f6-4c64-9525-abbcf124e0d1")
-		(property "Reference" "#PWR072"
+		(property "Reference" "#PWR0218"
 			(at 179.07 63.5 0)
 			(effects
 				(font
@@ -12870,7 +12364,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR072")
+					(reference "#PWR0218")
 					(unit 1)
 				)
 			)
@@ -12891,7 +12385,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f167e5fa-d3bf-4e93-9636-5cec24676501")
-		(property "Reference" "C27"
+		(property "Reference" "C214"
 			(at 242.951 64.8716 0)
 			(effects
 				(font
@@ -12955,7 +12449,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C27")
+					(reference "C214")
 					(unit 1)
 				)
 			)
@@ -12976,7 +12470,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f460a08e-8621-4f5e-9e91-1f6efc57da96")
-		(property "Reference" "TP1"
+		(property "Reference" "TP201"
 			(at 26.3652 80.7212 90)
 			(effects
 				(font
@@ -13036,7 +12530,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "TP1")
+					(reference "TP201")
 					(unit 1)
 				)
 			)
@@ -13057,7 +12551,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f6ad3550-f939-4be2-a247-092dddebc630")
-		(property "Reference" "C21"
+		(property "Reference" "C208"
 			(at 161.671 64.8716 0)
 			(effects
 				(font
@@ -13120,7 +12614,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "C21")
+					(reference "C208")
 					(unit 1)
 				)
 			)
@@ -13142,7 +12636,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fb6ea099-33c1-4a4b-9230-66ad286b8506")
-		(property "Reference" "J3"
+		(property "Reference" "J203"
 			(at 33.02 107.95 0)
 			(effects
 				(font
@@ -13158,7 +12652,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_B3U-1000P-B"
 			(at 34.29 111.76 0)
 			(effects
 				(font
@@ -13203,7 +12697,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "J3")
+					(reference "J203")
 					(unit 1)
 				)
 			)
@@ -13230,7 +12724,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fd107b82-9922-47d9-aef9-7307f1627e49")
-		(property "Reference" "#PWR067"
+		(property "Reference" "#PWR0215"
 			(at 138.43 171.45 0)
 			(effects
 				(font
@@ -13280,7 +12774,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR067")
+					(reference "#PWR0215")
 					(unit 1)
 				)
 			)
@@ -13301,7 +12795,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ff658fb3-ac9d-4905-b26c-61610c873c7a")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR0203"
 			(at 27.94 119.38 0)
 			(effects
 				(font
@@ -13351,7 +12845,7 @@
 		(instances
 			(project "Env-MicroDotClock"
 				(path "/3dbeb8d8-208e-4f6d-8d30-b14372f68a4f/6b5c3b7c-d164-4e63-b354-b3df0a72db3d"
-					(reference "#PWR07")
+					(reference "#PWR0203")
 					(unit 1)
 				)
 			)

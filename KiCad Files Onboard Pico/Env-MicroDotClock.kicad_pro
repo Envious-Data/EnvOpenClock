@@ -49,7 +49,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.25
+          "min_clearance": 0.15
         }
       },
       "diff_pair_dimensions": [
@@ -61,7 +61,7 @@
         {
           "gap": 0.25,
           "via_gap": 0.25,
-          "width": 0.8
+          "width": 0.25
         }
       ],
       "drc_exclusions": [],
@@ -481,7 +481,7 @@
         "clearance": 0.15,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.8,
+        "diff_pair_width": 0.25,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
@@ -499,12 +499,7 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": [
-      {
-        "netclass": "Default",
-        "pattern": "3V3"
-      }
-    ]
+    "netclass_patterns": []
   },
   "pcbnew": {
     "last_paths": {
@@ -675,6 +670,22 @@
     [
       "6b5c3b7c-d164-4e63-b354-b3df0a72db3d",
       "Onboard Pico"
+    ],
+    [
+      "84c3387f-4e30-4231-ae7a-2b79437559d0",
+      "IS31FL3731 - 01"
+    ],
+    [
+      "d4ada606-9030-45c9-9597-817721426107",
+      "IS31FL3731 - 02"
+    ],
+    [
+      "5c900ad2-2c62-406f-9e41-092e86036a33",
+      "IS31FL3731 - 03"
+    ],
+    [
+      "0e3cbebf-bde9-4ed2-a1de-0972d669c136",
+      "IS31FL3731 - 04"
     ]
   ],
   "text_variables": {}
