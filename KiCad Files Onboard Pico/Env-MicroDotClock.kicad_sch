@@ -6638,7 +6638,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sheetfile" "untitled.kicad_sch"
+		(property "Sheetfile" "MCU.kicad_sch"
 			(at 15.24 267.2846 0)
 			(show_name yes)
 			(effects
