@@ -4877,7 +4877,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/e4fc9e94-1cab-44d7-9565-6caec6f21481")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -12740,7 +12740,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/02415af9-2dfe-479f-afa6-f822913d5ce0")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 0.38)
@@ -16597,7 +16597,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/1c28d701-7f8e-4747-b241-c4f965adc52f")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 0.38)
@@ -17502,7 +17502,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/159e649a-0fb1-478a-992a-dabdcd74e013")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -21002,7 +21002,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/3377234e-711a-4c62-a0a9-e35f132d0925")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 0.38)
@@ -21229,7 +21229,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/8451cd53-6b07-49e1-b3b4-93a96726cd3c")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -29766,7 +29766,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/e1f4f0dc-7e0b-42fa-99df-54378f0cc020")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 -0.38)
@@ -37329,7 +37329,7 @@
 		)
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/d3a2f142-2267-48ed-a0e6-14c02074fadd")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -3.61 3.61)
@@ -40869,7 +40869,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/29d1463d-0242-4300-a19d-3d3b71a7aa70")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -43973,7 +43973,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/a3cddca9-d697-43b9-a780-bbc8ca66933e")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -47792,7 +47792,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/5f7a7d51-850b-4093-95c5-b4109fbdab94")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -48245,7 +48245,7 @@
 		(property ki_fp_filters "Pin* Test*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/f460a08e-8621-4f5e-9e91-1f6efc57da96")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_circle
 			(center 0 0)
@@ -48600,7 +48600,7 @@
 		(property ki_fp_filters "Pin* Test*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/83c620dd-48f6-4bef-be63-65fbd5208895")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr exclude_from_pos_files)
 		(fp_circle
 			(center 0 0)
@@ -48943,7 +48943,7 @@
 		(property ki_fp_filters "Crystal*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/9a5f4a78-6a8b-41a3-88af-8c8cefd1f0e8")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -2 1.65)
@@ -51288,7 +51288,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/33e3863e-3c50-4237-8b86-824a95ef90a0")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -51502,7 +51502,7 @@
 		(property ki_fp_filters "Texas*DRC0010J*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/ac26ec22-a3a8-437b-82d4-740956a68799")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -1.61 1.38)
@@ -53819,7 +53819,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/65978b58-2a71-44ab-8fc1-ac6daec208a3")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -55603,7 +55603,7 @@
 		)
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/fb6ea099-33c1-4a4b-9230-66ad286b8506")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 1.65 -1.4)
@@ -58854,7 +58854,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/aab4fea4-bec1-4db0-9834-308a57b3f012")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -63698,7 +63698,7 @@
 		(property ki_fp_filters "Choke_* *Coil* Inductor_* L_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/00943f2c-c694-458d-b469-bef4131c53b7")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 1.76 -1.76)
@@ -65589,7 +65589,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/f167e5fa-d3bf-4e93-9636-5cec24676501")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -68968,7 +68968,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/27aaa413-481c-428e-94d0-c96141e11383")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -73166,7 +73166,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/c6540c4d-cd25-40b5-a28b-f9f14c2e999e")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -74058,7 +74058,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/9bb829d2-8250-438f-b1e6-ebc654f5fab6")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -76335,7 +76335,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/12e3ff68-5e89-4c4d-8ab0-9c486b8acb15")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 -0.38)
@@ -76788,7 +76788,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/f6ad3550-f939-4be2-a247-092dddebc630")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -79941,7 +79941,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/d1f512cd-8d9c-4c46-966c-11e71fcbe160")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.153641 0.38)
@@ -81725,7 +81725,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/12c1ea77-9d54-4f8d-a824-d755dbfd3ca2")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -82391,7 +82391,7 @@
 		(property ki_fp_filters "WSON*1EP*6x5mm*P1.27mm*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/37ec1433-9183-4827-bb84-1a25fa9800d3")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -1.5 1.185)
@@ -82752,7 +82752,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/665f8f29-474b-4b1d-a889-4190775db0fc")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -84335,7 +84335,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/e221825a-7c94-40bb-afda-6d1eb7ab7064")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 0.36)
@@ -86332,7 +86332,7 @@
 		)
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/4152ede7-7b85-4c0f-9592-a377992ed1c8")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 1.65 -1.4)
@@ -87283,7 +87283,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/71932082-c346-4bd5-a90f-1a9e4c3c72be")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.107836 -0.36)
@@ -88327,7 +88327,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "5.1K 0402"
+		(property "Value" "5K1 0402"
 			(at 0 -1.17 90)
 			(layer "B.Fab")
 			(uuid "80c0168a-42c2-42f9-a6b7-a85fb81b601e")
@@ -88398,7 +88398,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/0b2b20a3-e6f5-4b86-bf15-c905e72ca2bc")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 0.153641 0.38)
@@ -88620,7 +88620,7 @@
 		(property ki_fp_filters "USB*C*Receptacle*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/d0da77ee-5136-45f3-92a8-46004814d2d7")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 4.27 1.12)
@@ -89515,7 +89515,7 @@
 		(property ki_fp_filters "TO-???* *_Diode_* *SingleDiode* D_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/9890a937-2d56-4425-85db-04a319b152c6")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 1.65 -1)
@@ -89760,7 +89760,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "5.1K 0402"
+		(property "Value" "5K1 0402"
 			(at 0 -1.17 90)
 			(layer "B.Fab")
 			(uuid "74477e70-b131-4d5a-8271-a12d0b4db0c9")
@@ -89831,7 +89831,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/6b5c3b7c-d164-4e63-b354-b3df0a72db3d/c041a20b-5641-44a8-bcca-09557207855b")
 		(sheetname "Onboard Pico")
-		(sheetfile "untitled.kicad_sch")
+		(sheetfile "MCU.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start 0.153641 -0.38)
@@ -121786,17 +121786,15 @@
 		)
 		(polygon
 			(pts
-				(xy 71.775 55.9) (xy 71.775 57.775) (xy 70.476385 59.073615) (xy 70.448839 59.073615) (xy 70.448839 60.148839)
-				(xy 70.448839 61.178615) (xy 70.150224 61.18) (xy 70.148839 60.148615) (xy 70.148839 58.376161)
-				(xy 70.975 57.55) (xy 70.975 55.9)
+				(xy 71.775 55.9) (xy 71.775 57.6) (xy 70.448839 58.873615) (xy 70.448839 60.148839) (xy 70.448839 61.178615)
+				(xy 70.150224 61.18) (xy 70.148839 60.148615) (xy 70.148839 58.376161) (xy 70.975 57.55) (xy 70.975 55.9)
 			)
 		)
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
-				(xy 71.753326 55.921674) (xy 71.775 55.974) (xy 71.775 57.624141) (xy 71.753326 57.676467) (xy 71.753237 57.676556)
-				(xy 70.51192 58.913652) (xy 70.505824 58.920085) (xy 70.505795 58.920118) (xy 70.50579 58.920124)
-				(xy 70.478035 58.964253) (xy 70.478032 58.964258) (xy 70.456343 59.016575) (xy 70.44449 59.076079)
+				(xy 71.753326 55.921674) (xy 71.775 55.974) (xy 71.775 57.568467) (xy 71.753326 57.620793) (xy 71.752258 57.62184)
+				(xy 70.448839 58.873615) (xy 70.448839 59.046954) (xy 70.447413 59.06141) (xy 70.44449 59.076079)
 				(xy 70.443911 61.174635) (xy 70.442248 61.178645) (xy 70.150224 61.18) (xy 70.148839 60.148615)
 				(xy 70.148839 59.985386) (xy 70.150261 59.97095) (xy 70.1505 59.969748) (xy 70.1505 58.405152) (xy 70.172174 58.352826)
 				(xy 70.975 57.55) (xy 70.975 55.974) (xy 70.996674 55.921674) (xy 71.049 55.9) (xy 71.701 55.9)

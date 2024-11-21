@@ -8104,7 +8104,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1K 0402"
+		(property "Value" "5K1 0402"
 			(at 41.91 38.1 90)
 			(effects
 				(font
@@ -11126,7 +11126,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1K 0402"
+		(property "Value" "5K1 0402"
 			(at 41.91 40.64 90)
 			(effects
 				(font
