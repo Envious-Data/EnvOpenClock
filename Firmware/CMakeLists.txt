@@ -19,5 +19,9 @@ add_executable(clock
 # pull in common dependencies
 target_link_libraries(clock pico_stdlib pico_multicore hardware_i2c hardware_pwm hardware_pio hardware_clocks)
 
+#enale usb seral
+pico_enable_stdio_usb(clock 1)
+pico_enable_stdio_uart(clock 0)
+
 # create map/bin/hex file etc.
 pico_add_extra_outputs(clock)
