@@ -485,3 +485,58 @@ void display_string(char *string) {
 
     update_display();
 }
+
+void animate_slide_up(int display, char current_char, char next_char) {
+    if (display < 0 || display > 7) return;
+
+    uint8_t current_buffer[8];
+    uint8_t next_buffer[8];
+    
+    // Get the character bitmaps
+    for (int i = 0; i < 8; i++) {
+        current_buffer[i] = (display % 2 == 0) ? characters[((int)current_char) - 32][i] : alternate_characters[((int)current_char) - 32][i];
+        next_buffer[i] = (display % 2 == 0) ? characters[((int)next_char) - 32][i] : alternate_characters[((int)next_char) - 32][i];
+    }
+
+    if (display % 2 == 0) {
+        // Even displays: vertical slide animation (original)
+        uint8_t offset_current[16]; // Double the size for offset
+        uint8_t offset_next[16];    // Double the size for offset
+        
+        // Copy to offset buffers, with next buffer on top
+        for (int i = 0; i < 8; i++) {
+            offset_current[i] = current_buffer[i];
+            offset_current[i + 8] = 0; // Clear the top half
+            offset_next[i] = 0; // Clear the bottom half
+            offset_next[i + 8] = next_buffer[i];
+        }
+
+        // Animation loop (gradually shift)
+        for (int shift = 0; shift < 8; shift++) {
+            // Copy the animation into the display buffer
+            for (int row = 0; row < 8; row++) {
+                displays[display][row] = offset_current[row + shift] | offset_next[row + shift];
+            }
+
+            update_display();
+            sleep_ms(50); // Adjust animation speed
+        }
+    } else {
+        // Odd displays: horizontal slide animation
+        // Animation loop (gradually shift horizontally)
+        for (int shift = 0; shift < 8; shift++) {
+            // Copy the animation into the display buffer
+            for (int row = 0; row < 8; row++) {
+                // Slide current char out to the left, next char in from the right
+                displays[display][row] = (current_buffer[row] >> shift) | (next_buffer[row] << (8 - shift));
+            }
+
+            update_display();
+            sleep_ms(50); // Adjust animation speed
+        }
+    }
+
+    // Final update with the next character
+    set_char(display, next_char, true);
+}
+

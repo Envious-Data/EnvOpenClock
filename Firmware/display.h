@@ -21,6 +21,9 @@ extern uint8_t brightness_level;
 extern uint8_t addresses[8];
 extern uint8_t displays[8][8];
 
+// Add a function prototype for the vertical wipe animation
+void animate_slide_up(int display, char current_char, char next_char);
+
 void convertLeftToRight(const uint8_t *left_matrix, uint8_t *right_matrix);
 void pre_generate_alternate_characters();
 void set_option(int display, uint8_t address, uint8_t value);
@@ -33,3 +36,4 @@ void clear(int display, bool update);
 void set_char(int display, char letter, bool update);
 void scroll_display_string(char *string);
 void display_string(char *string);
+
