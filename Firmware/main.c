@@ -68,104 +68,106 @@ bool timer_callback(struct repeating_timer* t) {
 // ... (Your existing main.c code) ...
 
 bool update_clock() {
-  if (clock_set) {
-    char* clock_string_buffer = malloc(9);
-    if (clock_string_buffer == NULL) {
-      return false;
+    if (clock_set) {
+        char* clock_string_buffer = malloc(9);
+        if (clock_string_buffer == NULL) {
+            return false;
+        }
+
+        clock_read_time();
+
+        clock_buffer[0] &= 0x7F;  // sec
+        clock_buffer[1] &= 0x7F;  // min
+        clock_buffer[2] &= 0x3F;  // hour
+
+        sprintf(clock_string_buffer, "%02x:%02x:%02x", clock_buffer[2],
+                clock_buffer[1], clock_buffer[0]);
+
+        // Extract individual digits
+        char hour_tens = clock_string_buffer[0];
+        char hour_ones = clock_string_buffer[1];
+        char minute_tens = clock_string_buffer[3];
+        char minute_ones = clock_string_buffer[4];
+        char second_tens = clock_string_buffer[6];
+        char second_ones = clock_string_buffer[7];
+
+        // Animate digit changes with slide_up
+        if (prev_hour_tens == ' ') {
+            set_char(0, hour_tens, false);
+        } else if (hour_tens != prev_hour_tens) {
+            animate_slide_up(0, prev_hour_tens, hour_tens);
+        }
+
+        if (prev_hour_ones == ' ') {
+            set_char(1, hour_ones, false);
+        } else if (hour_ones != prev_hour_ones) {
+            animate_slide_up(1, prev_hour_ones, hour_ones);
+        }
+
+        if (prev_minute_tens == ' ') {
+            set_char(3, minute_tens, false);
+        } else if (minute_tens != prev_minute_tens) {
+            animate_slide_up(3, prev_minute_tens, minute_tens);
+        }
+
+        if (prev_minute_ones == ' ') {
+            set_char(4, minute_ones, false);
+        } else if (minute_ones != prev_minute_ones) {
+            animate_slide_up(4, prev_minute_ones, minute_ones);
+        }
+
+        if (prev_second_tens == ' ') {
+            set_char(6, second_tens, false);
+        } else if (second_tens != prev_second_tens) {
+            animate_slide_up(6, prev_second_tens, second_tens);
+        }
+
+        if (prev_second_ones == ' ') {
+            set_char(7, second_ones, false);
+        } else if (second_ones != prev_second_ones) {
+            animate_slide_up(7, prev_second_ones, second_ones);
+        }
+
+        // Update previous digit values
+        prev_hour_tens = hour_tens;
+        prev_hour_ones = hour_ones;
+        prev_minute_tens = minute_tens;
+        prev_minute_ones = minute_ones;
+        prev_second_tens = second_tens;
+        prev_second_ones = second_ones;
+
+        free(clock_string_buffer);
+        set_char(2, ':', false);
+        set_char(5, ':', false);
+        return true;
     }
-
-    clock_read_time();
-
-    clock_buffer[0] &= 0x7F;  // sec
-    clock_buffer[1] &= 0x7F;  // min
-    clock_buffer[2] &= 0x3F;  // hour
-
-    sprintf(clock_string_buffer, "%02x:%02x:%02x", clock_buffer[2],
-            clock_buffer[1], clock_buffer[0]);
-
-    // Extract individual digits
-    char hour_tens = clock_string_buffer[0];
-    char hour_ones = clock_string_buffer[1];
-    char minute_tens = clock_string_buffer[3];
-    char minute_ones = clock_string_buffer[4];
-    char second_tens = clock_string_buffer[6];
-    char second_ones = clock_string_buffer[7];
-
-    // Animate digit changes with slide_up
-    if (prev_hour_tens == ' ') {
-      set_char(0, hour_tens, false);
-    } else if (hour_tens != prev_hour_tens) {
-      animate_slide_up(0, prev_hour_tens, hour_tens);
-    }
-
-    if (prev_hour_ones == ' ') {
-      set_char(1, hour_ones, false);
-    } else if (hour_ones != prev_hour_ones) {
-      animate_slide_up(1, prev_hour_ones, hour_ones);
-    }
-
-    if (prev_minute_tens == ' ') {
-      set_char(3, minute_tens, false);
-    } else if (minute_tens != prev_minute_tens) {
-      animate_slide_up(3, prev_minute_tens, minute_tens);
-    }
-
-    if (prev_minute_ones == ' ') {
-      set_char(4, minute_ones, false);
-    } else if (minute_ones != prev_minute_ones) {
-      animate_slide_up(4, prev_minute_ones, minute_ones);
-    }
-
-    if (prev_second_tens == ' ') {
-      set_char(6, second_tens, false);
-    } else if (second_tens != prev_second_tens) {
-      animate_slide_up(6, prev_second_tens, second_tens);
-    }
-
-    if (prev_second_ones == ' ') {
-      set_char(7, second_ones, false);
-    } else if (second_ones != prev_second_ones) {
-      animate_slide_up(7, prev_second_ones, second_ones);
-    }
-
-    // Update previous digit values
-    prev_hour_tens = hour_tens;
-    prev_hour_ones = hour_ones;
-    prev_minute_tens = minute_tens;
-    prev_minute_ones = minute_ones;
-    prev_second_tens = second_tens;
-    prev_second_ones = second_ones;
-
-    free(clock_string_buffer);
-    return true;
-  }
-  return false;
+    return false;
 }
 
 // ... (Your animate_vertical_wipe function from display.c) ...
 
 bool update_date() {
-  if (clock_set) {
-    char* date_string_buffer = malloc(100);
-    if (date_string_buffer == NULL) {
-      return false;
+    if (clock_set) {
+        char* date_string_buffer = malloc(100);
+        if (date_string_buffer == NULL) {
+            return false;
+        }
+
+        clock_read_time();
+
+        clock_buffer[4] &= 0x7F;  // day
+        clock_buffer[5] &= 0x7F;  // month
+        clock_buffer[6] &= 0x3F;  // year
+
+        sprintf(date_string_buffer, "%02x/%02x/%02x", clock_buffer[4],
+                clock_buffer[5], clock_buffer[6]);
+        display_string(date_string_buffer);
+        free(date_string_buffer);
+
+        set_char(2, '/', false);
+        set_char(5, '/', false);
     }
-
-    clock_read_time();
-
-    clock_buffer[4] &= 0x7F;  // day
-    clock_buffer[5] &= 0x7F;  // month
-    clock_buffer[6] &= 0x3F;  // year
-
-    sprintf(date_string_buffer, "%02x/%02x/%02x", clock_buffer[4],
-            clock_buffer[5], clock_buffer[6]);
-    display_string(date_string_buffer);
-    free(date_string_buffer);
-
-    set_char(2, '/', false);
-    set_char(5, '/', false);
-  }
-  return false;
+    return false;
 }
 
 int calculate_frequency(uint frequency) {
@@ -413,10 +415,14 @@ int main() {
   add_repeating_timer_ms(-60000, timer_callback, NULL, &timer);
 
   bool show = true;
-  if (clock_set) {
-    update_clock();  // Force an initial update
-    sleep_ms(100);   // Small delay to ensure display update completes
-  }
+    if (clock_set) {
+        // Display "00:00:00" initially
+        display_string("00:00:00");
+        sleep_ms(1000); // Delay to show "00:00:00"
+
+        update_clock(); // Force an initial update with the actual time
+        sleep_ms(500);  // Delay to ensure display update completes
+    }
   while (true) {
     if (gpio_irq_flags.set_time) {
       set_date_and_time();
@@ -446,15 +452,15 @@ int main() {
       sleep_ms(500);
     }
 
-    if (clock_set) {
-      if (show)
-        update_clock();
-      else
-        update_date();
+        if (clock_set) {
+            if (show)
+                update_clock();
+            else
+                update_date();
+        }
     }
-  }
 
-  return 0;
+    return 0;
 }
 
 void reset_clock_static_vars() {
