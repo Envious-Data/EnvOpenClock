@@ -519,7 +519,7 @@ void animate_slide_up(int display, char current_char, char next_char) {
             }
 
             update_display();
-            sleep_ms(50); // Adjust animation speed
+            sleep_us(16600); // Adjust animation speed
         }
     } else {
         // Odd displays: horizontal slide animation
@@ -532,7 +532,7 @@ void animate_slide_up(int display, char current_char, char next_char) {
             }
 
             update_display();
-            sleep_ms(50); // Adjust animation speed
+            sleep_us(16600); // Adjust animation speed
         }
     }
 

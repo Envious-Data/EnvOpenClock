@@ -13,6 +13,7 @@
 #include "pico/multicore.h"
 #include "pico/stdlib.h"
 #include "rtc.h"
+#include "hardware/watchdog.h"
 
 const int song[] = {
     NOTE_E5, 4,  NOTE_B4, 8,  NOTE_C5, 8,  NOTE_D5, 4, NOTE_C5,  8,
@@ -46,6 +47,17 @@ static char prev_second_ones = ' ';
 // Variables for display update timing
 static uint32_t last_display_update = 0;
 static const uint32_t display_update_interval_ms = 500; // Update every 500ms
+
+// Global flag to indicate if I2C is active
+volatile bool i2c_active = false;
+
+// Watchdog timeout in milliseconds
+const uint32_t I2C_WATCHDOG_TIMEOUT_MS = 500;
+
+// Function to set I2C active flag
+void set_i2c_active(bool active) {
+    i2c_active = active;
+}
 
 struct {
   uint8_t set_time : 1;
@@ -210,9 +222,27 @@ void core1_entry() {
                 } else {
                     printf("Invalid time format.\n");
                 }
+            } else if (strncmp(serial_buffer, "reset", 5) == 0) {
+                // Reset command received
+                clear_all(true); // Clear the display
+                printf("Resetting Pico...\n");
+                sleep_ms(100); // Small delay to allow serial output to complete.
+                watchdog_enable(1, 1); // Enable watchdog with a short timeout.
+                while(1); // Wait for the watchdog to trigger the reset.
             } else {
                 printf("Unknown command: %s", serial_buffer);
             }
+        }
+
+        // I2C watchdog logic
+        if (i2c_active) {
+            // If I2C is active, enable watchdog with I2C timeout
+            watchdog_enable(I2C_WATCHDOG_TIMEOUT_MS, 1);
+            // reset the watchdog timer.
+            watchdog_update();
+        } else {
+            // If I2C is not active, disable watchdog.
+            watchdog_enable(1, 0); // Disable watchdog.
         }
     }
 }
@@ -420,7 +450,7 @@ int main() {
 
     char startup_message[] = "PICO8LED";
     int message_length = strlen(startup_message);
-	
+
     for (int display = 0; display < 8; display++) {
         if (display < message_length) {
             char current_char = ' ';
@@ -431,7 +461,7 @@ int main() {
         }
     }
 
-    sleep_ms(2000); // Display the startup message for a while
+    sleep_ms(1000); // Display the startup message for a while
     for (int display = 0; display < 8; display++) {
         if (display < message_length) {
             char current_char = startup_message[display];
@@ -453,25 +483,26 @@ int main() {
                 animate_slide_up(i, ' ', time_string[i]);
             }
         }
-        sleep_ms(1000);
+        sleep_ms(100);
 
         // Animate to current time
-        clock_read_time();
         char current_time_string[9];
-        sprintf(current_time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F,
-                clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
         for (int i = 0; i < 8; i++) {
             if (i != 2 && i != 5) {
+                // Read current time inside the animation loop
+                clock_read_time();
+                sprintf(current_time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F,
+                        clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
                 animate_slide_up(i, time_string[i], current_time_string[i]);
             }
         }
-        sleep_ms(500);
+        sleep_ms(100);
+
         // Initialize previous time
         update_clock();
-        sleep_ms(500);
+        sleep_ms(100);
     }
-	
-	
+
     // Launch core 1 for serial input
     multicore_launch_core1(core1_entry);
 
@@ -498,21 +529,24 @@ int main() {
         if (clock_buffer[6] == 0x00 && clock_buffer[5] == 0x01 && clock_buffer[4] == 0x01) {
             clock_set = false;
             display_string("SET TIME");
-            sleep_ms(500);
-            clear_all(true);
+			clear_all(true);
             sleep_ms(500);
         }
 
         if (clock_set) {
             if (should_update_display()) {
                 if (show) {
+                    set_i2c_active(true); // I2C start
                     if (!update_clock()) {
-                       // i2c_bus_recovery(I2C_DISPLAY_LINE); //Removed
+                        // i2c_bus_recovery(I2C_DISPLAY_LINE); //Removed
                     }
+                    set_i2c_active(false); // I2C end
                 } else {
+                    set_i2c_active(true); // I2C start
                     if (!update_date()) {
-                       // i2c_bus_recovery(I2C_DISPLAY_LINE); //Removed
+                        // i2c_bus_recovery(I2C_DISPLAY_LINE); //Removed
                     }
+                    set_i2c_active(false); // I2C end
                 }
             }
         }
