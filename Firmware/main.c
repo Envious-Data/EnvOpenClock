@@ -59,6 +59,19 @@ void set_i2c_active(bool active) {
     i2c_active = active;
 }
 
+typedef enum {
+    ANIM_SLIDE_UP,
+    ANIM_PIXELATED,
+    ANIM_EXPAND_CONTRACT,
+    ANIM_ROTATION,
+    ANIM_MORPH,
+    ANIM_COUNT
+} AnimationType;
+
+AnimationType selected_animation = ANIM_PIXELATED; // Default animation
+
+
+
 struct {
   uint8_t set_time : 1;
   uint8_t increment_counter : 1;
@@ -93,87 +106,6 @@ bool should_update_display() {
     return false;
 }
 
-// ... (Your existing main.c code) ...
-
-bool update_clock() {
-    if (clock_set) {
-        char *clock_string_buffer = malloc(9);
-        if (clock_string_buffer == NULL) {
-            return false;
-        }
-
-        clock_read_time();
-
-        clock_buffer[0] &= 0x7F;  // sec
-        clock_buffer[1] &= 0x7F;  // min
-        clock_buffer[2] &= 0x3F;  // hour
-
-        sprintf(clock_string_buffer, "%02x:%02x:%02x", clock_buffer[2],
-                clock_buffer[1], clock_buffer[0]);
-
-        // Extract individual digits
-        char hour_tens = clock_string_buffer[0];
-        char hour_ones = clock_string_buffer[1];
-        char minute_tens = clock_string_buffer[3];
-        char minute_ones = clock_string_buffer[4];
-        char second_tens = clock_string_buffer[6];
-        char second_ones = clock_string_buffer[7];
-
-        // Animate digit changes with slide_up
-        if (prev_hour_tens == ' ') {
-            set_char(0, hour_tens, false);
-        } else if (hour_tens != prev_hour_tens) {
-            animate_slide_up(0, prev_hour_tens, hour_tens);
-        }
-
-        if (prev_hour_ones == ' ') {
-            set_char(1, hour_ones, false);
-        } else if (hour_ones != prev_hour_ones) {
-            animate_slide_up(1, prev_hour_ones, hour_ones);
-        }
-
-        if (prev_minute_tens == ' ') {
-            set_char(3, minute_tens, false);
-        } else if (minute_tens != prev_minute_tens) {
-            animate_slide_up(3, prev_minute_tens, minute_tens);
-        }
-
-        if (prev_minute_ones == ' ') {
-            set_char(4, minute_ones, false);
-        } else if (minute_ones != prev_minute_ones) {
-            animate_slide_up(4, prev_minute_ones, minute_ones);
-        }
-
-        if (prev_second_tens == ' ') {
-            set_char(6, second_tens, false);
-        } else if (second_tens != prev_second_tens) {
-            animate_slide_up(6, prev_second_tens, second_tens);
-        }
-
-        if (prev_second_ones == ' ') {
-            set_char(7, second_ones, false);
-        } else if (second_ones != prev_second_ones) {
-            animate_slide_up(7, prev_second_ones, second_ones);
-        }
-
-        // Update previous digit values
-        prev_hour_tens = hour_tens;
-        prev_hour_ones = hour_ones;
-        prev_minute_tens = minute_tens;
-        prev_minute_ones = minute_ones;
-        prev_second_tens = second_tens;
-        prev_second_ones = second_ones;
-
-        free(clock_string_buffer);
-        set_char(2, ':', false);
-        set_char(5, ':', false);
-        return true;
-    }
-    return false;
-}
-
-// ... (Your animate_vertical_wipe function from display.c) ...
-
 bool update_date() {
     if (clock_set) {
         char *date_string_buffer = malloc(100);
@@ -205,14 +137,169 @@ int calculate_frequency(uint frequency) {
   return delay >> 1;
 }
 
-// Function to run on core 1 for serial input
+bool update_clock() {
+    if (!clock_set) return false;
+
+    char clock_string_buffer[9];
+    clock_read_time();
+
+    uint8_t hour = clock_buffer[2] & 0x3F;
+    uint8_t minute = clock_buffer[1] & 0x7F;
+    uint8_t second = clock_buffer[0] & 0x7F;
+
+    snprintf(clock_string_buffer, sizeof(clock_string_buffer), "%02x:%02x:%02x", hour, minute, second);
+
+    char hour_tens = clock_string_buffer[0];
+    char hour_ones = clock_string_buffer[1];
+    char minute_tens = clock_string_buffer[3];
+    char minute_ones = clock_string_buffer[4];
+    char second_tens = clock_string_buffer[6];
+    char second_ones = clock_string_buffer[7];
+
+    struct {
+        char current;
+        char previous;
+        int display_index;
+    } digits[] = {
+        {hour_tens, prev_hour_tens, 0},
+        {hour_ones, prev_hour_ones, 1},
+        {minute_tens, prev_minute_tens, 3},
+        {minute_ones, prev_minute_ones, 4},
+        {second_tens, prev_second_tens, 6},
+        {second_ones, prev_second_ones, 7}
+    };
+
+    for (int i = 0; i < sizeof(digits) / sizeof(digits[0]); i++) {
+        if (digits[i].previous == ' ') {
+            set_char(digits[i].display_index, digits[i].current, false);
+        } else if (digits[i].current != digits[i].previous) {
+            switch (selected_animation) {
+                case ANIM_SLIDE_UP:
+                    animate_slide_up(digits[i].display_index, digits[i].previous, digits[i].current);
+                    break;
+                case ANIM_PIXELATED:
+                    animate_pixelated_transition(digits[i].display_index, digits[i].previous, digits[i].current);
+                    break;
+                case ANIM_EXPAND_CONTRACT:
+                    animate_expanding_contracting(digits[i].display_index, digits[i].previous, digits[i].current);
+                    break;
+                case ANIM_ROTATION:
+                    animate_rotation(digits[i].display_index, digits[i].previous, digits[i].current, true);
+                    break;
+                case ANIM_MORPH:
+                    animate_morph(digits[i].display_index, digits[i].previous, digits[i].current);
+                    break;
+            }
+        }
+    }
+
+    // Update previous values
+    prev_hour_tens = hour_tens;
+    prev_hour_ones = hour_ones;
+    prev_minute_tens = minute_tens;
+    prev_minute_ones = minute_ones;
+    prev_second_tens = second_tens;
+    prev_second_ones = second_ones;
+
+    set_char(2, ':', false);
+    set_char(5, ':', false);
+
+    return true;
+}
+
+void set_date_and_time() {
+    clear_all(false);
+    update_display(); // Ensure full clear
+    clock_set = true;
+
+    struct {
+        const char* prompt;
+        int* value;
+        int min;
+        int max;
+    } settings[] = {
+        {"Year:", &(int){23}, 0, 99},
+        {"Month:", &(int){1}, 1, 12},
+        {"Day:", &(int){1}, 1, 31},
+        {"Hour:", &(int){0}, 0, 23},
+        {"Minute:", &(int){0}, 0, 59},
+        {"Second:", &(int){0}, 0, 59}
+    };
+
+    for (int i = 0; i < sizeof(settings) / sizeof(settings[0]); i++) {
+        clear_all(false);
+        update_display(); // Ensure full clear
+        int* value = settings[i].value;
+
+        if (strcmp(settings[i].prompt, "Day:") == 0){
+            int month = *(settings[1].value);
+            int year = *(settings[0].value) + 2000;
+            int max_days[] = {31, (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+            settings[i].max = max_days[month - 1];
+        }
+
+        while (!gpio_irq_flags.set_confirm) {
+            if (!gpio_irq_flags.decrement_counter || !gpio_irq_flags.increment_counter) {
+                if (gpio_irq_flags.decrement_counter) {
+                    *value = (*value > settings[i].min) ? *value - 1 : settings[i].max;
+                    gpio_irq_flags.decrement_counter = 0;
+                }
+                if (gpio_irq_flags.increment_counter) {
+                    *value = (*value < settings[i].max) ? *value + 1 : settings[i].min;
+                    gpio_irq_flags.increment_counter = 0;
+                }
+
+                display_string(settings[i].prompt);
+                set_char(6, '0' + (*value / 10), false);
+                set_char(7, '0' + (*value % 10), true);
+            }
+        }
+        gpio_irq_flags.set_confirm = 0;
+        if (i == 4){ // if minutes were just set.
+            clear(3, false);
+            clear(4, false);
+            update_display();
+        }
+    }
+
+    clock_set_time(int_to_bcd(*(settings[5].value)), int_to_bcd(*(settings[4].value)),
+                   int_to_bcd(*(settings[3].value)), int_to_bcd(*(settings[2].value)),
+                   int_to_bcd(*(settings[1].value)), int_to_bcd(*(settings[0].value)));
+
+    clock_read_time();
+
+    // Display full time with separators
+    char time_string[9];
+    snprintf(time_string, sizeof(time_string), "%02x:%02x:%02x", clock_buffer[2] & 0x3F, clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
+    display_string(time_string);
+    set_char(2, ':', false);
+    set_char(5, ':', false);
+    update_display();
+}
+
+void gpio_iqr_handler(uint gpio, uint32_t event) {
+    switch (gpio) {
+        case 2:
+            gpio_irq_flags.set_time = 1;
+            break;
+        case 3: // Increment button (now switches animations)
+            gpio_irq_flags.increment_counter = 1;
+            break;
+        case 4:
+            gpio_irq_flags.decrement_counter = 1;
+            break;
+        case 5:
+            gpio_irq_flags.set_confirm = 1;
+            break;
+    }
+    return;
+}
+
 void core1_entry() {
     char serial_buffer[100];
     while (true) {
         if (fgets(serial_buffer, sizeof(serial_buffer), stdin) != NULL) {
-            // Process serial input here
             if (strncmp(serial_buffer, "settime", 7) == 0) {
-                // Parse and set time from serial input
                 int year, month, day, hour, minute, second;
                 if (sscanf(serial_buffer, "settime %d-%d-%d %d:%d:%d", &year, &month, &day, &hour, &minute, &second) == 6) {
                     clock_set_time(int_to_bcd(second), int_to_bcd(minute), int_to_bcd(hour),
@@ -223,182 +310,36 @@ void core1_entry() {
                     printf("Invalid time format.\n");
                 }
             } else if (strncmp(serial_buffer, "reset", 5) == 0) {
-                // Reset command received
-                clear_all(true); // Clear the display
+                clear_all(true);
                 printf("Resetting Pico...\n");
-                sleep_ms(100); // Small delay to allow serial output to complete.
-                watchdog_enable(1, 1); // Enable watchdog with a short timeout.
-                while(1); // Wait for the watchdog to trigger the reset.
+                sleep_ms(100);
+                watchdog_enable(1, 1);
+                while(1);
+            } else if (strncmp(serial_buffer, "anim ", 5) == 0) {
+                int anim_num;
+                if (sscanf(serial_buffer, "anim %d", &anim_num) == 1) {
+                    if (anim_num >= 0 && anim_num < ANIM_COUNT) {
+                        selected_animation = (AnimationType)anim_num;
+                        printf("Animation set to %d.\n", anim_num);
+                    } else {
+                        printf("Invalid animation number. Must be between 0 and %d.\n", ANIM_COUNT - 1);
+                    }
+                } else {
+                    printf("Invalid animation command format. Use 'anim <number>'.\n");
+                }
             } else {
                 printf("Unknown command: %s", serial_buffer);
             }
         }
 
-        // I2C watchdog logic
         if (i2c_active) {
-            // If I2C is active, enable watchdog with I2C timeout
             watchdog_enable(I2C_WATCHDOG_TIMEOUT_MS, 1);
-            // reset the watchdog timer.
             watchdog_update();
         } else {
-            // If I2C is not active, disable watchdog.
-            watchdog_enable(1, 0); // Disable watchdog.
+            watchdog_enable(1, 0);
         }
     }
 }
-
-void set_date_and_time() {
-  clear_all(false);
-  clock_set = true;
-
-  // Year
-  int year = 23;
-  while (!gpio_irq_flags.set_confirm) {
-    if (!gpio_irq_flags.decrement_counter ||
-        !gpio_irq_flags.increment_counter) {
-      if (gpio_irq_flags.decrement_counter) {
-        year = year > 0 ? year - 1 : 99;
-        gpio_irq_flags.decrement_counter = 0;
-      }
-      if (gpio_irq_flags.increment_counter) {
-        year = year < 99 ? year + 1 : 0;
-        gpio_irq_flags.increment_counter = 0;
-      }
-
-      display_string("Year:");
-      set_char(6, '0' + (year / 10), false);
-      set_char(7, '0' + (year % 10), true);
-    }
-  }
-
-  gpio_irq_flags.set_confirm = 0;
-
-  // month
-  int month = 1;
-  while (!gpio_irq_flags.set_confirm) {
-    if (!gpio_irq_flags.decrement_counter ||
-        !gpio_irq_flags.increment_counter) {
-      if (gpio_irq_flags.decrement_counter) {
-        month = month > 1 ? month - 1 : 12;
-        gpio_irq_flags.decrement_counter = 0;
-      }
-      if (gpio_irq_flags.increment_counter) {
-        month = month < 12 ? month + 1 : 1;
-        gpio_irq_flags.increment_counter = 0;
-      }
-
-      display_string("Month:");
-      set_char(6, '0' + (month / 10), false);
-      set_char(7, '0' + (month % 10), true);
-    }
-  }
-  gpio_irq_flags.set_confirm = 0;
-
-  int max_days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-  int day = 1;
-  while (!gpio_irq_flags.set_confirm) {
-    if (!gpio_irq_flags.decrement_counter ||
-        !gpio_irq_flags.increment_counter) {
-      if (gpio_irq_flags.decrement_counter) {
-        day = day > 1 ? day - 1 : max_days[month - 1];
-        gpio_irq_flags.decrement_counter = 0;
-      }
-      if (gpio_irq_flags.increment_counter) {
-        day = day < max_days[month - 1] ? day + 1 : 1;
-        gpio_irq_flags.increment_counter = 0;
-      }
-
-      display_string("Day:");
-      set_char(6, '0' + (day / 10), false);
-      set_char(7, '0' + (day % 10), true);
-    }
-  }
-  gpio_irq_flags.set_confirm = 0;
-
-  display_string("00:00:00");
-  int hour = 0;
-  while (!gpio_irq_flags.set_confirm) {
-    if (!gpio_irq_flags.decrement_counter ||
-        !gpio_irq_flags.increment_counter) {
-      if (gpio_irq_flags.decrement_counter) {
-        hour = hour > 0 ? hour - 1 : 23;
-        gpio_irq_flags.decrement_counter = 0;
-      }
-      if (gpio_irq_flags.increment_counter) {
-        hour = hour < 23 ? hour + 1 : 0;
-        gpio_irq_flags.increment_counter = 0;
-      }
-
-      set_char(0, '0' + (hour / 10), false);
-      set_char(1, '0' + (hour % 10), true);
-    }
-  }
-  gpio_irq_flags.set_confirm = 0;
-
-  int minute = 0;
-  while (!gpio_irq_flags.set_confirm) {
-    if (!gpio_irq_flags.decrement_counter ||
-        !gpio_irq_flags.increment_counter) {
-      if (gpio_irq_flags.decrement_counter) {
-        minute = minute > 0 ? minute - 1 : 59;
-        gpio_irq_flags.decrement_counter = 0;
-      }
-      if (gpio_irq_flags.increment_counter) {
-        minute = minute < 59 ? minute + 1 : 0;
-        gpio_irq_flags.increment_counter = 0;
-      }
-
-      set_char(3, '0' + (minute / 10), false);
-      set_char(4, '0' + (minute % 10), true);
-    }
-  }
-  gpio_irq_flags.set_confirm = 0;
-
-  int second = 0;
-  while (!gpio_irq_flags.set_confirm) {
-    if (!gpio_irq_flags.decrement_counter ||
-        !gpio_irq_flags.increment_counter) {
-      if (gpio_irq_flags.decrement_counter) {
-        second = second > 0 ? second - 1 : 59;
-        gpio_irq_flags.decrement_counter = 0;
-      }
-      if (gpio_irq_flags.increment_counter) {
-        second = second < 59 ? second + 1 : 0;
-        gpio_irq_flags.increment_counter = 0;
-      }
-
-      set_char(6, '0' + (second / 10), false);
-      set_char(7, '0' + (second % 10), true);
-    }
-  }
-  gpio_irq_flags.set_confirm = 0;
-
-  clock_set_time(int_to_bcd(second), int_to_bcd(minute), int_to_bcd(hour),
-                 int_to_bcd(day), int_to_bcd(month), int_to_bcd(year));
-
-  clock_read_time();
-  return;
-}
-
-void gpio_iqr_handler(uint gpio, uint32_t event) {
-  switch (gpio) {
-    case 2:
-      gpio_irq_flags.set_time = 1;
-      break;
-    case 3:
-      gpio_irq_flags.increment_counter = 1;
-      break;
-    case 4:
-      gpio_irq_flags.decrement_counter = 1;
-      break;
-    case 5:
-      gpio_irq_flags.set_confirm = 1;
-      break;
-  }
-
-  return;
-}
-
 
 
 int main() {
@@ -529,7 +470,7 @@ int main() {
         if (clock_buffer[6] == 0x00 && clock_buffer[5] == 0x01 && clock_buffer[4] == 0x01) {
             clock_set = false;
             display_string("SET TIME");
-			clear_all(true);
+            clear_all(true);
             sleep_ms(500);
         }
 
@@ -550,9 +491,17 @@ int main() {
                 }
             }
         }
+
+if (gpio_irq_flags.increment_counter) {
+    selected_animation = (AnimationType)((selected_animation + 1) % ANIM_COUNT);
+    printf("Animation set to %d.\n", selected_animation);
+    gpio_irq_flags.increment_counter = 0; // Clear flag
+}
+
     }
     return 0;
 }
+
 
 void reset_clock_static_vars() {
   prev_hour_tens = ' ';

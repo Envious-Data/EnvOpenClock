@@ -1,6 +1,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <stdio.h>
+#include "display.h"
+
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
 
@@ -321,6 +324,7 @@ uint8_t* prepend_address(uint8_t address, uint8_t *buffer, int buffer_size) {
     what is currently stored in displays to each of the 4 IS31FL3730's
  */
 void update_display() {
+	printf("update_display called\n"); // Add this line
     for (int i = 0; i < count_of(displays); i++)
     {
         uint8_t mat_addr = i % 2 == 0 ? MATRIX_A_ADDR : MATRIX_B_ADDR;
@@ -348,7 +352,10 @@ void update_display() {
  * @param status Whether the pixel on the LTP305 should be set to on or off
  * @param update Update the display after changing the pixel
  */
+ 
 void set_pixel(int display, uint8_t x, uint8_t y, bool status, bool update) {
+    printf("set_pixel called: display=%d, x=%d, y=%d, status=%d\n", display, x, y, status);
+
     if (display < 0 || display > 7) return;
 
     if (display % 2 == 0) {
@@ -370,8 +377,19 @@ void set_pixel(int display, uint8_t x, uint8_t y, bool status, bool update) {
         displays[display][y] = value;
     }
 
-    if (update) update_display();
+    if (update) {
+        uint8_t display_buffer[17];
+        display_buffer[0] = 0x00; // Start at address 0
+        convertLeftToRight(displays[display], display_buffer + 1);
+        int result = i2c_write_timeout_us(I2C_DISPLAY_LINE, addresses[display], display_buffer, 17, false, 1000); // 1000 microsecond timeout
+        if (result == PICO_ERROR_TIMEOUT) {
+            printf("I2C write timed out in set_pixel!\n");
+        } else if (result < 0) {
+            printf("I2C write error in set_pixel. Error code: %d\n", result);
+        }
+    }
 }
+
 
 /**
  * @brief Clear the buffer and reset all values to 0
@@ -475,7 +493,7 @@ void scroll_display_string(char *string) {
  * 
  * @param string The string whose first 6 chars should be displayed.
  */
-void display_string(char *string) {
+void display_string(const char *string) {
     clear_all(false);
 
     for (int i = 0; i < strlen(string); i++)
@@ -539,4 +557,132 @@ void animate_slide_up(int display, char current_char, char next_char) {
     // Final update with the next character
     set_char(display, next_char, true);
 }
+
+void animate_pixelated_transition(int display, char current_char, char next_char) {
+    if (display < 0 || display > 7) return;
+
+    uint8_t current_buffer[8];
+    uint8_t next_buffer[8];
+    uint8_t temp_buffer[8]; // For pixel manipulation
+
+    // Get character bitmaps
+    for (int i = 0; i < 8; i++) {
+        current_buffer[i] = (display % 2 == 0) ? characters[((int)current_char) - 32][i] : alternate_characters[((int)current_char) - 32][i];
+        next_buffer[i] = (display % 2 == 0) ? characters[((int)next_char) - 32][i] : alternate_characters[((int)next_char) - 32][i];
+    }
+
+    // Pixelated dissolve animation
+    for (int step = 0; step < 8; step++) {
+        for (int row = 0; row < 8; row++) {
+            temp_buffer[row] = 0;
+            for (int col = 0; col < 8; col++) {
+                if (rand() % (8 - step) == 0) { // Randomly choose pixels
+                    temp_buffer[row] |= (next_buffer[row] & (1 << col));
+                } else {
+                    temp_buffer[row] |= (current_buffer[row] & (1 << col));
+                }
+            }
+            displays[display][row] = temp_buffer[row];
+        }
+        update_display();
+        sleep_us(16600); // Adjust animation speed
+    }
+
+    // Final update
+    set_char(display, next_char, true);
+}
+
+void animate_expanding_contracting(int display, char current_char, char next_char) {
+    if (display < 0 || display > 7) return;
+
+    uint8_t current_buffer[8];
+    uint8_t next_buffer[8];
+    uint8_t temp_buffer[8];
+
+    // Get character bitmaps
+    for (int i = 0; i < 8; i++) {
+        current_buffer[i] = (display % 2 == 0) ? characters[((int)current_char) - 32][i] : alternate_characters[((int)current_char) - 32][i];
+        next_buffer[i] = (display % 2 == 0) ? characters[((int)next_char) - 32][i] : alternate_characters[((int)next_char) - 32][i];
+    }
+
+    // Expanding animation (simplified)
+    for (int scale = 1; scale <= 8; scale++) {
+        for (int row = 0; row < 8; row++) {
+            temp_buffer[row] = 0;
+            for (int col = 0; col < 8; col++) {
+                if ((next_buffer[row] & (1 << col)) && (col % scale == 0 && row % scale == 0)) {
+                    temp_buffer[row] |= (1 << col);
+                }
+            }
+            displays[display][row] = temp_buffer[row];
+        }
+        update_display();
+        sleep_us(16600); // Adjust animation speed
+    }
+
+    // Final update
+    set_char(display, next_char, true);
+}
+
+void animate_rotation(int display, char current_char, char next_char, bool clockwise) {
+    if (display < 0 || display > 7) return;
+
+    uint8_t current_buffer[8];
+    uint8_t next_buffer[8];
+    uint8_t rotated_buffer[8];
+
+    // Get character bitmaps
+    for (int i = 0; i < 8; i++) {
+        current_buffer[i] = (display % 2 == 0) ? characters[((int)current_char) - 32][i] : alternate_characters[((int)current_char) - 32][i];
+        next_buffer[i] = (display % 2 == 0) ? characters[((int)next_char) - 32][i] : alternate_characters[((int)next_char) - 32][i];
+    }
+
+    // Rotation animation
+    for (int angle = 0; angle < 360; angle += 45) { // Rotate in steps
+        for (int row = 0; row < 8; row++) {
+            rotated_buffer[row] = 0;
+            for (int col = 0; col < 8; col++) {
+                // Simplified rotation logic (not precise)
+                int new_col = (clockwise) ? (col + angle / 45) % 8 : (col - angle / 45 + 8) % 8;
+                if (next_buffer[row] & (1 << new_col)) {
+                    rotated_buffer[row] |= (1 << col);
+                }
+            }
+            displays[display][row] = rotated_buffer[row];
+        }
+        update_display();
+        sleep_us(16600); // Adjust animation speed
+    }
+
+    // Final update
+    set_char(display, next_char, true);
+}
+
+void animate_morph(int display, char current_char, char next_char) {
+    if (display < 0 || display > 7) return;
+
+    uint8_t current_buffer[8];
+    uint8_t next_buffer[8];
+    uint8_t morph_buffer[8];
+
+    // Get character bitmaps
+    for (int i = 0; i < 8; i++) {
+        current_buffer[i] = (display % 2 == 0) ? characters[((int)current_char) - 32][i] : alternate_characters[((int)current_char) - 32][i];
+        next_buffer[i] = (display % 2 == 0) ? characters[((int)next_char) - 32][i] : alternate_characters[((int)next_char) - 32][i];
+    }
+
+    // Morphing animation (simplified)
+    for (int step = 0; step <= 8; step++) {
+        for (int row = 0; row < 8; row++) {
+            morph_buffer[row] = (current_buffer[row] & ~(next_buffer[row] & ((1 << step) - 1))) | (next_buffer[row] & ((1 << step) - 1));
+            displays[display][row] = morph_buffer[row];
+        }
+        update_display();
+        sleep_us(16600); // Adjust animation speed
+    }
+
+    // Final update
+    set_char(display, next_char, true);
+}
+
 
