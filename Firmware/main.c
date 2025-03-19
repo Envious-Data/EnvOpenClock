@@ -109,6 +109,10 @@ struct {
   uint8_t set_confirm : 1;
 } gpio_irq_flags;
 
+// Debounce variables
+#define DEBOUNCE_MS 50
+uint32_t last_button_press[4] = {0}; // 4 buttons
+
 extern char clock_buffer[];
 extern char* week[];
 
@@ -301,21 +305,43 @@ void set_date_and_time() {
 }
 
 void gpio_iqr_handler(uint gpio, uint32_t event) {
-  switch (gpio) {
-    case 2:
-      gpio_irq_flags.set_time = 1;
-      break;
-    case 3:  // Increment button (now switches animations)
-      gpio_irq_flags.increment_counter = 1;
-      break;
-    case 4:
-      gpio_irq_flags.decrement_counter = 1;
-      break;
-    case 5:
-      gpio_irq_flags.set_confirm = 1;
-      break;
-  }
-  return;
+    uint32_t current_time = to_ms_since_boot(get_absolute_time());
+    int button_index = -1;
+
+    switch (gpio) {
+        case 2:
+            button_index = 0;
+            break;
+        case 3:
+            button_index = 1;
+            break;
+        case 4:
+            button_index = 2;
+            break;
+        case 5:
+            button_index = 3;
+            break;
+    }
+
+    if (button_index != -1 && (current_time - last_button_press[button_index]) > DEBOUNCE_MS) {
+        last_button_press[button_index] = current_time;
+
+        switch (gpio) {
+            case 2:
+                gpio_irq_flags.set_time = 1;
+                break;
+            case 3: // Increment button (now switches animations)
+                gpio_irq_flags.increment_counter = 1;
+                break;
+            case 4:
+                gpio_irq_flags.decrement_counter = 1;
+                break;
+            case 5:
+                gpio_irq_flags.set_confirm = 1;
+                break;
+        }
+    }
+    return;
 }
 
 void core1_entry() {
