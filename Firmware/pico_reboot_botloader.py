@@ -66,7 +66,7 @@ if __name__ == "__main__":
             if pico_drive:
                 logging.info(f"Pico drive found: {pico_drive}")
                 logging.info(f"Found Pico in bootloader, copying file now.")
-                uf2_file = r"clock.uf2"
+                uf2_file = r"C:\\Users\\Envy\\Documents\\GitHub\\EnvOpenClock\\Firmware\\clock.uf2"
                 copy_uf2_to_pico(uf2_file, pico_drive)
                 break
             else:
@@ -90,7 +90,7 @@ if __name__ == "__main__":
         if pico_drive:
             logging.info(f"Pico drive found: {pico_drive}")
             logging.info(f"Pico found after reset, copying file now.")
-            uf2_file = r"clock.uf2"
+            uf2_file = r"C:\\Users\\Envy\\Documents\\GitHub\\EnvOpenClock\\Firmware\\clock.uf2"
             copy_uf2_to_pico(uf2_file, pico_drive)
         else:
             logging.error("Pico drive not found after reset attempt.")

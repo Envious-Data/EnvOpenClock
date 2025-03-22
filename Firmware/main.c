@@ -1,5 +1,7 @@
 #include <ctype.h>
+#include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>  // Required for rand() and srand()
 #include <string.h>
 
 #include "display.h"
@@ -55,7 +57,13 @@ volatile bool i2c_active = false;
 const uint32_t I2C_WATCHDOG_TIMEOUT_MS = 500;
 
 // Function to set I2C active flag
-void set_i2c_active(bool active) { i2c_active = active; }
+void set_i2c_active(bool active) {
+  i2c_active = active;
+}
+
+typedef void (*AnimationFunction)(int display_index,
+                                  char previous,
+                                  char current);
 
 // Updated AnimationType enum
 typedef enum {
@@ -68,40 +76,32 @@ typedef enum {
   ANIM_HEARTBEAT_PULSE,
   ANIM_WATERFALL,
   ANIM_CLOCK_HAND_WIPE,
-  ANIM_COUNT // Keep this as the last element
+  ANIM_COUNT  // Keep this as the last element
 } AnimationType;
 
-AnimationType selected_animation = ANIM_PIXELATED; // Default animation
-
-typedef void (*AnimationFunction)(int display_index, char previous, char current);
-
-
 // Updated animations array
-AnimationFunction animations[] = {
-    animate_slide_up,
-    animate_pixelated_transition,
-    animate_expanding_contracting,
-    animate_morph,
-    animate_interlocking_pieces,
-    animate_glitch_effect,
-    animate_heartbeat_pulse,
-    animate_waterfall,
-    animate_clock_hand_wipe
-};
+AnimationFunction animations[] = {animate_slide_up,
+                                  animate_pixelated_transition,
+                                  animate_expanding_contracting,
+                                  animate_morph,
+                                  animate_interlocking_pieces,
+                                  animate_glitch_effect,
+                                  animate_heartbeat_pulse,
+                                  animate_waterfall,
+                                  animate_clock_hand_wipe};
 
 // Array of animation names
 const char* animation_names[] = {
-    "SLIDE_UP",
-    "PIXELATED",
-    "EXPAND_CONTRACT",
-    "MORPH",
-    "INTERLOCKING_PIECES",
-    "GLITCH_EFFECT",
-    "HEARTBEAT_PULSE",
-    "WATERFALL",
-    "CLOCK_HAND_WIPE"
-};
+    "SLIDE_UP",        "PIXELATED",           "EXPAND_CONTRACT",
+    "MORPH",           "INTERLOCKING_PIECES", "GLITCH_EFFECT",
+    "HEARTBEAT_PULSE", "WATERFALL",           "CLOCK_HAND_WIPE"};
 
+AnimationType selected_animation = ANIM_SLIDE_UP;  // Default animation
+
+void randomize_animation() {
+  selected_animation = (AnimationType)(rand() % (ANIM_COUNT));
+  printf("Animation set to %s.\n", animation_names[selected_animation]);
+}
 
 struct {
   uint8_t set_time : 1;
@@ -112,7 +112,7 @@ struct {
 
 // Debounce variables
 #define DEBOUNCE_MS 50
-uint32_t last_button_press[4] = {0}; // 4 buttons
+uint32_t last_button_press[4] = {0};  // 4 buttons
 
 extern char clock_buffer[7];
 extern char* week[];
@@ -174,7 +174,8 @@ int calculate_frequency(uint frequency) {
 
 // UPDATE CLOCK BIT
 bool update_clock() {
-  if (!clock_set) return false;
+  if (!clock_set)
+    return false;
 
   char clock_string_buffer[9];
   clock_read_time();
@@ -208,11 +209,10 @@ bool update_clock() {
     } else if (digits[i].current != digits[i].previous) {
       // Simple approach - use the animations function array
       if (selected_animation < ANIM_COUNT) {
-        animations[selected_animation](digits[i].display_index, 
-                                      digits[i].previous,
-                                      digits[i].current);
+        animations[selected_animation](digits[i].display_index,
+                                       digits[i].previous, digits[i].current);
       }
-	}
+    }
   }
 
   // Update previous values
@@ -228,7 +228,6 @@ bool update_clock() {
 
   return true;
 }
-
 
 void set_date_and_time() {
   clear_all(false);
@@ -306,43 +305,44 @@ void set_date_and_time() {
 }
 
 void gpio_iqr_handler(uint gpio, uint32_t event) {
-    uint32_t current_time = to_ms_since_boot(get_absolute_time());
-    int button_index = -1;
+  uint32_t current_time = to_ms_since_boot(get_absolute_time());
+  int button_index = -1;
+
+  switch (gpio) {
+    case 2:
+      button_index = 0;
+      break;
+    case 3:
+      button_index = 1;
+      break;
+    case 4:
+      button_index = 2;
+      break;
+    case 5:
+      button_index = 3;
+      break;
+  }
+
+  if (button_index != -1 &&
+      (current_time - last_button_press[button_index]) > DEBOUNCE_MS) {
+    last_button_press[button_index] = current_time;
 
     switch (gpio) {
-        case 2:
-            button_index = 0;
-            break;
-        case 3:
-            button_index = 1;
-            break;
-        case 4:
-            button_index = 2;
-            break;
-        case 5:
-            button_index = 3;
-            break;
+      case 2:
+        gpio_irq_flags.set_time = 1;
+        break;
+      case 3:  // Increment button (now switches animations)
+        gpio_irq_flags.increment_counter = 1;
+        break;
+      case 4:
+        gpio_irq_flags.decrement_counter = 1;
+        break;
+      case 5:
+        gpio_irq_flags.set_confirm = 1;
+        break;
     }
-
-    if (button_index != -1 && (current_time - last_button_press[button_index]) > DEBOUNCE_MS) {
-        last_button_press[button_index] = current_time;
-
-        switch (gpio) {
-            case 2:
-                gpio_irq_flags.set_time = 1;
-                break;
-            case 3: // Increment button (now switches animations)
-                gpio_irq_flags.increment_counter = 1;
-                break;
-            case 4:
-                gpio_irq_flags.decrement_counter = 1;
-                break;
-            case 5:
-                gpio_irq_flags.set_confirm = 1;
-                break;
-        }
-    }
-    return;
+  }
+  return;
 }
 
 void core1_entry() {
@@ -366,7 +366,8 @@ void core1_entry() {
         printf("Resetting Pico...\n");
         sleep_ms(100);
         watchdog_enable(1, 1);
-        while (1);
+        while (1)
+          ;
       } else if (strncmp(serial_buffer, "anim ", 5) == 0) {
         int anim_num;
         if (sscanf(serial_buffer, "anim %d", &anim_num) == 1) {
@@ -394,190 +395,224 @@ void core1_entry() {
   }
 }
 
-
 int main() {
-    stdio_init_all();
-    printf("start\n");
+  stdio_init_all();
+  printf("start\n");
+  sleep_ms(500);
 
-    sleep_ms(500);
+  gpio_init(25);
+  gpio_set_dir(25, GPIO_OUT);
+  gpio_put(25, 0);
 
-    gpio_init(25);
-    gpio_set_dir(25, GPIO_OUT);
-    gpio_put(25, 0);
+  if (i2c_init(I2C_DISPLAY_LINE, 100 * 1000) < 0) {
+    fprintf(stderr, "Error initializing I2C.\n");
+    return 1;
+  }
 
-    if (i2c_init(I2C_DISPLAY_LINE, 100 * 1000) < 0) {
-        fprintf(stderr, "Error initializing I2C.\n");
-        return 1;
+  gpio_set_function(I2C_DISPLAY_SCL, GPIO_FUNC_I2C);
+  gpio_set_function(I2C_DISPLAY_SDA, GPIO_FUNC_I2C);
+
+  bi_decl(bi_2pins_with_func(I2C_DISPLAY_SDA, I2C_DISPLAY_SCL, GPIO_FUNC_I2C));
+
+  pre_generate_alternate_characters();
+
+  // Initialize button and buzzer GPIOs
+  gpio_init(28);
+  gpio_init(2);
+  gpio_init(3);
+  gpio_init(4);
+  gpio_init(5);
+  gpio_set_dir(28, GPIO_OUT);
+  gpio_set_dir(2, GPIO_IN);
+  gpio_set_dir(3, GPIO_IN);
+  gpio_set_dir(4, GPIO_IN);
+  gpio_set_dir(5, GPIO_IN);
+
+  gpio_pull_up(2);
+  gpio_pull_up(3);
+  gpio_pull_up(4);
+  gpio_pull_up(5);
+
+  gpio_set_irq_enabled_with_callback(2, GPIO_IRQ_EDGE_RISE, true,
+                                     &gpio_iqr_handler);
+  gpio_set_irq_enabled(3, GPIO_IRQ_EDGE_RISE, true);
+  gpio_set_irq_enabled(4, GPIO_IRQ_EDGE_RISE, true);
+  gpio_set_irq_enabled(5, GPIO_IRQ_EDGE_RISE, true);
+
+  struct repeating_timer timer;
+  add_repeating_timer_ms(-60000, timer_callback, NULL, &timer);
+
+  // char startup_message[] = "PICO8LED";
+  char startup_message[] = "PICOTIME";
+  int message_length = strlen(startup_message);
+
+  // Seed the random number generator using the current time from the RTC.
+  if (clock_set) {
+    clock_read_time();
+    uint8_t hour = clock_buffer[2] & 0x3F;
+    uint8_t minute = clock_buffer[1] & 0x7F;
+    uint8_t second = clock_buffer[0] & 0x7F;
+    // Calculate the total number of seconds, add some more variation.
+    unsigned int seed = (hour * 3600) + (minute * 60) + second;
+    seed ^= (seed << 13);
+    seed ^= (seed >> 17);
+    seed ^= (seed << 5);
+    srand(seed);
+  } else {
+    srand(time(NULL));  // Fallback if the clock isn't set.
+  }
+  randomize_animation();
+
+  for (int display = 0; display < 8; display++) {
+    if (display < message_length) {
+      char current_char = ' ';
+      char next_char = startup_message[display];
+      if (selected_animation < ANIM_COUNT) {  // Use selected_animation
+        animations[selected_animation](display, current_char, next_char);
+      }
+    } else {
+      set_char(display, ' ', true);
     }
+  }
 
-    gpio_set_function(I2C_DISPLAY_SCL, GPIO_FUNC_I2C);
-    gpio_set_function(I2C_DISPLAY_SDA, GPIO_FUNC_I2C);
+  sleep_ms(1000);  // Display the startup message for a while
+  for (int display = 0; display < 8; display++) {
+    if (display < message_length) {
+      char current_char = startup_message[display];
+      char next_char = ' ';  // Slide to a space
+      if (selected_animation < ANIM_COUNT) {
+        animations[selected_animation](display, current_char, next_char);
+      }
+    }
+  }
 
-    bi_decl(bi_2pins_with_func(I2C_DISPLAY_SDA, I2C_DISPLAY_SCL, GPIO_FUNC_I2C));
+  clear_all(true);  // Clear after animation
 
-    pre_generate_alternate_characters();
+  bool show = true;
+  if (clock_set) {
+    // Animate to 00:00:00  <-- REMOVE THIS SECTION
+    // char time_string[] = "00:00:00";
+    // for (int i = 0; i < 8; i++) {
+    //     if (i == 2 || i == 5) {
+    //         set_char(i, time_string[i], false);
+    //     } else {
+    //         char next_char = time_string[i];
+    //         char current_char = ' ';
+    //         if (selected_animation < ANIM_COUNT) { // Use selected_animation
+    //             animations[selected_animation](i, current_char, next_char);
+    //         }
+    //     }
+    // }
+    // sleep_ms(100);
 
-    // Initialize button and buzzer GPIOs
-    gpio_init(28);
-    gpio_init(2);
-    gpio_init(3);
-    gpio_init(4);
-    gpio_init(5);
-    gpio_set_dir(28, GPIO_OUT);
-    gpio_set_dir(2, GPIO_IN);
-    gpio_set_dir(3, GPIO_IN);
-    gpio_set_dir(4, GPIO_IN);
-    gpio_set_dir(5, GPIO_IN);
-
-    gpio_pull_up(2);
-    gpio_pull_up(3);
-    gpio_pull_up(4);
-    gpio_pull_up(5);
-
-    gpio_set_irq_enabled_with_callback(2, GPIO_IRQ_EDGE_RISE, true, &gpio_iqr_handler);
-    gpio_set_irq_enabled(3, GPIO_IRQ_EDGE_RISE, true);
-    gpio_set_irq_enabled(4, GPIO_IRQ_EDGE_RISE, true);
-    gpio_set_irq_enabled(5, GPIO_IRQ_EDGE_RISE, true);
-
-    struct repeating_timer timer;
-    add_repeating_timer_ms(-60000, timer_callback, NULL, &timer);
-
-    char startup_message[] = "PICO8LED";
-    int message_length = strlen(startup_message);
-
-    for (int display = 0; display < 8; display++) {
-        if (display < message_length) {
-            char current_char = ' ';
-            char next_char = startup_message[display];
-            animate_slide_up(display, current_char, next_char);
-        } else {
-            set_char(display, ' ', true);
+    // Animate to current time
+    char current_time_string[9];
+    for (int i = 0; i < 8; i++) {
+      clock_read_time();
+      sprintf(current_time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F,
+              clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
+      if (i == 2 || i == 5) {
+        set_char(i, ':', false);  // Set colon *before* animation
+      } else {
+        char next_char = current_time_string[i];
+        char current_char = ' ';
+        if (selected_animation < ANIM_COUNT) {
+          animations[selected_animation](i, current_char, next_char);
         }
+      }
     }
+    sleep_ms(100);
+  }
 
-    sleep_ms(1000); // Display the startup message for a while
-    for (int display = 0; display < 8; display++) {
-        if (display < message_length) {
-            char current_char = startup_message[display];
-            char next_char = ' '; // Slide to a space
-            animate_slide_up(display, current_char, next_char);
+  // Launch core 1 for serial input
+  multicore_launch_core1(core1_entry);
+
+  while (true) {
+    // REMOVED: update_rtc_from_serial();
+
+    if (gpio_irq_flags.set_time) {
+      set_date_and_time();
+      gpio_irq_flags.set_time = 0;
+    } else if (gpio_irq_flags.set_confirm) {
+      gpio_irq_flags.set_confirm = 0;
+
+      if (show) {  // Time to Date animation
+        char time_string[9];
+        char date_string[9];
+
+        // Capture current time
+        clock_read_time();
+        sprintf(time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F,
+                clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
+
+        // Capture current date
+        clock_read_time();
+        sprintf(date_string, "%02x/%02x/%02x", clock_buffer[4], clock_buffer[5],
+                clock_buffer[6]);
+
+        for (int i = 0; i < 8; i++) {
+          animate_slide_up(i, time_string[i], date_string[i]);
         }
+        sleep_ms(100);
+        show = false;
+      } else {  // Date to Time animation
+        char date_string[9];
+        char time_string[9];
+
+        // Capture current date
+        clock_read_time();
+        sprintf(date_string, "%02x/%02x/%02x", clock_buffer[4], clock_buffer[5],
+                clock_buffer[6]);
+
+        // Capture current time
+        clock_read_time();
+        sprintf(time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F,
+                clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
+
+        for (int i = 0; i < 8; i++) {
+          animate_slide_up(i, date_string[i], time_string[i]);
+        }
+        sleep_ms(100);
+        show = true;
+        reset_clock_static_vars();
+      }
     }
 
-    clear_all(true); // Clear after animation
+    if (clock_buffer[6] == 0x00 && clock_buffer[5] == 0x01 &&
+        clock_buffer[4] == 0x01) {
+      clock_set = false;
+      display_string("SET TIME");
+      clear_all(true);
+      sleep_ms(500);
+    }
 
-    bool show = true;
     if (clock_set) {
-        // Animate to 00:00:00
-        char time_string[] = "00:00:00";
-        for (int i = 0; i < 8; i++) {
-            if (i == 2 || i == 5) {
-                set_char(i, time_string[i], false);
-            } else {
-                animate_slide_up(i, ' ', time_string[i]);
-            }
+      if (should_update_display()) {
+        if (show) {
+          set_i2c_active(true);  // I2C start
+          if (!update_clock()) {
+            // i2c_bus_recovery(I2C_DISPLAY_LINE); //Removed
+          }
+          set_i2c_active(false);  // I2C end
+        } else {
+          set_i2c_active(true);  // I2C start
+          if (!update_date()) {
+            // i2c_bus_recovery(I2C_DISPLAY_LINE); //Removed
+          }
+          set_i2c_active(false);  // I2C end
         }
-        sleep_ms(100);
-
-        // Animate to current time
-        char current_time_string[9];
-        for (int i = 0; i < 8; i++) {
-            if (i != 2 && i != 5) {
-                // Read current time inside the animation loop
-                clock_read_time();
-                sprintf(current_time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F, clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
-                animate_slide_up(i, time_string[i], current_time_string[i]);
-            }
-        }
-        sleep_ms(100);
-
-        // Initialize previous time
-        update_clock();
-        sleep_ms(100);
+      }
     }
 
-    // Launch core 1 for serial input
-    multicore_launch_core1(core1_entry);
-
-    while (true) {
-        // REMOVED: update_rtc_from_serial();
-
-        if (gpio_irq_flags.set_time) {
-            set_date_and_time();
-            gpio_irq_flags.set_time = 0;
-        } else if (gpio_irq_flags.set_confirm) {
-            gpio_irq_flags.set_confirm = 0;
-
-            if (show) { // Time to Date animation
-                char time_string[9];
-                char date_string[9];
-
-                // Capture current time
-                clock_read_time();
-                sprintf(time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F, clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
-
-                // Capture current date
-                clock_read_time();
-                sprintf(date_string, "%02x/%02x/%02x", clock_buffer[4], clock_buffer[5], clock_buffer[6]);
-
-                for (int i = 0; i < 8; i++) {
-                    animate_slide_up(i, time_string[i], date_string[i]);
-                }
-                sleep_ms(100);
-                show = false;
-            } else { // Date to Time animation
-                char date_string[9];
-                char time_string[9];
-
-                // Capture current date
-                clock_read_time();
-                sprintf(date_string, "%02x/%02x/%02x", clock_buffer[4], clock_buffer[5], clock_buffer[6]);
-
-                // Capture current time
-                clock_read_time();
-                sprintf(time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F, clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
-
-                for (int i = 0; i < 8; i++) {
-                    animate_slide_up(i, date_string[i], time_string[i]);
-                }
-                sleep_ms(100);
-                show = true;
-                reset_clock_static_vars();
-            }
-        }
-
-        if (clock_buffer[6] == 0x00 && clock_buffer[5] == 0x01 && clock_buffer[4] == 0x01) {
-            clock_set = false;
-            display_string("SET TIME");
-            clear_all(true);
-            sleep_ms(500);
-        }
-
-        if (clock_set) {
-            if (should_update_display()) {
-                if (show) {
-                    set_i2c_active(true); // I2C start
-                    if (!update_clock()) {
-                        // i2c_bus_recovery(I2C_DISPLAY_LINE); //Removed
-                    }
-                    set_i2c_active(false); // I2C end
-                } else {
-                    set_i2c_active(true); // I2C start
-                    if (!update_date()) {
-                        // i2c_bus_recovery(I2C_DISPLAY_LINE); //Removed
-                    }
-                    set_i2c_active(false); // I2C end
-                }
-            }
-        }
-
-        if (gpio_irq_flags.increment_counter) {
-            selected_animation = (AnimationType)((selected_animation + 1) % ANIM_COUNT);
-            printf("Animation set to %s.\n", animation_names[selected_animation]); // Print animation name
-            gpio_irq_flags.increment_counter = 0; // Clear flag
-        }
+    if (gpio_irq_flags.increment_counter) {
+      selected_animation =
+          (AnimationType)((selected_animation + 1) % ANIM_COUNT);
+      printf("Animation set to %s.\n",
+             animation_names[selected_animation]);  // Print animation name
+      gpio_irq_flags.increment_counter = 0;         // Clear flag
     }
-    return 0;
+  }
+  return 0;
 }
 
 void reset_clock_static_vars() {
