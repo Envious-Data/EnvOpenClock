@@ -36,16 +36,10 @@ void animate_expanding_contracting(int display, char current_char, char next_cha
 void animate_morph(int display, char current_char, char next_char);
 
 // new animations
-void animate_slide_up_with_trail(int display, char current_char, char next_char);
-void animate_slide_up_with_scanlines(int display, char current_char, char next_char);
 void animate_interlocking_pieces(int display, char current_char, char next_char);
 void animate_glitch_effect(int display, char current_char, char next_char);
 void animate_heartbeat_pulse(int display, char current_char, char next_char);
-void animate_matrix_rain(int display, char current_char, char next_char);
 void animate_waterfall(int display, char current_char, char next_char);
-void animate_blinds(int display, char current_char, char next_char);
-void animate_swirl(int display, char current_char, char next_char);
-void animate_bouncing_ball(int display, char current_char, char next_char);
 void animate_clock_hand_wipe(int display, char current_char, char next_char);
 
 void convertLeftToRight(const uint8_t *left_matrix, uint8_t *right_matrix);

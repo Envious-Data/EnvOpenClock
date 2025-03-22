@@ -59,26 +59,26 @@ if __name__ == "__main__":
     ports = list(serial.tools.list_ports.comports())
     if not ports:
         logging.info("No serial ports found. Checking for bootloader mode...")
-        time.sleep(5)  # Initial delay
+        time.sleep(1)  # Initial delay
         for i in range(5):  # Try 5 times
             logging.info(f"Checking for Pico drive, attempt {i+1}")
             pico_drive = find_pico_drive()
             if pico_drive:
                 logging.info(f"Pico drive found: {pico_drive}")
                 logging.info(f"Found Pico in bootloader, copying file now.")
-                uf2_file = r"\\wsl.localhost\Ubuntu-22.04\home\envy\Firmware\build\clock.uf2"
+                uf2_file = r"clock.uf2"
                 copy_uf2_to_pico(uf2_file, pico_drive)
                 break
             else:
                 logging.info(f"Attempt {i + 1}: Pico drive not found. Waiting...")
-                time.sleep(5)  # Increase delay each time
+                time.sleep(1)  # Increase delay each time
         else:
             logging.error("Pico drive not found after multiple attempts.")
     else:
         logging.info("Serial port detected, attempting to reset Pico to bootloader.")
         reset_pico_to_bootloader() #attempt reset
         logging.info("Waiting for Pico to enter bootloader mode.")
-        time.sleep(10) #wait for drive to appear
+        time.sleep(1) #wait for drive to appear
         pico_drive = None
         for i in range(5):
             logging.info(f"Checking for Pico drive, attempt {i+1}")
@@ -86,11 +86,11 @@ if __name__ == "__main__":
             if pico_drive:
                 break;
             else:
-                time.sleep(2)
+                time.sleep(1)
         if pico_drive:
             logging.info(f"Pico drive found: {pico_drive}")
             logging.info(f"Pico found after reset, copying file now.")
-            uf2_file = r"\\wsl.localhost\Ubuntu-22.04\home\envy\Firmware\build\clock.uf2"
+            uf2_file = r"clock.uf2"
             copy_uf2_to_pico(uf2_file, pico_drive)
         else:
             logging.error("Pico drive not found after reset attempt.")

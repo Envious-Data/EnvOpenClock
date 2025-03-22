@@ -329,7 +329,7 @@ uint8_t *prepend_address(uint8_t address, uint8_t *buffer, int buffer_size) {
     what is currently stored in displays to each of the 4 IS31FL3730's
  */
 void update_display() {
-  printf("update_display called\n");  // Add this line
+  //printf("update_display called\n");  // Add this line
   for (int i = 0; i < count_of(displays); i++) {
     uint8_t mat_addr = i % 2 == 0 ? MATRIX_A_ADDR : MATRIX_B_ADDR;
 
@@ -429,26 +429,38 @@ void clear(int display, bool update) {
 }
 
 /**
- * @brief Set a specific display to a certain ASCII character;
+ * @brief Transforms a character buffer based on the display number
+ * to handle even/odd display differences.
  *
- * @param display The 0 indexed display to update [0,8)
- * @param letter The ASCII character to be displayed
- * @param update Update the display after setting the buffer to a character
+ * @param letter The ASCII character to get the buffer for.
+ * @param display The display number.
+ * @param buffer The output buffer to store the transformed character.
+ */
+void transform_buffer_for_display(char letter, int display, uint8_t *buffer) {
+    for (int i = 0; i < 8; i++) {
+        if (display % 2 == 0) {
+            buffer[i] = characters[((int)letter) - 32][i];
+        } else {
+            buffer[i] = alternate_characters[((int)letter) - 32][i];
+        }
+    }
+}
+
+/**
+ * @brief Sets a character to be displayed.
+ *
+ * @param display The display to set the character on.
+ * @param letter The character to set.
+ * @param update Whether to update the display immediately.
  */
 void set_char(int display, char letter, bool update) {
-  if (display < 0 || display > 7) return;
-
-  if (display % 2 == 0) {
+    if (display < 0 || display > 7) return;
+    uint8_t char_buffer[8];
+    transform_buffer_for_display(letter, display, char_buffer);
     for (int i = 0; i < 8; i++) {
-      displays[display][i] = characters[((int)letter) - 32][i];
+        displays[display][i] = char_buffer[i];
     }
-  } else {
-    for (int i = 0; i < 8; i++) {
-      displays[display][i] = alternate_characters[((int)letter) - 32][i];
-    }
-  }
-
-  if (update) update_display();
+    if (update) update_display();
 }
 
 /**
@@ -673,147 +685,6 @@ void animate_morph(int display, char current_char, char next_char) {
   set_char(display, next_char, true);
 }
 
-
-void animate_slide_up_with_trail(int display, char current_char, char next_char) {
-    if (display < 0 || display > 7) return;
-
-    uint8_t current_buffer[8];
-    uint8_t next_buffer[8];
-    uint8_t trail_buffer[8]; // Buffer for trail effect
-
-    // Get the character bitmaps
-    for (int i = 0; i < 8; i++) {
-        current_buffer[i] = (display % 2 == 0)
-                                ? characters[((int)current_char) - 32][i]
-                                : alternate_characters[((int)current_char) - 32][i];
-        next_buffer[i] = (display % 2 == 0)
-                             ? characters[((int)next_char) - 32][i]
-                             : alternate_characters[((int)next_char) - 32][i];
-        trail_buffer[i] = 0; // Initialize trail buffer
-    }
-
-    if (display % 2 == 0) {
-        // Even displays: vertical slide animation (original)
-        uint8_t offset_current[16];
-        uint8_t offset_next[16];
-
-        // Copy to offset buffers, with next buffer on top
-        for (int i = 0; i < 8; i++) {
-            offset_current[i] = current_buffer[i];
-            offset_current[i + 8] = 0;
-            offset_next[i] = 0;
-            offset_next[i + 8] = next_buffer[i];
-        }
-
-        // Animation loop (gradually shift)
-        for (int shift = 0; shift < 8; shift++) {
-            // Calculate trail - a simple trail that copies the previous frame
-            for (int row = 0; row < 8; row++) {
-                trail_buffer[row] = offset_current[row + shift]; // Store previous frame
-
-            }
-
-            // Copy the animation into the display buffer
-            for (int row = 0; row < 8; row++) {
-              // Combine current animation frame with the trail (crude, needs improvement)
-                displays[display][row] = (offset_current[row + shift] | offset_next[row + shift] | (trail_buffer[row] >> 1));  // Right shift for dimming effect
-            }
-
-            update_display();
-            sleep_us(16600);
-        }
-    } else {
-        // Odd displays: horizontal slide animation
-        for (int shift = 0; shift < 8; shift++) {
-            // Calculate trail
-            for (int row = 0; row < 8; row++){
-                trail_buffer[row] = current_buffer[row];
-            }
-            // Copy the animation into the display buffer
-            for (int row = 0; row < 8; row++) {
-                displays[display][row] =
-                    (current_buffer[row] >> shift) |
-                    (next_buffer[row] << (8 - shift)) |
-                    (trail_buffer[row] >> 1);
-            }
-
-            update_display();
-            sleep_us(16600);
-        }
-    }
-
-    // Final update with the next character
-    set_char(display, next_char, true);
-}
-
-void animate_slide_up_with_scanlines(int display, char current_char,
-                                     char next_char) {
-  if (display < 0 || display > 7) return;
-
-  uint8_t current_buffer[8];
-  uint8_t next_buffer[8];
-
-  // Get the character bitmaps
-  for (int i = 0; i < 8; i++) {
-    current_buffer[i] = (display % 2 == 0)
-                            ? characters[((int)current_char) - 32][i]
-                            : alternate_characters[((int)current_char) - 32][i];
-    next_buffer[i] = (display % 2 == 0)
-                         ? characters[((int)next_char) - 32][i]
-                         : alternate_characters[((int)next_char) - 32][i];
-  }
-
-  if (display % 2 == 0) {
-    // Even displays: vertical slide animation (original)
-    uint8_t offset_current[16];
-    uint8_t offset_next[16];
-
-    // Copy to offset buffers, with next buffer on top
-    for (int i = 0; i < 8; i++) {
-      offset_current[i] = current_buffer[i];
-      offset_current[i + 8] = 0;  // Clear the top half
-      offset_next[i] = 0;          // Clear the bottom half
-      offset_next[i + 8] = next_buffer[i];
-    }
-
-    // Animation loop (gradually shift)
-    for (int shift = 0; shift < 8; shift++) {
-      // Copy the animation into the display buffer
-      for (int row = 0; row < 8; row++) {
-        displays[display][row] =
-            offset_current[row + shift] | offset_next[row + shift];
-        if (row % 2 != 0) {
-          displays[display][row] = 0;  // Apply scanlines
-        }
-      }
-
-      update_display();
-      sleep_us(16600);  // Adjust animation speed
-    }
-  } else {
-    // Odd displays: horizontal slide animation
-    // Animation loop (gradually shift horizontally)
-    for (int shift = 0; shift < 8; shift++) {
-      // Copy the animation into the display buffer
-      for (int row = 0; row < 8; row++) {
-        // Slide current char out to the left, next char in from the right
-        displays[display][row] =
-            (current_buffer[row] >> shift) |
-            (next_buffer[row] << (8 - shift));
-        if (row % 2 != 0) {
-          displays[display][row] = 0;  // Apply scanlines
-        }
-      }
-
-      update_display();
-      sleep_us(16600);  // Adjust animation speed
-    }
-  }
-
-  // Final update with the next character
-  set_char(display, next_char, true);
-}
-
 void animate_interlocking_pieces(int display, char current_char,
                                   char next_char) {
   if (display < 0 || display > 7) return;
@@ -848,47 +719,6 @@ void animate_interlocking_pieces(int display, char current_char,
     }
     update_display();
     sleep_us(16600); // Adjust speed as needed
-  }
-
-  // Final update
-  set_char(display, next_char, true);
-}
-
-void animate_matrix_rain(int display, char current_char, char next_char) {
-  if (display < 0 || display > 7) return;
-
-  uint8_t current_buffer[8];
-  uint8_t next_buffer[8];
-  uint8_t rain_buffer[8];
-
-  // Get character bitmaps
-  for (int i = 0; i < 8; i++) {
-    current_buffer[i] = (display % 2 == 0)
-                            ? characters[((int)current_char) - 32][i]
-                            : alternate_characters[((int)current_char) - 32][i];
-    next_buffer[i] = (display % 2 == 0)
-                         ? characters[((int)next_char) - 32][i]
-                         : alternate_characters[((int)next_char) - 32][i];
-    rain_buffer[i] = 0; // Initialize rain buffer
-  }
-
-  // Matrix Rain effect
-  int rain_steps = 8; // Number of rain steps
-
-  for (int step = 0; step < rain_steps; step++) {
-    for (int row = 0; row < 8; row++) {
-      rain_buffer[row] >>= 1; // Shift rain down
-
-      // Add new rain drops randomly
-      uint8_t new_rain = rand();
-      rain_buffer[0] |= (new_rain & 0x80); // Top row rain
-
-      // Combine rain with the next character
-      displays[display][row] = rain_buffer[row] |
-                                 (next_buffer[row] << step);
-    }
-    update_display();
-    sleep_us(16600); // Adjust rain speed
   }
 
   // Final update
@@ -1103,203 +933,6 @@ void animate_waterfall(int display, char current_char, char next_char) {
   set_char(display, next_char, true);
 }
 
-// Blinds effect - like window blinds opening/closing
-void animate_blinds(int display, char current_char, char next_char) {
-  if (display < 0 || display > 7) return;
-  
-  uint8_t current_buffer[8];
-  uint8_t next_buffer[8];
-  
-  // Get character bitmaps
-  for (int i = 0; i < 8; i++) {
-    current_buffer[i] = (display % 2 == 0)
-                          ? characters[((int)current_char) - 32][i]
-                          : alternate_characters[((int)current_char) - 32][i];
-    next_buffer[i] = (display % 2 == 0)
-                       ? characters[((int)next_char) - 32][i]
-                       : alternate_characters[((int)next_char) - 32][i];
-  }
-  
-  // Even rows close first, then odd rows open to reveal new character
-  for (int phase = 0; phase < 2; phase++) {
-    for (int step = 0; step <= 5; step++) {
-      for (int row = 0; row < 8; row++) {
-        if (phase == 0) {
-          // Phase 1: Close blinds
-          if (row % 2 == 0) {
-            // Even rows: close from right to left
-            displays[display][row] = current_buffer[row] & ~((1 << step) - 1);
-          } else {
-            // Odd rows: close from left to right
-            displays[display][row] = current_buffer[row] & ~(0x1F >> (5 - step));
-          }
-        } else {
-          // Phase 2: Open blinds to reveal new character
-          if (row % 2 == 0) {
-            // Even rows: open from left to right
-            displays[display][row] = next_buffer[row] & (0x1F >> (5 - step));
-          } else {
-            // Odd rows: open from right to left
-            displays[display][row] = next_buffer[row] & ((1 << step) - 1);
-          }
-        }
-      }
-      update_display();
-      sleep_us(16600);
-    }
-  }
-  
-  // Final state
-  set_char(display, next_char, true);
-}
-
-// Swirl effect - pixelated vortex transition
-void animate_swirl(int display, char current_char, char next_char) {
-  if (display < 0 || display > 7) return;
-  
-  uint8_t current_buffer[8];
-  uint8_t next_buffer[8];
-  uint8_t anim_buffer[8];
-  
-  // Get character bitmaps
-  for (int i = 0; i < 8; i++) {
-    current_buffer[i] = (display % 2 == 0)
-                          ? characters[((int)current_char) - 32][i]
-                          : alternate_characters[((int)current_char) - 32][i];
-    next_buffer[i] = (display % 2 == 0)
-                       ? characters[((int)next_char) - 32][i]
-                       : alternate_characters[((int)next_char) - 32][i];
-    anim_buffer[i] = current_buffer[i];
-  }
-  
-  // Define swirl pattern coordinates (row, col pairs)
-  // Coordinates start from outside and spiral inward
-  const uint8_t swirl_coords[][2] = {
-    {0,0}, {0,1}, {0,2}, {0,3}, {0,4},  // Top row
-    {1,4}, {2,4}, {3,4}, {4,4}, {5,4}, {6,4}, {7,4},  // Right column
-    {7,3}, {7,2}, {7,1}, {7,0},  // Bottom row
-    {6,0}, {5,0}, {4,0}, {3,0}, {2,0}, {1,0},  // Left column
-    {1,1}, {1,2}, {1,3},  // Inner top
-    {2,3}, {3,3}, {4,3}, {5,3}, {6,3},  // Inner right
-    {6,2}, {6,1},  // Inner bottom
-    {5,1}, {4,1}, {3,1}, {2,1},  // Inner left
-    {2,2}, {3,2}, {4,2}, {5,2}  // Center
-  };
-  
-  const int num_coords = sizeof(swirl_coords) / sizeof(swirl_coords[0]);
-  
-  // Animate through the swirl pattern
-  for (int i = 0; i < num_coords; i++) {
-    int row = swirl_coords[i][0];
-    int col = swirl_coords[i][1];
-    
-    // Only modify if the coordinate is valid
-    if (row >= 0 && row < 8 && col >= 0 && col < 5) {
-      // Toggle the bit at this position to match the next character
-      if (next_buffer[row] & (1 << col)) {
-        anim_buffer[row] |= (1 << col);
-      } else {
-        anim_buffer[row] &= ~(1 << col);
-      }
-      
-      // Update display
-      for (int r = 0; r < 8; r++) {
-        displays[display][r] = anim_buffer[r];
-      }
-      update_display();
-      sleep_us(15000);
-    }
-  }
-  
-  // Final state
-  set_char(display, next_char, true);
-}
-
-// Bouncing ball effect - a ball of light bounces and transforms the characters
-void animate_bouncing_ball(int display, char current_char, char next_char) {
-  if (display < 0 || display > 7) return;
-  
-  uint8_t current_buffer[8];
-  uint8_t next_buffer[8];
-  uint8_t anim_buffer[8];
-  
-  // Get character bitmaps
-  for (int i = 0; i < 8; i++) {
-    current_buffer[i] = (display % 2 == 0)
-                          ? characters[((int)current_char) - 32][i]
-                          : alternate_characters[((int)current_char) - 32][i];
-    next_buffer[i] = (display % 2 == 0)
-                       ? characters[((int)next_char) - 32][i]
-                       : alternate_characters[((int)next_char) - 32][i];
-    anim_buffer[i] = current_buffer[i];
-  }
-  
-  // Ball physics parameters
-  float ball_x = 0;
-  float ball_y = 0;
-  float velocity_x = 0.35;
-  float velocity_y = 0.45;
-  int touched_pixels = 0;
-  
-  // Animate for a certain number of frames
-  for (int frame = 0; frame < 30; frame++) {
-    // Update ball position
-    ball_x += velocity_x;
-    ball_y += velocity_y;
-    
-    // Bounce off walls
-    if (ball_x < 0 || ball_x > 4) {
-      velocity_x = -velocity_x;
-      ball_x += velocity_x;
-    }
-    
-    if (ball_y < 0 || ball_y > 7) {
-      velocity_y = -velocity_y;
-      ball_y += velocity_y;
-    }
-    
-    // Draw the current state
-    for (int row = 0; row < 8; row++) {
-      for (int col = 0; col < 5; col++) {
-        // Calculate distance from ball center
-        float dx = col - ball_x;
-        float dy = row - ball_y;
-        float distance = sqrt(dx*dx + dy*dy);
-        
-        // Ball touches this pixel if distance is small enough
-        if (distance < 1.5) {
-          // Toggle this pixel to match the next character
-          uint8_t bit_mask = (1 << col);
-          if (next_buffer[row] & bit_mask) {
-            anim_buffer[row] |= bit_mask;
-          } else {
-            anim_buffer[row] &= ~bit_mask;
-          }
-          
-          // Count touched pixels
-          if ((anim_buffer[row] & bit_mask) != (current_buffer[row] & bit_mask)) {
-            touched_pixels++;
-          }
-        }
-      }
-    }
-    
-    // Display animation frame
-    for (int row = 0; row < 8; row++) {
-      displays[display][row] = anim_buffer[row];
-    }
-    update_display();
-    sleep_us(16600);
-    
-    // If we've changed most pixels, accelerate the animation
-    if (touched_pixels > 25) {
-      break;
-    }
-  }
-  
-  // Final state
-  set_char(display, next_char, true);
-}
 
 // Clock hand wipe - simulates analog clock hand sweeping
 void animate_clock_hand_wipe(int display, char current_char, char next_char) {

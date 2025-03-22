@@ -63,16 +63,10 @@ typedef enum {
   ANIM_PIXELATED,
   ANIM_EXPAND_CONTRACT,
   ANIM_MORPH,
-  ANIM_SLIDE_UP_TRAIL,
-  ANIM_SLIDE_UP_SCANLINES,
   ANIM_INTERLOCKING_PIECES,
   ANIM_GLITCH_EFFECT,
   ANIM_HEARTBEAT_PULSE,
-  ANIM_MATRIX_RAIN,
   ANIM_WATERFALL,
-  ANIM_BLINDS,
-  ANIM_SWIRL,
-  ANIM_BOUNCING_BALL,
   ANIM_CLOCK_HAND_WIPE,
   ANIM_COUNT // Keep this as the last element
 } AnimationType;
@@ -88,17 +82,24 @@ AnimationFunction animations[] = {
     animate_pixelated_transition,
     animate_expanding_contracting,
     animate_morph,
-    animate_slide_up_with_trail,
-    animate_slide_up_with_scanlines,
     animate_interlocking_pieces,
     animate_glitch_effect,
     animate_heartbeat_pulse,
-    animate_matrix_rain,
     animate_waterfall,
-    animate_blinds,
-    animate_swirl,
-    animate_bouncing_ball,
     animate_clock_hand_wipe
+};
+
+// Array of animation names
+const char* animation_names[] = {
+    "SLIDE_UP",
+    "PIXELATED",
+    "EXPAND_CONTRACT",
+    "MORPH",
+    "INTERLOCKING_PIECES",
+    "GLITCH_EFFECT",
+    "HEARTBEAT_PULSE",
+    "WATERFALL",
+    "CLOCK_HAND_WIPE"
 };
 
 
@@ -572,7 +573,7 @@ int main() {
 
         if (gpio_irq_flags.increment_counter) {
             selected_animation = (AnimationType)((selected_animation + 1) % ANIM_COUNT);
-            printf("Animation set to %d.\n", selected_animation);
+            printf("Animation set to %s.\n", animation_names[selected_animation]); // Print animation name
             gpio_irq_flags.increment_counter = 0; // Clear flag
         }
     }
