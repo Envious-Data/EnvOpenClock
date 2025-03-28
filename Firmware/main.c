@@ -443,7 +443,7 @@ int main() {
   add_repeating_timer_ms(-60000, timer_callback, NULL, &timer);
 
   // char startup_message[] = "PICO8LED";
-  char startup_message[] = "PICOTIME";
+  char startup_message[] = " envclk ";
   int message_length = strlen(startup_message);
 
   // Seed the random number generator using the current time from the RTC.
@@ -531,51 +531,61 @@ int main() {
     // REMOVED: update_rtc_from_serial();
 
     if (gpio_irq_flags.set_time) {
-      set_date_and_time();
-      gpio_irq_flags.set_time = 0;
+        set_date_and_time();
+        gpio_irq_flags.set_time = 0;
     } else if (gpio_irq_flags.set_confirm) {
-      gpio_irq_flags.set_confirm = 0;
+        gpio_irq_flags.set_confirm = 0;
 
-      if (show) {  // Time to Date animation
-        char time_string[9];
-        char date_string[9];
+        if (show) {  // Time to Date animation
+            char time_string[9];
+            char date_string[9];
 
-        // Capture current time
-        clock_read_time();
-        sprintf(time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F,
-                clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
+            // Capture current time
+            clock_read_time();
+            sprintf(time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F,
+                            clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
 
-        // Capture current date
-        clock_read_time();
-        sprintf(date_string, "%02x/%02x/%02x", clock_buffer[4], clock_buffer[5],
-                clock_buffer[6]);
+            // Capture current date
+            clock_read_time();
+            sprintf(date_string, "%02x/%02x/%02x", clock_buffer[4], clock_buffer[5],
+                            clock_buffer[6]);
 
-        for (int i = 0; i < 8; i++) {
-          animate_slide_up(i, time_string[i], date_string[i]);
+            for (int i = 0; i < 8; i++) {
+                char current_char = ' '; // Or perhaps the current displayed character?
+                char next_char_time = time_string[i];
+                char next_char_date = date_string[i];
+                if (selected_animation < ANIM_COUNT) {
+                    animations[selected_animation](i, current_char, next_char_date); // Animate to date
+                }
+            }
+            sleep_ms(100);
+            show = false;
+        } else {  // Date to Time animation
+            char date_string[9];
+            char time_string[9];
+
+            // Capture current date
+            clock_read_time();
+            sprintf(date_string, "%02x/%02x/%02x", clock_buffer[4], clock_buffer[5],
+                            clock_buffer[6]);
+
+            // Capture current time
+            clock_read_time();
+            sprintf(time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F,
+                            clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
+
+            for (int i = 0; i < 8; i++) {
+                char current_char = ' '; // Or perhaps the current displayed character?
+                char next_char_date = date_string[i];
+                char next_char_time = time_string[i];
+                if (selected_animation < ANIM_COUNT) {
+                    animations[selected_animation](i, current_char, next_char_time); // Animate to time
+                }
+            }
+            sleep_ms(100);
+            show = true;
+            reset_clock_static_vars();
         }
-        sleep_ms(100);
-        show = false;
-      } else {  // Date to Time animation
-        char date_string[9];
-        char time_string[9];
-
-        // Capture current date
-        clock_read_time();
-        sprintf(date_string, "%02x/%02x/%02x", clock_buffer[4], clock_buffer[5],
-                clock_buffer[6]);
-
-        // Capture current time
-        clock_read_time();
-        sprintf(time_string, "%02x:%02x:%02x", clock_buffer[2] & 0x3F,
-                clock_buffer[1] & 0x7F, clock_buffer[0] & 0x7F);
-
-        for (int i = 0; i < 8; i++) {
-          animate_slide_up(i, date_string[i], time_string[i]);
-        }
-        sleep_ms(100);
-        show = true;
-        reset_clock_static_vars();
-      }
     }
 
     if (clock_buffer[6] == 0x00 && clock_buffer[5] == 0x01 &&
