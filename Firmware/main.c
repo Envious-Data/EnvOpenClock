@@ -139,20 +139,20 @@ bool timer_callback(struct repeating_timer* t) {
     bool is_night = (current_hour >= 22 || current_hour <= 6);
 
     const uint8_t night_brightness_default = 0b00000001;
+    const uint8_t day_brightness_default = 0b00111111; // Assuming display.c default is 63
 
     if (!user_brightness_override && is_night) {
         if (brightness_level > night_brightness_default) {
+            // Compares against current brightness:
+            // If the current brightness is greater than the night default, reduce it.
             brightness_level = night_brightness_default;
             printf("Night time: Brightness reduced to 0b%08b (%d)\n", brightness_level, brightness_level);
         }
     } else if (!user_brightness_override && !is_night) {
-        // We don't explicitly set a day-time default here anymore,
-        // assuming display.c initializes it.
-        // We might want to restore to a specific day level if the
-        // night mode was active and the user hasn't overridden.
+        // Compares against current brightness:
+        // If the current brightness is equal to the night default, restore to day default.
         if (brightness_level == night_brightness_default) {
-            // Restore to the display.c default if coming out of night mode
-            brightness_level = 0b00111111; // Assuming 63 is the display.c default
+            brightness_level = day_brightness_default;
             printf("Day time: Brightness restored to default 0b%08b (%d)\n", brightness_level, brightness_level);
         }
     }
