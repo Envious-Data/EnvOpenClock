@@ -22,7 +22,9 @@
 #define DEFAULT_MODE 0b00011000
 #define DEFAULT_OPTIONS 0b00001110
 
-uint8_t brightness_level = 0b1101000;
+//uint8_t brightness_level = 0b00011001;
+uint8_t brightness_level = 0b00111111; // original brightness.
+
 
 /**
  * @brief The addresses of the displays in order from left to right.
